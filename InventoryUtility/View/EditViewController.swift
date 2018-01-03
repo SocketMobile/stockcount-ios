@@ -11,9 +11,10 @@ import UIKit
 
 class EditViewController: UIViewController, UITextViewDelegate
 {
+    var fileName : String = ""
     
-    var btnSetting: UIBarButtonItem!
-    var btnDone: UIBarButtonItem!
+    /*var btnSetting: UIBarButtonItem!
+    var btnDone: UIBarButtonItem!*/
     
     @IBOutlet weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var txtView: UITextView!
@@ -21,19 +22,42 @@ class EditViewController: UIViewController, UITextViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        btnSetting = UIBarButtonItem(title: "Setting", style: .plain, target: self, action:#selector(onBtnSetting))
-        btnDone = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(onBtnDone))
+        /*btnSetting = UIBarButtonItem(title: "Setting", style: .plain, target: self, action:#selector(onBtnSetting))
+//        btnDone = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(onBtnDone))
+//        navigationItem.rightBarButtonItems = [btnDone, btnSetting]
+        navigationItem.rightBarButtonItems = [btnSetting]*/
+        updateTopButtons(isDoneVisible: false)
         
-        navigationItem.rightBarButtonItems = [btnDone, btnSetting]
-        
+        //Keyboard Notification
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        
+        //Read File Content
+        let strContent = FileMgr.readFile(fileName: fileName)
+        txtView.text = strContent
+        
+        //Set Cursor to end text
+        let curPosition = txtView.endOfDocument
+        txtView.selectedTextRange = txtView.textRange(from: curPosition, to: curPosition)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        txtView.becomeFirstResponder()
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
     
-    @objc func onBtnSetting() {
+    //MARK: - Back
+    
+    @IBAction func onBtnBack(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    /*@objc func onBtnSetting() {
         btnDone = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(onBtnDone))
         navigationItem.rightBarButtonItems = [btnDone, btnSetting]
     }
@@ -41,12 +65,15 @@ class EditViewController: UIViewController, UITextViewDelegate
     @objc func onBtnDone() {
         self.view.endEditing(true)
         navigationItem.rightBarButtonItems = [btnSetting]
-    }
+        
+        FileMgr.saveFile(fileName: fileName, content: txtView.text)
+    }*/
     
     //MARK: - TextField Delegate
     func textViewDidBeginEditing(_ textView: UITextView) {
-        btnDone = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(onBtnDone))
-        navigationItem.rightBarButtonItems = [btnDone, btnSetting]
+        /*btnDone = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(onBtnDone))
+        navigationItem.rightBarButtonItems = [btnDone, btnSetting]*/
+        updateTopButtons(isDoneVisible: true)
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
@@ -72,4 +99,45 @@ class EditViewController: UIViewController, UITextViewDelegate
                            completion: nil)
         }
     }
+
+    //MARK: - Delete & Share
+    
+    @IBAction func onBtnRemove(_ sender: Any) {
+        FileMgr.deleteFile(fileName: fileName)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func onBtnShare(_ sender: Any) {
+        if let fileURL = FileMgr.getURL(fileName: fileName) {
+            let activityViewController = UIActivityViewController(activityItems: [fileURL], applicationActivities: nil)
+            activityViewController.popoverPresentationController?.sourceView = self.view
+            
+            self.present(activityViewController, animated: true, completion: nil)
+        }
+    }
+    
+    //MARK: - Setting & Done Buttons
+    
+    @IBOutlet weak var btnSettingTrailing: NSLayoutConstraint!
+    
+    @IBOutlet weak var btnDoneTrailing: NSLayoutConstraint!
+    
+    func updateTopButtons(isDoneVisible : Bool) {
+        btnSettingTrailing.constant = isDoneVisible ? -46 : -8
+        btnDoneTrailing.constant = isDoneVisible ? -8 : 38
+    }
+    
+    @IBAction func onBtnDone(_ sender: Any) {
+        self.view.endEditing(true)
+        FileMgr.saveFile(fileName: fileName, content: txtView.text)
+        updateTopButtons(isDoneVisible: false)
+    }
+    
+    @IBAction func onBtnSetting(_ sender: Any) {
+        updateTopButtons(isDoneVisible: false)
+    }
+    
+    
+    
+    
 }
