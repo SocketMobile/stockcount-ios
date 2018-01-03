@@ -13,19 +13,12 @@ class EditViewController: UIViewController, UITextViewDelegate
 {
     var fileName : String = ""
     
-    /*var btnSetting: UIBarButtonItem!
-    var btnDone: UIBarButtonItem!*/
-    
     @IBOutlet weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var txtView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /*btnSetting = UIBarButtonItem(title: "Setting", style: .plain, target: self, action:#selector(onBtnSetting))
-//        btnDone = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(onBtnDone))
-//        navigationItem.rightBarButtonItems = [btnDone, btnSetting]
-        navigationItem.rightBarButtonItems = [btnSetting]*/
         updateTopButtons(isDoneVisible: false)
         
         //Keyboard Notification
@@ -56,23 +49,9 @@ class EditViewController: UIViewController, UITextViewDelegate
     @IBAction func onBtnBack(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
-    
-    /*@objc func onBtnSetting() {
-        btnDone = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(onBtnDone))
-        navigationItem.rightBarButtonItems = [btnDone, btnSetting]
-    }
-    
-    @objc func onBtnDone() {
-        self.view.endEditing(true)
-        navigationItem.rightBarButtonItems = [btnSetting]
-        
-        FileMgr.saveFile(fileName: fileName, content: txtView.text)
-    }*/
-    
+
     //MARK: - TextField Delegate
     func textViewDidBeginEditing(_ textView: UITextView) {
-        /*btnDone = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(onBtnDone))
-        navigationItem.rightBarButtonItems = [btnDone, btnSetting]*/
         updateTopButtons(isDoneVisible: true)
     }
     
