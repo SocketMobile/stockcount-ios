@@ -14,6 +14,7 @@ class EditViewController: UIViewController, UITextViewDelegate
     var fileName : String = ""
     
     @IBOutlet weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomBarHeightLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var txtView: UITextView!
     
     override func viewDidLoad() {
@@ -67,7 +68,7 @@ class EditViewController: UIViewController, UITextViewDelegate
             let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
             let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
             if (endFrame?.origin.y)! >= UIScreen.main.bounds.size.height {
-                self.keyboardHeightLayoutConstraint?.constant = 60
+                self.keyboardHeightLayoutConstraint?.constant = bottomBarHeightLayoutConstraint.constant
             } else {
                 self.keyboardHeightLayoutConstraint?.constant = endFrame?.size.height ?? 0.0
             }
@@ -101,9 +102,17 @@ class EditViewController: UIViewController, UITextViewDelegate
     
     @IBOutlet weak var btnDoneTrailing: NSLayoutConstraint!
     
+    @IBOutlet weak var btnDone: UIButton!
+    
+    
     func updateTopButtons(isDoneVisible : Bool) {
-        btnSettingTrailing.constant = isDoneVisible ? -46 : -8
-        btnDoneTrailing.constant = isDoneVisible ? -8 : 38
+        
+        btnDone.isHidden = !isDoneVisible
+        
+        btnSettingTrailing.constant = btnDoneTrailing.constant
+        if (isDoneVisible) {
+            btnSettingTrailing.constant = -btnDone.frame.width + 2 * btnDoneTrailing.constant
+        }
     }
     
     @IBAction func onBtnDone(_ sender: Any) {
