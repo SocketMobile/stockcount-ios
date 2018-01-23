@@ -16,19 +16,25 @@ protocol EditControllerProtocol {
     
     func setSoftScan(_ isSet : Bool)
     func startScan()
-    func stopScan()
+//    func stopScan()
+}
+
+enum EnumScanMode {
+    case none
+    case deviceScan
+    case softScan
 }
 
 class EditController : CaptureHelperDeviceDecodedDataDelegate, EditControllerProtocol,
-//                    CaptureHelperDeviceManagerDiscoveryDelegate,
                     CaptureHelperDeviceManagerPresenceDelegate,
-                    CaptureHelperDevicePresenceDelegate{
-    let captureHelper = CaptureHelper.sharedInstance
-    var deviceManager : CaptureHelperDeviceManager? = nil
+                    CaptureHelperDevicePresenceDelegate {
+    
     var viewer : EditViewProtocol?
     
-    private var isScanning = false
-    private var isSoftScan = false
+    let captureHelper = CaptureHelper.sharedInstance
+    
+    private var scanMode : EnumScanMode = .none
+    private var softScanner : CaptureHelperDevice? = nil
     
     init(view : EditViewProtocol? = nil) {
         viewer = view
@@ -59,7 +65,6 @@ class EditController : CaptureHelperDeviceDecodedDataDelegate, EditControllerPro
                     print("Result of Auto Scan")
                 })
             }
-            
         }
     }
     
@@ -81,91 +86,58 @@ class EditController : CaptureHelperDeviceDecodedDataDelegate, EditControllerPro
     }
     
     func setSoftScan(_ isSet: Bool = true) {
-        isSoftScan = true
-        
+        scanMode = .softScan
+        //Starting SoftScan
         captureHelper.setSoftScanStatus(.enable) { (result) in
             print("Setting softscan to supported returned \(result.rawValue)")
         }
         
     }
     func startScan() {
-        /*let deviceMgrList = captureHelper.getDeviceManagers()
-        if deviceMgrList.count > 0 {
-            isScanning = true
-            deviceMgrList[0].startDiscoveryWithTimeout(5000, withCompletionHandler: { (result : SKTResult) in
-                print("Discovering Result : \(result)")
-                
-                if result == SKTResult.E_NOERROR {
-                    DispatchQueue.main.async {
-                        self.viewer?.showScangDlg()
-                    }
-                }
-                
+        if scanMode == .softScan {
+            softScanner?.setTrigger(.start, withCompletionHandler: { (result) in
+                print("Start Soft Scan Overlay : \(result.rawValue)")
             })
-        }*/
-        
-        if captureHelper.getDevices().count < 1 {
-            //No devices Connected.
-            self.viewer?.showCompanionDlg()
+        } else {
+            if captureHelper.getDevices().count < 1 {
+                scanMode = .none
+                self.viewer?.showCompanionDlg()
+            } else {
+                scanMode = .deviceScan
+            }
         }
     }
     
-    func stopScan() {
+    /*func stopScan() {
         captureHelper.popDelegate(self)
-    }
+    }*/
     
     //MARK: - CaptureHelperDeviceDecodedDataDelegate Delegate
     func didReceiveDecodedData(_ decodedData: SKTCaptureDecodedData?, fromDevice device: CaptureHelperDevice, withResult result: SKTResult) {
         if result == SKTCaptureErrors.E_NOERROR {
-            let rawData = decodedData?.decodedData
-            let rawDataSize = rawData?.count
-            print("Size: \(String(describing: rawDataSize))")
-            print("data: \(String(describing: decodedData?.decodedData))")
-            let string = decodedData?.stringFromDecodedData()!
-            print("Decoded Data \(String(describing: string))")
             
-            // here we can update the UI directly because we set
-            // the deleteDispatchQueue Capture Helper property to DispatchQueue.main
-            if let readData = rawData {
-                if let readStr = String(data: readData, encoding: .utf8) {
-                    viewer?.addScanData(strLine: readStr)
+            if scanMode != .none {
+                let rawData = decodedData?.decodedData
+                let rawDataSize = rawData?.count
+                print("Size: \(String(describing: rawDataSize))")
+                print("data: \(String(describing: decodedData?.decodedData))")
+                let string = decodedData?.stringFromDecodedData()!
+                print("Decoded Data \(String(describing: string))")
+                
+                // here we can update the UI directly because we set
+                // the deleteDispatchQueue Capture Helper property to DispatchQueue.main
+                if let readData = rawData {
+                    if let readStr = String(data: readData, encoding: .utf8) {
+                        viewer?.addScanData(strLine: readStr)
+                    }
                 }
             }
         }
     }
     
-    //MARK: - CaptureHelperDeviceManagerDiscoveryDelegate
-    /*func didDiscoverDevice(_ device: String, fromDeviceManager deviceManager: CaptureHelperDeviceManager) {
-        let data  = device.data(using: .utf8)
-        let deviceInfo = try! PropertyListSerialization.propertyList(from:data!, options: [], format: nil) as! [String:Any]
-        print("device discover: \(deviceInfo)")
-        deviceManager.setFavoriteDevices(deviceInfo["identifierUUID"] as! String) { (result) in
-            print("setting the favorite devices returns: \(result.rawValue)")
-        }
-    }
-    
-    func didEndDiscoveryWithResult(_ result: SKTResult, fromDeviceManager deviceManager: CaptureHelperDeviceManager) {
-        print("Did End Discovery Result = \(result)")
-        
-        DispatchQueue.main.async {
-            self.viewer?.closeScanDlg()
-        }
-        
-        let deviceList = captureHelper.getDevices()
-        if deviceList.count < 1 {
-            DispatchQueue.main.async {
-                self.viewer?.showCompanionDlg()
-            }
-        }
-        
-    }*/
-    
     //MARK: - DeviceManager Presence Delegate
     func didNotifyArrivalForDeviceManager(_ device: CaptureHelperDeviceManager, withResult result: SKTResult) {
         print("DEvice Manager Arrival Notification")
-        
-        deviceManager = device
-        
         device.getFavoriteDevicesWithCompletionHandler { (result, favorites) in
             print("getting the favorite devices returned \(result.rawValue)")
             if result == .E_NOERROR {
@@ -187,21 +159,24 @@ class EditController : CaptureHelperDeviceDecodedDataDelegate, EditControllerPro
     //MARK: - CaptureHelperDevicePresenceDelegate
     func didNotifyArrivalForDevice(_ device: CaptureHelperDevice, withResult result: SKTResult) {
         device.getDataAcknowledgmentWithCompletionHandler { (result, dataAcknowledgement) in
-            
+            if let curAck = dataAcknowledgement, curAck == .on {
+                device.setDataAcknowledgment(.off, withCompletionHandler: { (result) in
+                    print("Set Device dataAcknowledgement result \(result.rawValue)")
+                })
+            }
         }
         
         let name = device.deviceInfo.name
         if name?.caseInsensitiveCompare("SoftScanner") == ComparisonResult.orderedSame {
             
+            softScanner = device
             if let viewContext = self.viewer?.getOverlayContextForSoftScan() {
                 let context : [String:Any] = [SKTCaptureSoftScanContext : viewContext]
                 device.setSoftScanOverlayViewParameter(context, withCompletionHandler: { (result) in
                     print("Set soft scan overlay result : \(result.rawValue)")
-//                    self.viewer?.showAlert("Set SoftScan Overlay result : \(result.rawValue)")
                     
                     device.setTrigger(.start, withCompletionHandler: { (result) in
                         print("Starting soft scan result : \(result.rawValue)")
-//                        self.viewer?.showAlert("SoftScan Started : \(result.rawValue)")
                     })
                 })
             }
@@ -210,6 +185,10 @@ class EditController : CaptureHelperDeviceDecodedDataDelegate, EditControllerPro
     
     func didNotifyRemovalForDevice(_ device: CaptureHelperDevice, withResult result: SKTResult) {
         
+        let name = device.deviceInfo.name
+        if name?.caseInsensitiveCompare("SoftScanner") == ComparisonResult.orderedSame {
+            softScanner = nil
+        }
     }
     
 }

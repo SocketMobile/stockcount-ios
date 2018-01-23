@@ -193,6 +193,8 @@ extension EditViewController : EditViewProtocol {
         
         txtView.text = curContent
         setCursorToEnd()
+        
+        editController.saveFile(fileName, strContent: curContent)
     }
     
     func showScangDlg() {
