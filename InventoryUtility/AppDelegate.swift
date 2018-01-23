@@ -9,6 +9,7 @@
 import UIKit
 import Fabric
 import Crashlytics
+import SKTCapture
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         Fabric.with([Crashlytics.self])
+        
+        
+        //Socket Mobile Init
+        /*let AppInfo = SKTAppInfo()
+        AppInfo.appKey="MC0CFHPYIb54AaQQ0h90lh6iOTzSi38nAhUA4nA2VM8Dim+NAnTDKwx+BOCr4p0="
+        AppInfo.bundleID="ios:com.socketmobile.inventoryCounting";
+        AppInfo.developerID="EF62BC15-59E0-4E86-82A3-493101D7DB4E"
+        // open Capture Helper only once in the application
+        CaptureHelper.sharedInstance.openWithAppInfo(AppInfo) { (result: SKTResult) in
+            print("Result of Capture initialization: \(result.rawValue)")
+        }*/
+        
         return true
     }
 

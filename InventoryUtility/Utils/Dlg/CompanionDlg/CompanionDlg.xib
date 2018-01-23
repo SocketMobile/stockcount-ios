@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CompanionDlg" customModule="InventoryUtility" customModuleProvider="target">
+            <connections>
+                <outlet property="_backgroundView" destination="ncU-hg-bHL" id="5dg-y6-MQe"/>
+                <outlet property="_dialogView" destination="049-d4-cai" id="dTH-Ag-lKm"/>
+                <outlet property="btnOpenCompanion" destination="U0p-vY-1sQ" id="261-Dd-Kfe"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ncU-hg-bHL">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6G-y0-Rpv">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <connections>
+                                <action selector="onBtnBG:" destination="-1" eventType="touchUpInside" id="hUL-jI-5b9"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="d6G-y0-Rpv" firstAttribute="leading" secondItem="ncU-hg-bHL" secondAttribute="leading" id="58a-Oe-koT"/>
+                        <constraint firstAttribute="trailing" secondItem="d6G-y0-Rpv" secondAttribute="trailing" id="Kvg-vH-QjM"/>
+                        <constraint firstAttribute="bottom" secondItem="d6G-y0-Rpv" secondAttribute="bottom" id="Ou1-OM-fYM"/>
+                        <constraint firstItem="d6G-y0-Rpv" firstAttribute="top" secondItem="ncU-hg-bHL" secondAttribute="top" id="UK4-eY-plS"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="049-d4-cai">
+                    <rect key="frame" x="37.5" y="95.5" width="300" height="476"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTh-El-hNL">
+                            <rect key="frame" x="134.5" y="12" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="cZL-VG-GpK"/>
+                                <constraint firstAttribute="height" constant="30" id="r1r-B4-xmY"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="btn_close.png"/>
+                            <connections>
+                                <action selector="onBtnClose:" destination="-1" eventType="touchUpInside" id="qts-WP-vk0"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cannot connect to a Socket scanner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zg8-US-llQ">
+                            <rect key="frame" x="46.5" y="50" width="206" height="15"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0p-vY-1sQ">
+                            <rect key="frame" x="43" y="208" width="214" height="30"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="J6q-4Z-mXk"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="Open Companion"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                    <integer key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipsToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="onBtnOpenCompanion:" destination="-1" eventType="touchUpInside" id="g2J-Mr-Wi2"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To use a Socket scanner with this app, you need to pair the scanner in Application Mode." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4z-Ic-DfJ">
+                            <rect key="frame" x="29.5" y="181.5" width="240" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uh7-0G-y0Y">
+                            <rect key="frame" x="48.5" y="250" width="202" height="27"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="Learn more about Application Mode"/>
+                            <connections>
+                                <action selector="onBtnLearnMore:" destination="-1" eventType="touchUpInside" id="3nC-Xe-TeL"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5n-rA-5h7">
+                            <rect key="frame" x="42.5" y="425" width="214" height="27"/>
+                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="Continue with Camera">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="onBtnCamera:" destination="-1" eventType="touchUpInside" id="BFE-rT-aNC"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you continue without a connected scanner, the app will launch the camera for scanning." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzs-xQ-HIY">
+                            <rect key="frame" x="29.5" y="394.5" width="240" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="a4z-Ic-DfJ" firstAttribute="width" secondItem="049-d4-cai" secondAttribute="width" multiplier="4:5" id="0vj-Yz-64X"/>
+                        <constraint firstItem="B5n-rA-5h7" firstAttribute="width" secondItem="U0p-vY-1sQ" secondAttribute="width" id="4pM-bU-DBn"/>
+                        <constraint firstItem="uh7-0G-y0Y" firstAttribute="top" secondItem="U0p-vY-1sQ" secondAttribute="bottom" constant="12" id="Epc-r0-kvE"/>
+                        <constraint firstItem="qTh-El-hNL" firstAttribute="centerX" secondItem="049-d4-cai" secondAttribute="centerX" id="Ibz-eR-5R5"/>
+                        <constraint firstAttribute="bottom" secondItem="B5n-rA-5h7" secondAttribute="bottom" constant="24" id="LhS-2B-SNI"/>
+                        <constraint firstItem="U0p-vY-1sQ" firstAttribute="width" secondItem="049-d4-cai" secondAttribute="width" multiplier="5:7" id="MRG-UB-39V"/>
+                        <constraint firstItem="U0p-vY-1sQ" firstAttribute="bottom" secondItem="049-d4-cai" secondAttribute="bottom" multiplier="1:2" id="MxT-YF-9B8"/>
+                        <constraint firstItem="U0p-vY-1sQ" firstAttribute="top" secondItem="a4z-Ic-DfJ" secondAttribute="bottom" constant="12" id="N0v-Tj-M2B"/>
+                        <constraint firstItem="qTh-El-hNL" firstAttribute="top" secondItem="049-d4-cai" secondAttribute="top" constant="12" id="P5h-l1-p55"/>
+                        <constraint firstItem="mzs-xQ-HIY" firstAttribute="centerX" secondItem="049-d4-cai" secondAttribute="centerX" id="PVh-ne-GnB"/>
+                        <constraint firstItem="uh7-0G-y0Y" firstAttribute="centerX" secondItem="049-d4-cai" secondAttribute="centerX" id="SB8-B3-Zi2"/>
+                        <constraint firstItem="B5n-rA-5h7" firstAttribute="top" secondItem="mzs-xQ-HIY" secondAttribute="bottom" constant="16" id="SmA-kW-N54"/>
+                        <constraint firstItem="U0p-vY-1sQ" firstAttribute="centerX" secondItem="049-d4-cai" secondAttribute="centerX" id="dZT-ea-jQV"/>
+                        <constraint firstItem="zg8-US-llQ" firstAttribute="centerX" secondItem="049-d4-cai" secondAttribute="centerX" id="dzp-LB-Oig"/>
+                        <constraint firstItem="B5n-rA-5h7" firstAttribute="centerX" secondItem="049-d4-cai" secondAttribute="centerX" id="ebP-wv-DqE"/>
+                        <constraint firstItem="mzs-xQ-HIY" firstAttribute="width" secondItem="a4z-Ic-DfJ" secondAttribute="width" id="q6f-vt-dWB"/>
+                        <constraint firstItem="zg8-US-llQ" firstAttribute="top" secondItem="qTh-El-hNL" secondAttribute="bottom" constant="8" id="wxY-db-cmD"/>
+                        <constraint firstItem="a4z-Ic-DfJ" firstAttribute="centerX" secondItem="049-d4-cai" secondAttribute="centerX" id="wxt-AO-bZx"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipsToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="049-d4-cai" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="13E-Xb-WA1"/>
+                <constraint firstItem="ncU-hg-bHL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="38d-sx-uaO"/>
+                <constraint firstItem="ncU-hg-bHL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5L5-Vi-BYi"/>
+                <constraint firstItem="ncU-hg-bHL" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="6Kc-Tl-bI6"/>
+                <constraint firstAttribute="trailing" secondItem="ncU-hg-bHL" secondAttribute="trailing" id="I3R-rA-bBO"/>
+                <constraint firstItem="049-d4-cai" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Iva-gq-fRp"/>
+                <constraint firstItem="049-d4-cai" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="4:5" id="J4t-fA-liH"/>
+                <constraint firstItem="049-d4-cai" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="5:7" id="WGP-Ad-JDY"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="24" y="51"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn_close.png" width="200" height="200"/>
+    </resources>
+</document>

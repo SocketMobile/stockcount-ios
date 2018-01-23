@@ -5,4 +5,6 @@ target 'InventoryUtility' do
 pod 'Fabric'
 pod 'Crashlytics'
 pod 'RealmSwift'
+#pod 'SKTCapture', path: '../SDK/CaptureSDK-1.0.20'
+pod 'SKTCapture', '~>1.0'
 end

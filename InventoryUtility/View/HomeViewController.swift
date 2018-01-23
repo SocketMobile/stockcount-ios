@@ -37,6 +37,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewWillAppear(animated)
         
         tableView.reloadData()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -68,6 +69,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     //MARK: - Create New
     @IBAction func onBtnNew(_ sender: Any) {
+//        let alert = ScanDlg()
+//        alert.show(animated: true)
+        
         if let fileName = FileMgr.createFile() {
             performSegue(withIdentifier: "SEGUE_EditViewController", sender: fileName)
         }
