@@ -14,7 +14,7 @@ class SettingMgr {
         case delineatorComma = "KEY_DelineatorCommaSet" //1 : Comma Space Quantity, 0 : Space Quantity
         case defaultQuantity = "KEY_DefaultQuantity"
         case newLineForNewScan = "KEY_NewLineForNewScan"
-        case semiColonBeforeNewScan = "KEY_SemiColonBeforeNewScan"
+//        case semiColonBeforeNewScan = "KEY_SemiColonBeforeNewScan"
     }
     
     static let key_AutoAddQuantity = "KEY_AutoAddQuantity"
@@ -53,8 +53,29 @@ class SettingMgr {
         set (argValue) {setSetting(keyName: .newLineForNewScan, newValue: argValue)}
     }
     
-    class var semiColonBeforeNewScan : Bool {
-        get {return getSetting(keyName: .semiColonBeforeNewScan, typeIndicator: Bool.self) ?? false}
-        set (argValue) {setSetting(keyName: .semiColonBeforeNewScan, newValue: argValue)}
+    
+    class func getLineForBarcode(_ barcode:String? = nil) -> String {
+        var strLine = barcode == nil ?  "[barcode]" : barcode!
+        
+        if autoAddQuantity {
+            if delineatorComma {
+                strLine = strLine + ", \(defaultQuantity)"
+            } else {
+                strLine = strLine + " \(defaultQuantity)"
+            }
+        }
+        
+        if newLineForNewScan {
+            strLine = strLine + "\n"
+        } else {
+            strLine = strLine + ";"
+        }
+        
+        return strLine
     }
+    
+//    class var semiColonBeforeNewScan : Bool {
+//        get {return getSetting(keyName: .semiColonBeforeNewScan, typeIndicator: Bool.self) ?? false}
+//        set (argValue) {setSetting(keyName: .semiColonBeforeNewScan, newValue: argValue)}
+//    }
 }

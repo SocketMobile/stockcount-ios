@@ -189,7 +189,6 @@ extension EditViewController : EditViewProtocol {
     func addScanData(strLine: String) {
         var curContent = txtView.text ?? ""
         curContent += strLine
-        curContent += "\n"
         
         txtView.text = curContent
         setCursorToEnd()

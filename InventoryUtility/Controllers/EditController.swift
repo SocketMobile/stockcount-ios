@@ -16,7 +16,7 @@ protocol EditControllerProtocol {
     
     func setSoftScan(_ isSet : Bool)
     func startScan()
-//    func stopScan()
+    //    func stopScan()
 }
 
 enum EnumScanMode {
@@ -26,10 +26,12 @@ enum EnumScanMode {
 }
 
 class EditController : CaptureHelperDeviceDecodedDataDelegate, EditControllerProtocol,
-                    CaptureHelperDeviceManagerPresenceDelegate,
-                    CaptureHelperDevicePresenceDelegate {
+    CaptureHelperDeviceManagerPresenceDelegate,
+CaptureHelperDevicePresenceDelegate {
     
     var viewer : EditViewProtocol?
+    
+    var guidList : [String] = []
     
     let captureHelper = CaptureHelper.sharedInstance
     
@@ -99,7 +101,8 @@ class EditController : CaptureHelperDeviceDecodedDataDelegate, EditControllerPro
                 print("Start Soft Scan Overlay : \(result.rawValue)")
             })
         } else {
-            if captureHelper.getDevices().count < 1 {
+            //            if captureHelper.getDevices().count < 1
+            if guidList.count < 1 {
                 scanMode = .none
                 self.viewer?.showCompanionDlg()
             } else {
@@ -109,11 +112,14 @@ class EditController : CaptureHelperDeviceDecodedDataDelegate, EditControllerPro
     }
     
     /*func stopScan() {
-        captureHelper.popDelegate(self)
-    }*/
+     captureHelper.popDelegate(self)
+     }*/
     
     //MARK: - CaptureHelperDeviceDecodedDataDelegate Delegate
     func didReceiveDecodedData(_ decodedData: SKTCaptureDecodedData?, fromDevice device: CaptureHelperDevice, withResult result: SKTResult) {
+        
+        print("Decoded data arrived")
+        
         if result == SKTCaptureErrors.E_NOERROR {
             
             if scanMode != .none {
@@ -127,8 +133,10 @@ class EditController : CaptureHelperDeviceDecodedDataDelegate, EditControllerPro
                 // here we can update the UI directly because we set
                 // the deleteDispatchQueue Capture Helper property to DispatchQueue.main
                 if let readData = rawData {
-                    if let readStr = String(data: readData, encoding: .utf8) {
-                        viewer?.addScanData(strLine: readStr)
+                    if let readBarcode = String(data: readData, encoding: .utf8) {
+                        
+                        let newLineStr = SettingMgr.getLineForBarcode(readBarcode)
+                        viewer?.addScanData(strLine: newLineStr)
                     }
                 }
             }
@@ -158,15 +166,20 @@ class EditController : CaptureHelperDeviceDecodedDataDelegate, EditControllerPro
     
     //MARK: - CaptureHelperDevicePresenceDelegate
     func didNotifyArrivalForDevice(_ device: CaptureHelperDevice, withResult result: SKTResult) {
+        
         device.getDataAcknowledgmentWithCompletionHandler { (result, dataAcknowledgement) in
-            if let curAck = dataAcknowledgement, curAck == .on {
-                device.setDataAcknowledgment(.off, withCompletionHandler: { (result) in
-                    print("Set Device dataAcknowledgement result \(result.rawValue)")
-                })
-            }
+            print("GetDataAcknowledgement : \(result.rawValue)")
+            //            if let curAck = dataAcknowledgement, curAck == .off {
+            //                device.setDataAcknowledgment(.on, withCompletionHandler: { (result) in
+            //                    print("Set Device dataAcknowledgement result \(result.rawValue)")
+            //                })
+            //            }
         }
         
         let name = device.deviceInfo.name
+        
+        print("Device Arrival = \(name)")
+        
         if name?.caseInsensitiveCompare("SoftScanner") == ComparisonResult.orderedSame {
             
             softScanner = device
@@ -180,6 +193,10 @@ class EditController : CaptureHelperDeviceDecodedDataDelegate, EditControllerPro
                     })
                 })
             }
+        } else {
+            if let guid = device.deviceInfo.guid, !guidList.contains(guid) {
+                guidList.append(guid)
+            }
         }
     }
     
@@ -188,7 +205,12 @@ class EditController : CaptureHelperDeviceDecodedDataDelegate, EditControllerPro
         let name = device.deviceInfo.name
         if name?.caseInsensitiveCompare("SoftScanner") == ComparisonResult.orderedSame {
             softScanner = nil
+        } else {
+            if let guid = device.deviceInfo.guid, let itemIndex = guidList.index(of: guid) {
+                guidList.remove(at: itemIndex)
+            }
         }
     }
     
 }
+

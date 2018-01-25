@@ -171,10 +171,10 @@
             </objects>
             <point key="canvasLocation" x="455.625" y="116.19718309859155"/>
         </scene>
-        <!--View Controller-->
+        <!--Option View Controller-->
         <scene sceneID="ZhU-j3-XAQ">
             <objects>
-                <viewController id="vQ4-Cq-4Is" sceneMemberID="viewController">
+                <viewController id="vQ4-Cq-4Is" customClass="OptionViewController" customModule="InventoryUtility" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="010-su-NIN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -311,6 +311,9 @@ Version 1.0.0.0</string>
                                             <constraint firstAttribute="width" constant="24" id="hRl-bM-fkR"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="btn_back.png"/>
+                                        <connections>
+                                            <action selector="onBtnBack:" destination="vQ4-Cq-4Is" eventType="touchUpInside" id="XH3-RP-sOx"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kro-aP-fPa">
                                         <rect key="frame" x="44" y="23" width="58" height="34"/>
@@ -318,6 +321,9 @@ Version 1.0.0.0</string>
                                         <state key="normal" title="All files">
                                             <color key="titleColor" red="0.1333333333" green="0.44705882349999998" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onBtnBack:" destination="vQ4-Cq-4Is" eventType="touchUpInside" id="JS9-ex-Owo"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -418,9 +424,12 @@ Version 1.0.0.0</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kHu-PG-si1">
                                 <rect key="frame" x="0.0" y="196" width="320" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7k-nU-RMY">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7k-nU-RMY">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="didQuantityFormatChanged:" destination="GUU-ga-dA1" eventType="touchUpInside" id="cs8-rL-i62"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_check.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xp3-Fl-tZe">
                                         <rect key="frame" x="18" y="15" width="20" height="20"/>
@@ -465,8 +474,11 @@ Version 1.0.0.0</string>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foS-ri-iop">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="didQuantityFormatChanged:" destination="GUU-ga-dA1" eventType="touchUpInside" id="vGK-Yt-JQy"/>
+                                        </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rl1-16-Nsh">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_check.png" translatesAutoresizingMaskIntoConstraints="NO" id="rl1-16-Nsh">
                                         <rect key="frame" x="18" y="15" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="AyY-IE-YES"/>
@@ -531,9 +543,12 @@ Version 1.0.0.0</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IEg-cT-9Zd">
                                 <rect key="frame" x="0.0" y="394" width="320" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72n-kW-Sq1">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72n-kW-Sq1">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="didNewLineSetChanged:" destination="GUU-ga-dA1" eventType="touchUpInside" id="oST-4A-Seq"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_check.png" translatesAutoresizingMaskIntoConstraints="NO" id="hxD-fm-LGZ">
                                         <rect key="frame" x="18" y="15" width="20" height="20"/>
@@ -578,8 +593,11 @@ Version 1.0.0.0</string>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mgr-CZ-QjX">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="didNewLineSetChanged:" destination="GUU-ga-dA1" eventType="touchUpInside" id="L8t-fA-d7V"/>
+                                        </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ewl-SG-B05">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_check.png" translatesAutoresizingMaskIntoConstraints="NO" id="ewl-SG-B05">
                                         <rect key="frame" x="18" y="15" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ewl-SG-B05" secondAttribute="height" multiplier="1:1" id="SlT-8q-lfi"/>
@@ -606,6 +624,15 @@ Version 1.0.0.0</string>
                                     <constraint firstItem="ewl-SG-B05" firstAttribute="centerY" secondItem="UBF-Tk-BFl" secondAttribute="centerY" id="gqf-ur-IK6"/>
                                 </constraints>
                             </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TDA-Z0-ExN">
+                                <rect key="frame" x="0.0" y="502" width="320" height="66"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">The result will look like:
+[barcode], 1
+[barcode], 1</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0m4-1e-RtI" userLabel="Title Bar">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
                                 <subviews>
@@ -692,11 +719,15 @@ Version 1.0.0.0</string>
                             <constraint firstItem="0m4-1e-RtI" firstAttribute="top" secondItem="Ncq-Nb-IeA" secondAttribute="top" id="WAC-q7-hW9"/>
                             <constraint firstItem="Sbf-9Q-5W6" firstAttribute="trailing" secondItem="5Hd-j7-tJa" secondAttribute="trailing" id="Wol-4Y-w4t"/>
                             <constraint firstItem="IEg-cT-9Zd" firstAttribute="top" secondItem="t2D-Qp-tIQ" secondAttribute="bottom" constant="24" id="Xne-dp-70T"/>
+                            <constraint firstItem="TDA-Z0-ExN" firstAttribute="top" secondItem="UBF-Tk-BFl" secondAttribute="bottom" constant="8" id="Yap-98-b7w"/>
                             <constraint firstItem="iw4-DL-aHh" firstAttribute="top" secondItem="0m4-1e-RtI" secondAttribute="bottom" constant="4" id="ZyF-IY-bOU"/>
+                            <constraint firstItem="TDA-Z0-ExN" firstAttribute="leading" secondItem="5Hd-j7-tJa" secondAttribute="leading" id="dxp-Ee-icI"/>
+                            <constraint firstItem="TDA-Z0-ExN" firstAttribute="bottom" secondItem="5Hd-j7-tJa" secondAttribute="bottom" id="eJG-OH-a8t"/>
                             <constraint firstItem="mlv-f0-0rw" firstAttribute="top" secondItem="kHu-PG-si1" secondAttribute="bottom" id="j1Q-g2-PNV"/>
                             <constraint firstItem="mlv-f0-0rw" firstAttribute="trailing" secondItem="5Hd-j7-tJa" secondAttribute="trailing" id="mUY-YI-g0I"/>
                             <constraint firstItem="mlv-f0-0rw" firstAttribute="leading" secondItem="5Hd-j7-tJa" secondAttribute="leading" id="pQc-aJ-bJL"/>
                             <constraint firstItem="UBF-Tk-BFl" firstAttribute="trailing" secondItem="5Hd-j7-tJa" secondAttribute="trailing" id="s6Q-bt-5F0"/>
+                            <constraint firstItem="TDA-Z0-ExN" firstAttribute="trailing" secondItem="5Hd-j7-tJa" secondAttribute="trailing" id="sra-lp-k75"/>
                             <constraint firstItem="kHu-PG-si1" firstAttribute="top" secondItem="Sbf-9Q-5W6" secondAttribute="bottom" id="uMZ-XN-1J6"/>
                             <constraint firstItem="0m4-1e-RtI" firstAttribute="trailing" secondItem="5Hd-j7-tJa" secondAttribute="trailing" id="vdu-x6-Ppe"/>
                             <constraint firstItem="IEg-cT-9Zd" firstAttribute="leading" secondItem="5Hd-j7-tJa" secondAttribute="leading" id="weR-KC-Aua"/>
@@ -706,7 +737,12 @@ Version 1.0.0.0</string>
                         <viewLayoutGuide key="safeArea" id="5Hd-j7-tJa"/>
                     </view>
                     <connections>
+                        <outlet property="imgCheckNewLine" destination="hxD-fm-LGZ" id="Td5-fS-REC"/>
+                        <outlet property="imgCheckNoNewLine" destination="ewl-SG-B05" id="teB-zj-7Is"/>
+                        <outlet property="imgCheckQuantityComma" destination="Xp3-Fl-tZe" id="XHS-aS-P5m"/>
+                        <outlet property="imgCheckQuantityNoComma" destination="rl1-16-Nsh" id="gHo-fE-tbi"/>
                         <outlet property="switchAutoQuantity" destination="hwb-Mc-eh4" id="pws-nm-aZn"/>
+                        <outlet property="txtPreview" destination="TDA-Z0-ExN" id="tDl-zT-6q1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yOh-VR-Hdd" userLabel="First Responder" sceneMemberID="firstResponder"/>
