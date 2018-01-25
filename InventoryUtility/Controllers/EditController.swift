@@ -31,7 +31,9 @@ CaptureHelperDevicePresenceDelegate {
     
     var viewer : EditViewProtocol?
     
-    var guidList : [String] = []
+//    var guidList : [String] = []
+    var scannerList : [CaptureHelperDevice] = []
+    
     
     let captureHelper = CaptureHelper.sharedInstance
     
@@ -102,12 +104,24 @@ CaptureHelperDevicePresenceDelegate {
             })
         } else {
             //            if captureHelper.getDevices().count < 1
-            if guidList.count < 1 {
+            if scannerList.count < 1 {
                 scanMode = .none
                 self.viewer?.showCompanionDlg()
             } else {
                 scanMode = .deviceScan
+                for scanner in scannerList {
+                    scanner.setTrigger(.start, withCompletionHandler: { (result) in
+                        print("Start Triggering : \(result.rawValue)")
+                    })
+                }
             }
+            
+            /*if guidList.count < 1 {
+                scanMode = .none
+                self.viewer?.showCompanionDlg()
+            } else {
+                scanMode = .deviceScan
+            }*/
         }
     }
     
@@ -122,7 +136,7 @@ CaptureHelperDevicePresenceDelegate {
         
         if result == SKTCaptureErrors.E_NOERROR {
             
-            if scanMode != .none {
+//            if scanMode != .none {
                 let rawData = decodedData?.decodedData
                 let rawDataSize = rawData?.count
                 print("Size: \(String(describing: rawDataSize))")
@@ -135,11 +149,13 @@ CaptureHelperDevicePresenceDelegate {
                 if let readData = rawData {
                     if let readBarcode = String(data: readData, encoding: .utf8) {
                         
-                        let newLineStr = SettingMgr.getLineForBarcode(readBarcode)
+                        let trimmedData = readBarcode.trimmingCharacters(in: .newlines)
+                        
+                        let newLineStr = SettingMgr.getLineForBarcode(trimmedData)
                         viewer?.addScanData(strLine: newLineStr)
                     }
                 }
-            }
+//            }
         }
     }
     
@@ -194,9 +210,14 @@ CaptureHelperDevicePresenceDelegate {
                 })
             }
         } else {
-            if let guid = device.deviceInfo.guid, !guidList.contains(guid) {
-                guidList.append(guid)
+            
+            if !scannerList.contains(device) {
+                scannerList.append(device)
             }
+            
+            /*if let guid = device.deviceInfo.guid, !guidList.contains(guid) {
+                guidList.append(guid)
+            }*/
         }
     }
     
@@ -206,9 +227,14 @@ CaptureHelperDevicePresenceDelegate {
         if name?.caseInsensitiveCompare("SoftScanner") == ComparisonResult.orderedSame {
             softScanner = nil
         } else {
-            if let guid = device.deviceInfo.guid, let itemIndex = guidList.index(of: guid) {
+            /*if let guid = device.deviceInfo.guid, let itemIndex = guidList.index(of: guid) {
                 guidList.remove(at: itemIndex)
+            }*/
+            
+            if let itemIndex = scannerList.index(of: device) {
+                scannerList.remove(at: itemIndex)
             }
+            
         }
     }
     

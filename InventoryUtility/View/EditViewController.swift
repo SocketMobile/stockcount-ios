@@ -36,7 +36,7 @@ class EditViewController: UIViewController, UITextViewDelegate
             UIBarButtonItem(title: "Scan", style: .plain, target: self, action: #selector(onKeyboardScan)),
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
             UIBarButtonItem(image: UIImage(named: "btn_done"), style: .plain, target: self, action: nil),
-            UIBarButtonItem(title: "Scan", style: .plain, target: self, action: nil)
+            UIBarButtonItem(title: "Scan", style: .plain, target: self, action: #selector(onKeyboardScan))
         ]
         
         numberToolBar.sizeToFit()
