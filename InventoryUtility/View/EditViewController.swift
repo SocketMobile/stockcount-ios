@@ -46,23 +46,19 @@ class EditViewController: UIViewController, UITextViewDelegate
     }
     
     @objc func onKeyboardScan() {
-        self.view.endEditing(true)
-        editController.startScan()
+        editController.triggerScan()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         print("EditView Appeared")
-        
         txtView.becomeFirstResponder()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        
         print("EditView Disappeared")
-        
     }
     
     deinit {
