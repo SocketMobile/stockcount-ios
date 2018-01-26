@@ -111,18 +111,9 @@ CaptureHelperDevicePresenceDelegate {
     
     //MARK: - DeviceManager Presence Delegate
     func didNotifyArrivalForDeviceManager(_ device: CaptureHelperDeviceManager, withResult result: SKTResult) {
-        device.getFavoriteDevicesWithCompletionHandler { (result, favorites) in
-            print("getting the favorite devices returned \(result.rawValue)")
-            if result == .E_NOERROR {
-                if let fav = favorites as String! {
-                    if fav.isEmpty {
-                        device.setFavoriteDevices("*", withCompletionHandler: { (result) in
-                            print("Setting new favorites returned \(result.rawValue)")
-                        })
-                    }
-                }
-            }
-        }
+        device.setFavoriteDevices("*", withCompletionHandler: { (result) in
+            print("Setting new favorites returned \(result.rawValue)")
+        })
     }
     
     func didNotifyRemovalForDeviceManager(_ device: CaptureHelperDeviceManager, withResult result: SKTResult) {
@@ -143,10 +134,9 @@ CaptureHelperDevicePresenceDelegate {
                     })
                 })
             }
-        } else {
-            if !scannerList.contains(device) {
-                scannerList.append(device)
-            }
+        }
+        if !scannerList.contains(device) {
+            scannerList.append(device)
         }
     }
     
