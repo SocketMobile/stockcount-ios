@@ -6,6 +6,7 @@ class SettingViewController : UIViewController {
         super.viewDidLoad()
         
         switchAutoQuantity.isOn = SettingMgr.autoAddQuantity
+        switchSupportD600.isOn = SettingMgr.supportD600
         showQuantityFormat(SettingMgr.delineatorComma)
         showNewLineFormat(SettingMgr.newLineForNewScan)
     }
@@ -23,6 +24,14 @@ class SettingViewController : UIViewController {
         
         updateTxtPreview()
     }
+    
+    //MARK: - Support D600
+    
+    @IBOutlet weak var switchSupportD600: UISwitch!
+    @IBAction func didSupportD600Changed(_ sender: Any) {
+        SettingMgr.supportD600 = switchSupportD600.isOn
+    }
+    
     
     //MARK: - Quantity format options
     

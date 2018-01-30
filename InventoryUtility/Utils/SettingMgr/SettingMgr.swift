@@ -1,16 +1,9 @@
-//
-//  SettingMgr.swift
-//  InventoryUtility
-//
-//  Created by IT Star on 12/24/17.
-//  Copyright © 2017 Simple Design Inc. All rights reserved.
-//
-
 import Foundation
 
 class SettingMgr {
     enum  enumKey : String{
         case autoAddQuantity = "KEY_AutoAddQuantity"
+        case supportD600 = "KEY_D600Support"
         case delineatorComma = "KEY_DelineatorCommaSet" //1 : Comma Space Quantity, 0 : Space Quantity
         case defaultQuantity = "KEY_DefaultQuantity"
         case newLineForNewScan = "KEY_NewLineForNewScan"
@@ -35,6 +28,11 @@ class SettingMgr {
     class var autoAddQuantity : Bool{
         get {return getSetting(keyName: .autoAddQuantity, typeIndicator: Bool.self) ?? true }
         set(newValue) { setSetting(keyName: .autoAddQuantity, newValue: newValue) }
+    }
+    
+    class var supportD600 : Bool {
+        get {return getSetting(keyName: .supportD600, typeIndicator: Bool.self) ?? false }
+        set(newValue) { setSetting(keyName: .supportD600, newValue: newValue) }
     }
     
     class var delineatorComma : Bool {

@@ -33,6 +33,13 @@ CaptureHelperDevicePresenceDelegate {
         captureHelper.openWithAppInfo(AppInfo) { (result: SKTResult) in
             print("Result of Capture initialization: \(result.rawValue)")
             
+            let strFavorite = SettingMgr.supportD600 ? "*" : ""
+            for deviceMgr in self.captureHelper.getDeviceManagers() {
+                deviceMgr.setFavoriteDevices(strFavorite, withCompletionHandler: { (result) in
+                    
+                })
+            }
+            
             self.captureHelper.setConfirmationMode(.modeDevice, withCompletionHandler: { (result) in
                 print("Data Confirmation Mode returns : \(result.rawValue)")
             })
@@ -96,7 +103,12 @@ CaptureHelperDevicePresenceDelegate {
     
     //MARK: - DeviceManager Presence Delegate
     func didNotifyArrivalForDeviceManager(_ device: CaptureHelperDeviceManager, withResult result: SKTResult) {
-        device.setFavoriteDevices("*", withCompletionHandler: { (result) in
+        var strFavoriteDevice = ""
+        if SettingMgr.supportD600 {
+            strFavoriteDevice = "*"
+        }
+        
+        device.setFavoriteDevices(strFavoriteDevice, withCompletionHandler: { (result) in
             print("Setting new favorites returned \(result.rawValue)")
         })
     }
