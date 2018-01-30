@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  InventoryUtility
+*/
+"confirmation" = "Confirm";
+"removeFile" = "Remove file";
+"ok" = "Ok";
+"cancel" = "Cancel";
+
+"alert" = "Alert";

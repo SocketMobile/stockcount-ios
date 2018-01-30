@@ -1,11 +1,7 @@
-//
-//  CompanionDlg.swift
-//  InventoryUtility
-//
-//  Created by IT Star on 1/17/18.
-//  Copyright © 2018 Simple Design Inc. All rights reserved.
-//
-
+/*
+ * CompanionDlg
+ *
+ */
 import Foundation
 import UIKit
 
@@ -28,6 +24,9 @@ class CompanionDlg : UIView, Modal {
     
     @IBOutlet weak var _backgroundView: UIView!
     @IBOutlet weak var _dialogView: UIView!
+    @IBOutlet weak var btnOpenCompanion: UIButton!
+    
+    weak var delegate : CompanionDlgDelegate? = nil
     
     //MARK: - Initializer
     override init(frame: CGRect) {
@@ -46,7 +45,6 @@ class CompanionDlg : UIView, Modal {
         self.init(frame: UIScreen.main.bounds)
     }
     
-    @IBOutlet weak var btnOpenCompanion: UIButton!
     func xibSetup() {
         let bundle = Bundle(for: type(of: self))
         
@@ -86,9 +84,7 @@ class CompanionDlg : UIView, Modal {
     @IBAction func onBtnCamera(_ sender: Any) {
         closeDlgWithAction(.continueWithCamera)
     }
-    
-    //MARK: - Delegate
-    weak var delegate : CompanionDlgDelegate? = nil
+
 }
 enum enumCompanionDlgCloseAction {
     case none

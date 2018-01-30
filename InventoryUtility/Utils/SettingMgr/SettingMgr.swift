@@ -14,7 +14,6 @@ class SettingMgr {
         case delineatorComma = "KEY_DelineatorCommaSet" //1 : Comma Space Quantity, 0 : Space Quantity
         case defaultQuantity = "KEY_DefaultQuantity"
         case newLineForNewScan = "KEY_NewLineForNewScan"
-//        case semiColonBeforeNewScan = "KEY_SemiColonBeforeNewScan"
     }
     
     static let key_AutoAddQuantity = "KEY_AutoAddQuantity"
@@ -72,10 +71,5 @@ class SettingMgr {
         }
         
         return strLine
-    }
-    
-//    class var semiColonBeforeNewScan : Bool {
-//        get {return getSetting(keyName: .semiColonBeforeNewScan, typeIndicator: Bool.self) ?? false}
-//        set (argValue) {setSetting(keyName: .semiColonBeforeNewScan, newValue: argValue)}
-//    }
+    }    
 }

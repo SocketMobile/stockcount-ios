@@ -1,11 +1,3 @@
-//
-//  EditController.swift
-//  InventoryUtility
-//
-//  Created by IT Star on 1/14/18.
-//  Copyright © 2018 Simple Design Inc. All rights reserved.
-//
-
 import Foundation
 import SKTCapture
 
@@ -24,8 +16,6 @@ class EditController : CaptureHelperDeviceDecodedDataDelegate, EditControllerPro
 CaptureHelperDevicePresenceDelegate {
     
     var viewer : EditViewProtocol?
-    
-    var scannerList : [CaptureHelperDevice] = []
     
     let captureHelper = CaptureHelper.sharedInstance
     
@@ -71,7 +61,6 @@ CaptureHelperDevicePresenceDelegate {
     }
     
     func setSoftScan(_ isSet: Bool = true) {
-        //Starting SoftScan
         captureHelper.setSoftScanStatus(isSet ? .enable : .disable) { (result) in
             print("Setting softscan to supported returned \(result.rawValue)")
         }
@@ -79,6 +68,7 @@ CaptureHelperDevicePresenceDelegate {
     
     
     func triggerScan() {
+        let scannerList = captureHelper.getDevices()
         if scannerList.count < 1 {
             self.viewer?.showCompanionDlg()
         } else {
@@ -93,11 +83,6 @@ CaptureHelperDevicePresenceDelegate {
     //MARK: - CaptureHelperDeviceDecodedDataDelegate Delegate
     func didReceiveDecodedData(_ decodedData: SKTCaptureDecodedData?, fromDevice device: CaptureHelperDevice, withResult result: SKTResult) {
         if result == SKTCaptureErrors.E_NOERROR {
-            /*let rawData = decodedData?.decodedData
-            let rawDataSize = rawData?.count
-            print("Size: \(String(describing: rawDataSize))")
-            print("data: \(String(describing: decodedData?.decodedData))")*/
-            
             if let readData = decodedData?.decodedData {
                 if let readBarcode = String(data: readData, encoding: .utf8) {
                     
@@ -128,22 +113,16 @@ CaptureHelperDevicePresenceDelegate {
                 let context : [String:Any] = [SKTCaptureSoftScanContext : viewContext]
                 device.setSoftScanOverlayViewParameter(context, withCompletionHandler: { (result) in
                     print("Set soft scan overlay result : \(result.rawValue)")
-                    
                     device.setTrigger(.start, withCompletionHandler: { (result) in
                         print("Starting soft scan result : \(result.rawValue)")
                     })
                 })
             }
         }
-        if !scannerList.contains(device) {
-            scannerList.append(device)
-        }
     }
     
     func didNotifyRemovalForDevice(_ device: CaptureHelperDevice, withResult result: SKTResult) {
-        if let itemIndex = scannerList.index(of: device) {
-            scannerList.remove(at: itemIndex)
-        }
+        
     }
     
 }

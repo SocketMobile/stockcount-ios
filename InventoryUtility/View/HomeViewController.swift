@@ -1,11 +1,3 @@
-//
-//  HomeViewController.swift
-//  InventoryUtility
-//
-//  Created by IT Star on 12/24/17.
-//  Copyright © 2017 Simple Design Inc. All rights reserved.
-//
-
 import Foundation
 import UIKit
 import RealmSwift
@@ -68,10 +60,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     //MARK: - Create New
-    @IBAction func onBtnNew(_ sender: Any) {
-//        let alert = ScanDlg()
-//        alert.show(animated: true)
-        
+    @IBAction func onBtnNew(_ sender: Any) {       
         if let fileName = FileMgr.createFile() {
             performSegue(withIdentifier: "SEGUE_EditViewController", sender: fileName)
         }

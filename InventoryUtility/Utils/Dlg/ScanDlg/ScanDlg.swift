@@ -1,11 +1,3 @@
-//
-//  ScanDlg.swift
-//  InventoryUtility
-//
-//  Created by IT Star on 1/17/18.
-//  Copyright © 2018 Simple Design Inc. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
@@ -63,7 +55,7 @@ class ScanDlg : UIView, Modal {
     }
     
     @IBAction func onBtnBG(_ sender: Any) {
-//        dismiss(animated: true)
+        
     }
     
     

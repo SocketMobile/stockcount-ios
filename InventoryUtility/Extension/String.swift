@@ -13,4 +13,8 @@ public extension String {
         enumerateLines{line, _ in result.append(line)}
         return result
     }
+    
+    var localized : String {
+        return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "")
+    }
 }

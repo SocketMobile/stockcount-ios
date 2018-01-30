@@ -1,25 +1,16 @@
-//
-//  EditViewController.swift
-//  InventoryUtility
-//
-//  Created by IT Star on 12/24/17.
-//  Copyright © 2017 Simple Design Inc. All rights reserved.
-//
-
 import Foundation
 import UIKit
-import SKTCapture
 
 class EditViewController: UIViewController, UITextViewDelegate
 {
+    lazy var editController = EditController(view: self)
+    
     var fileName : String = ""
     
-    lazy var editController = EditController(view: self)
+    var scanDlg : ScanDlg? = nil
     
     @IBOutlet weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var txtView: UITextView!
-    
-//    let captureHelper =
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,16 +42,9 @@ class EditViewController: UIViewController, UITextViewDelegate
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        print("EditView Appeared")
         txtView.becomeFirstResponder()
     }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        print("EditView Disappeared")
-    }
-    
+        
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -68,6 +52,7 @@ class EditViewController: UIViewController, UITextViewDelegate
     //MARK: - Back
     
     @IBAction func onBtnBack(_ sender: Any) {
+        editController.setSoftScan(false)
         navigationController?.popViewController(animated: true)
     }
 
@@ -103,12 +88,12 @@ class EditViewController: UIViewController, UITextViewDelegate
     //MARK: - Delete & Share
     
     @IBAction func onBtnRemove(_ sender: Any) {
-        let alertController = UIAlertController(title: "Confirmation", message: "Remove file \'\(fileName)\'", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default ) {(_) in
+        let alertController = UIAlertController(title: "confirmation".localized, message: "removeFile".localized + "\'\(fileName)\'", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "ok".localized, style: .default ) {(_) in
             self.editController.removeFile(self.fileName)
             self.navigationController?.popViewController(animated: true)
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "cancel".localized, style: .cancel, handler: nil)
         
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
@@ -154,9 +139,6 @@ class EditViewController: UIViewController, UITextViewDelegate
     @IBAction func onBtnSetting(_ sender: Any) {
         updateTopButtons(isDoneVisible: false)
     }
-    
-    //MARK: - EditViewProtocol Variables
-    var scanDlg : ScanDlg? = nil
 }
 //MARK: - EditView View Protocol
 protocol EditViewProtocol : class{
@@ -200,10 +182,7 @@ extension EditViewController : EditViewProtocol {
         
     }
     func closeScanDlg() {
-        if let _ = scanDlg {
-            scanDlg?.dismiss(animated: true)
-        }
-        
+        scanDlg?.dismiss(animated: true)
         txtView.becomeFirstResponder()
     }
     
@@ -219,8 +198,8 @@ extension EditViewController : EditViewProtocol {
         return self
     }
     func showAlert(_ msg : String) {
-        let alertController = UIAlertController(title: "Alert", message: msg, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        let alertController = UIAlertController(title: "alert".localized, message: msg, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "ok".localized, style: .default, handler: nil)
         alertController.addAction(okAction)
         
         present(alertController, animated: true, completion: nil)
