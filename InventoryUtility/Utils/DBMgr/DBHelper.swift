@@ -1,20 +1,7 @@
-//
-//  DBHelper.swift
-//  InventoryUtility
-//
-//  Created by IT Star on 12/28/17.
-//  Copyright © 2017 Simple Design Inc. All rights reserved.
-//
-
 import Foundation
 import RealmSwift
 
 class DBHelper {
-    /*static let sharedInstance : DBHelper = {
-        let instance = DBHelper()
-        return instance
-    }()*/
-    
     class func updateFile(fileName : String, fileTitle : String , firstScan : String) {
         let realm = try! Realm()
         

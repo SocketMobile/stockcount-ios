@@ -12,6 +12,11 @@ class EditViewController: UIViewController, UITextViewDelegate
     @IBOutlet weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var txtView: UITextView!
     
+    @IBOutlet weak var btnSettingTrailing: NSLayoutConstraint!
+    @IBOutlet weak var btnDoneTrailing: NSLayoutConstraint!
+    @IBOutlet weak var btnDone: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -112,14 +117,6 @@ class EditViewController: UIViewController, UITextViewDelegate
     }
     
     //MARK: - Setting & Done Buttons
-    
-    @IBOutlet weak var btnSettingTrailing: NSLayoutConstraint!
-    
-    @IBOutlet weak var btnDoneTrailing: NSLayoutConstraint!
-    
-    @IBOutlet weak var btnDone: UIButton!
-    
-    
     private func updateTopButtons(isDoneVisible : Bool) {
         
         btnDone.isHidden = !isDoneVisible

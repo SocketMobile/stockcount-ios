@@ -8,7 +8,6 @@ protocol EditControllerProtocol {
     
     func setSoftScan(_ isSet : Bool)
     func triggerScan()
-    //    func stopScan()
 }
 
 class EditController : CaptureHelperDeviceDecodedDataDelegate, EditControllerProtocol,
@@ -33,19 +32,19 @@ CaptureHelperDevicePresenceDelegate {
         captureHelper.openWithAppInfo(AppInfo) { (result: SKTResult) in
             print("Result of Capture initialization: \(result.rawValue)")
             
-            let strFavorite = SettingMgr.supportD600 ? "*" : ""
-            for deviceMgr in self.captureHelper.getDeviceManagers() {
-                deviceMgr.setFavoriteDevices(strFavorite, withCompletionHandler: { (result) in
-                    
-                })
-            }
-            
             self.captureHelper.setConfirmationMode(.modeDevice, withCompletionHandler: { (result) in
                 print("Data Confirmation Mode returns : \(result.rawValue)")
             })
             
             self.captureHelper.setSoftScanStatus(.disable, withCompletionHandler: { (result) in
                 print("Soft Scan Disabled \(result.rawValue)")
+            })
+        }
+        
+        let strFavorite = SettingMgr.supportD600 ? "*" : ""
+        for deviceMgr in self.captureHelper.getDeviceManagers() {
+            deviceMgr.setFavoriteDevices(strFavorite, withCompletionHandler: { (result) in
+                
             })
         }
     }
