@@ -1,3 +1,11 @@
+//
+//  SettingMgr.swift
+//  InventoryUtility
+//
+//  Created by IT Star on 12/24/17.
+//  Copyright © 2017 Socket Mobile, Inc.
+//
+
 import Foundation
 
 class SettingMgr {

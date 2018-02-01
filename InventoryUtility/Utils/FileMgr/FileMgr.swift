@@ -1,3 +1,11 @@
+//
+//  FileMgr.swift
+//  InventoryUtility
+//
+//  Created by IT Star on 12/28/17.
+//  Copyright © 2017 Socket Mobile, Inc.
+//
+
 import Foundation
 class FileMgr  {
     /*

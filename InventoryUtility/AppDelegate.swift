@@ -1,3 +1,11 @@
+//
+//  AppDelegate.swift
+//  InventoryUtility
+//
+//  Created by IT Star on 12/23/17.
+//  Copyright © 2017 Socket Mobile, Inc.
+//
+
 import UIKit
 import Fabric
 import Crashlytics
