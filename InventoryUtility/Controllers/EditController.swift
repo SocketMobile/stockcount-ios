@@ -29,25 +29,11 @@ CaptureHelperDevicePresenceDelegate {
     init(view : EditViewProtocol? = nil) {
         viewer = view
         
-        let AppInfo = SKTAppInfo()
-        AppInfo.appKey="MC0CFHPYIb54AaQQ0h90lh6iOTzSi38nAhUA4nA2VM8Dim+NAnTDKwx+BOCr4p0="
-        AppInfo.bundleID="ios:com.socketmobile.inventoryCounting";
-        AppInfo.developerID="EF62BC15-59E0-4E86-82A3-493101D7DB4E"
-        
-        captureHelper.delegateDispatchQueue = DispatchQueue.main
         captureHelper.pushDelegate(self)
         
-        captureHelper.openWithAppInfo(AppInfo) { (result: SKTResult) in
-            print("Result of Capture initialization: \(result.rawValue)")
-            
-            self.captureHelper.setConfirmationMode(.modeDevice, withCompletionHandler: { (result) in
-                print("Data Confirmation Mode returns : \(result.rawValue)")
-            })
-            
-            self.captureHelper.setSoftScanStatus(.disable, withCompletionHandler: { (result) in
-                print("Soft Scan Disabled \(result.rawValue)")
-            })
-        }
+        captureHelper.setSoftScanStatus(.disable, withCompletionHandler: { (result) in
+            print("Soft Scan Disabled \(result.rawValue)")
+        })
         
         let strFavorite = SettingMgr.supportD600 ? "*" : ""
         for deviceMgr in self.captureHelper.getDeviceManagers() {

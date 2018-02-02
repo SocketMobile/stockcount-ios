@@ -5,6 +5,7 @@
 //  Created by IT Star on 1/17/18.
 //  Copyright © 2018 Socket Mobile, Inc.
 //
+// Dialog that inform user either try connect scanner using Companion app or continue launch the system camera.
 
 import Foundation
 import UIKit

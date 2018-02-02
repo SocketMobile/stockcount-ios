@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SKTCapture
 
 class SettingViewController : UIViewController {
     override func viewDidLoad() {
@@ -38,6 +39,15 @@ class SettingViewController : UIViewController {
     @IBOutlet weak var switchSupportD600: UISwitch!
     @IBAction func didSupportD600Changed(_ sender: Any) {
         SettingMgr.supportD600 = switchSupportD600.isOn
+        
+        let strFavorite = switchSupportD600.isOn ? "*" : ""
+        
+        let capture = CaptureHelper.sharedInstance
+        for deviceManager in capture.getDeviceManagers() {
+            deviceManager.setFavoriteDevices(strFavorite, withCompletionHandler: { (result) in
+                print("DeviceManager set favorite result :\(result.rawValue)")
+            })
+        }
     }
     
     

@@ -366,6 +366,9 @@ Version 0.8</string>
                     <navigationItem key="navigationItem" id="I7D-55-XNc">
                         <barButtonItem key="backBarButtonItem" title="Back" id="hNG-qB-C53"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="lblVersion" destination="Cmc-xK-7pR" id="0Yh-3H-mfL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pro-Re-pRH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

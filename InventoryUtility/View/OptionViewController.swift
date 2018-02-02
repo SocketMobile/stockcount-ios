@@ -10,8 +10,16 @@ import Foundation
 import UIKit
 
 class OptionViewController : UIViewController {
+    
+    
+    @IBOutlet weak var lblVersion: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let versionString = (Bundle.main.infoDictionary?["CFBundleVersion"] as? String) ?? ""
+        
+        lblVersion.text = "version".localized + versionString
     }
     
     //MARK: - Back
