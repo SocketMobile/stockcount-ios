@@ -34,13 +34,6 @@ CaptureHelperDevicePresenceDelegate {
         captureHelper.setSoftScanStatus(.disable, withCompletionHandler: { (result) in
             print("Soft Scan Disabled \(result.rawValue)")
         })
-        
-        let strFavorite = SettingMgr.supportD600 ? "*" : ""
-        for deviceMgr in self.captureHelper.getDeviceManagers() {
-            deviceMgr.setFavoriteDevices(strFavorite, withCompletionHandler: { (result) in
-                
-            })
-        }
     }
     
     deinit {

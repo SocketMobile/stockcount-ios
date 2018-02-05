@@ -61,10 +61,4 @@ class ScanDlg : UIView, Modal {
         
         addSubview(view)
     }
-    
-    @IBAction func onBtnBG(_ sender: Any) {
-        
-    }
-    
-    
 }

@@ -3,7 +3,7 @@
 //  InventoryUtilityUITests
 //
 //  Created by IT Star on 12/23/17.
-//  Copyright © 2017 Socket Mobile, Inc.
+//  Copyright © 2018 Socket Mobile, Inc.
 //
 
 import XCTest
