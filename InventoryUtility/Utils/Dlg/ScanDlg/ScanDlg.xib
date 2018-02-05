@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScanDlg" customModule="InventoryUtility" customModuleProvider="target">
+            <connections>
+                <outlet property="_backgroundView" destination="L7o-DZ-EXk" id="6Me-lO-yyS"/>
+                <outlet property="_dialogView" destination="ReA-uF-oq4" id="lqg-GN-8Mv"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L7o-DZ-EXk">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajZ-Kp-e00">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="ajZ-Kp-e00" secondAttribute="bottom" id="7NN-B7-Ucc"/>
+                        <constraint firstItem="ajZ-Kp-e00" firstAttribute="top" secondItem="L7o-DZ-EXk" secondAttribute="top" id="FDt-J6-OLL"/>
+                        <constraint firstAttribute="trailing" secondItem="ajZ-Kp-e00" secondAttribute="trailing" id="eR1-Tb-52l"/>
+                        <constraint firstItem="ajZ-Kp-e00" firstAttribute="leading" secondItem="L7o-DZ-EXk" secondAttribute="leading" id="hfU-pp-SmV"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ReA-uF-oq4">
+                    <rect key="frame" x="37.5" y="95.5" width="300" height="476"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z6Q-PD-Adq">
+                            <rect key="frame" x="85" y="143.5" width="129" height="128.5"/>
+                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Z6Q-PD-Adq" secondAttribute="height" multiplier="1:1" id="CXC-Mx-Eg7"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connecting Socket scanner..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBI-Su-I45">
+                            <rect key="frame" x="49.5" y="292" width="201" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Z6Q-PD-Adq" firstAttribute="centerX" secondItem="ReA-uF-oq4" secondAttribute="centerX" id="0Ls-sg-UNA"/>
+                        <constraint firstItem="Z6Q-PD-Adq" firstAttribute="bottom" secondItem="ReA-uF-oq4" secondAttribute="bottom" multiplier="4:7" id="81T-jt-nBg"/>
+                        <constraint firstItem="CBI-Su-I45" firstAttribute="centerX" secondItem="ReA-uF-oq4" secondAttribute="centerX" id="Upc-RT-1OS"/>
+                        <constraint firstItem="Z6Q-PD-Adq" firstAttribute="width" secondItem="ReA-uF-oq4" secondAttribute="width" multiplier="3:7" id="dly-be-Z8P"/>
+                        <constraint firstItem="CBI-Su-I45" firstAttribute="top" secondItem="Z6Q-PD-Adq" secondAttribute="bottom" constant="20" id="h64-Cz-p0b"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipsToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="ReA-uF-oq4" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="4:5" id="CYv-D2-hzr"/>
+                <constraint firstItem="L7o-DZ-EXk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Gwb-J6-3aP"/>
+                <constraint firstItem="ReA-uF-oq4" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="MFh-JD-O8b"/>
+                <constraint firstItem="L7o-DZ-EXk" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="N1L-mW-m9X"/>
+                <constraint firstItem="L7o-DZ-EXk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="PV3-ag-K4C"/>
+                <constraint firstItem="L7o-DZ-EXk" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="RhR-EK-zYm"/>
+                <constraint firstItem="ReA-uF-oq4" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Zd8-4m-Hf2"/>
+                <constraint firstItem="ReA-uF-oq4" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="5:7" id="v6p-X9-Q2a"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="24.5" y="51.5"/>
+        </view>
+    </objects>
+</document>

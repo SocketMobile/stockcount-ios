@@ -5,4 +5,5 @@ target 'InventoryUtility' do
 pod 'Fabric'
 pod 'Crashlytics'
 pod 'RealmSwift'
+pod 'SKTCapture', '~>1.0'
 end

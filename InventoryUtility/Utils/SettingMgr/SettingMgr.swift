@@ -3,7 +3,7 @@
 //  InventoryUtility
 //
 //  Created by IT Star on 12/24/17.
-//  Copyright © 2017 Simple Design Inc. All rights reserved.
+//  Copyright © 2018 Socket Mobile, Inc.
 //
 
 import Foundation
@@ -11,10 +11,10 @@ import Foundation
 class SettingMgr {
     enum  enumKey : String{
         case autoAddQuantity = "KEY_AutoAddQuantity"
+        case supportD600 = "KEY_D600Support"
         case delineatorComma = "KEY_DelineatorCommaSet" //1 : Comma Space Quantity, 0 : Space Quantity
         case defaultQuantity = "KEY_DefaultQuantity"
         case newLineForNewScan = "KEY_NewLineForNewScan"
-        case semiColonBeforeNewScan = "KEY_SemiColonBeforeNewScan"
     }
     
     static let key_AutoAddQuantity = "KEY_AutoAddQuantity"
@@ -38,6 +38,11 @@ class SettingMgr {
         set(newValue) { setSetting(keyName: .autoAddQuantity, newValue: newValue) }
     }
     
+    class var supportD600 : Bool {
+        get {return getSetting(keyName: .supportD600, typeIndicator: Bool.self) ?? false }
+        set(newValue) { setSetting(keyName: .supportD600, newValue: newValue) }
+    }
+    
     class var delineatorComma : Bool {
         get {return getSetting(keyName: .delineatorComma, typeIndicator: Bool.self) ?? true}
         set (argValue) { setSetting(keyName: .delineatorComma, newValue: argValue) }
@@ -53,8 +58,24 @@ class SettingMgr {
         set (argValue) {setSetting(keyName: .newLineForNewScan, newValue: argValue)}
     }
     
-    class var semiColonBeforeNewScan : Bool {
-        get {return getSetting(keyName: .semiColonBeforeNewScan, typeIndicator: Bool.self) ?? false}
-        set (argValue) {setSetting(keyName: .semiColonBeforeNewScan, newValue: argValue)}
-    }
+    
+    class func getLineForBarcode(_ barcode:String? = nil) -> String {
+        var strLine = barcode == nil ?  "[barcode]" : barcode!
+        
+        if autoAddQuantity {
+            if delineatorComma {
+                strLine = strLine + ", \(defaultQuantity)"
+            } else {
+                strLine = strLine + " \(defaultQuantity)"
+            }
+        }
+        
+        if newLineForNewScan {
+            strLine = strLine + "\n"
+        } else {
+            strLine = strLine + ";"
+        }
+        
+        return strLine
+    }    
 }

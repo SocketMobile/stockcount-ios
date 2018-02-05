@@ -3,7 +3,7 @@
 //  InventoryUtility
 //
 //  Created by IT Star on 12/24/17.
-//  Copyright © 2017 Simple Design Inc. All rights reserved.
+//  Copyright © 2018 Socket Mobile, Inc.
 //
 
 import Foundation
@@ -37,6 +37,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewWillAppear(animated)
         
         tableView.reloadData()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -67,7 +68,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     //MARK: - Create New
-    @IBAction func onBtnNew(_ sender: Any) {
+    @IBAction func onBtnNew(_ sender: Any) {       
         if let fileName = FileMgr.createFile() {
             performSegue(withIdentifier: "SEGUE_EditViewController", sender: fileName)
         }

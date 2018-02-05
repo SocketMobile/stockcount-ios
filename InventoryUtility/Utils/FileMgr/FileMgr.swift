@@ -3,7 +3,7 @@
 //  InventoryUtility
 //
 //  Created by IT Star on 12/28/17.
-//  Copyright © 2017 Simple Design Inc. All rights reserved.
+//  Copyright © 2018 Socket Mobile, Inc.
 //
 
 import Foundation
@@ -14,7 +14,7 @@ class FileMgr  {
      */
     class func createFile() -> String? {
         let fileTitle = "Inventory Scan - " + Date().toStringWithFormat("MM/dd/yyyy") + "\n"
-        let fileName = "InventoryScan_" + Date().toStringWithFormat("yyMMddHHmmss")
+        let fileName = "InventoryScan_" + Date().toStringWithFormat("yyMMddHHmmss") + ".txt"
         
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             let fileURL = dir.appendingPathComponent(fileName)
@@ -75,6 +75,7 @@ class FileMgr  {
             
             DBHelper.deleteFile(fileName: fileName)
         }
+        
     }
     
     //Getting File URL for share

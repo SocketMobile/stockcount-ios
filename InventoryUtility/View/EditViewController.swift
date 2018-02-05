@@ -3,7 +3,7 @@
 //  InventoryUtility
 //
 //  Created by IT Star on 12/24/17.
-//  Copyright © 2017 Simple Design Inc. All rights reserved.
+//  Copyright © 2018 Socket Mobile, Inc.
 //
 
 import Foundation
@@ -11,10 +11,19 @@ import UIKit
 
 class EditViewController: UIViewController, UITextViewDelegate
 {
+    lazy var editController = EditController(view: self)
+    
     var fileName : String = ""
+    
+    var scanDlg : ScanDlg? = nil
     
     @IBOutlet weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var txtView: UITextView!
+    
+    @IBOutlet weak var btnSettingTrailing: NSLayoutConstraint!
+    @IBOutlet weak var btnDoneTrailing: NSLayoutConstraint!
+    @IBOutlet weak var btnDone: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,22 +33,31 @@ class EditViewController: UIViewController, UITextViewDelegate
         //Keyboard Notification
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
         
-        //Read File Content
-        let strContent = FileMgr.readFile(fileName: fileName)
-        txtView.text = strContent
+        //Keyboard Toolbar
+        let numberToolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50))
+        numberToolBar.barStyle = UIBarStyle.default
+        numberToolBar.items = [
+            UIBarButtonItem(title: "Scan", style: .plain, target: self, action: #selector(onKeyboardScan)),
+            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
+            UIBarButtonItem(image: UIImage(named: "btn_done"), style: .plain, target: self, action: nil),
+            UIBarButtonItem(title: "Scan", style: .plain, target: self, action: #selector(onKeyboardScan))
+        ]
         
-        //Set Cursor to end text
-        let curPosition = txtView.endOfDocument
-        txtView.selectedTextRange = txtView.textRange(from: curPosition, to: curPosition)
+        numberToolBar.sizeToFit()
+        txtView.inputAccessoryView = numberToolBar
         
+        editController.readFile(fileName)        
+    }
+    
+    @objc func onKeyboardScan() {
+        editController.triggerScan()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         txtView.becomeFirstResponder()
     }
-    
+        
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -47,6 +65,7 @@ class EditViewController: UIViewController, UITextViewDelegate
     //MARK: - Back
     
     @IBAction func onBtnBack(_ sender: Any) {
+        editController.setSoftScan(false)
         navigationController?.popViewController(animated: true)
     }
 
@@ -67,7 +86,7 @@ class EditViewController: UIViewController, UITextViewDelegate
             let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
             let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
             if (endFrame?.origin.y)! >= UIScreen.main.bounds.size.height {
-                self.keyboardHeightLayoutConstraint?.constant = 60
+                self.keyboardHeightLayoutConstraint?.constant = 0
             } else {
                 self.keyboardHeightLayoutConstraint?.constant = endFrame?.size.height ?? 0.0
             }
@@ -82,11 +101,21 @@ class EditViewController: UIViewController, UITextViewDelegate
     //MARK: - Delete & Share
     
     @IBAction func onBtnRemove(_ sender: Any) {
-        FileMgr.deleteFile(fileName: fileName)
-        self.navigationController?.popViewController(animated: true)
+        let alertController = UIAlertController(title: "confirmation".localized, message: "removeFile".localized + "\'\(fileName)\'", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "ok".localized, style: .default ) {(_) in
+            self.editController.removeFile(self.fileName)
+            self.navigationController?.popViewController(animated: true)
+        }
+        let cancelAction = UIAlertAction(title: "cancel".localized, style: .cancel, handler: nil)
+        
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func onBtnShare(_ sender: Any) {
+        editController.saveFile(fileName, strContent: txtView.text)
         if let fileURL = FileMgr.getURL(fileName: fileName) {
             let activityViewController = UIActivityViewController(activityItems: [fileURL], applicationActivities: nil)
             activityViewController.popoverPresentationController?.sourceView = self.view
@@ -96,27 +125,101 @@ class EditViewController: UIViewController, UITextViewDelegate
     }
     
     //MARK: - Setting & Done Buttons
-    
-    @IBOutlet weak var btnSettingTrailing: NSLayoutConstraint!
-    
-    @IBOutlet weak var btnDoneTrailing: NSLayoutConstraint!
-    
-    func updateTopButtons(isDoneVisible : Bool) {
-        btnSettingTrailing.constant = isDoneVisible ? -46 : -8
-        btnDoneTrailing.constant = isDoneVisible ? -8 : 38
+    private func updateTopButtons(isDoneVisible : Bool) {
+        
+        btnDone.isHidden = !isDoneVisible
+        
+        btnSettingTrailing.constant = btnDoneTrailing.constant
+        if (isDoneVisible) {
+            btnSettingTrailing.constant = -btnDone.frame.width + 2 * btnDoneTrailing.constant
+        }
     }
     
     @IBAction func onBtnDone(_ sender: Any) {
         self.view.endEditing(true)
-        FileMgr.saveFile(fileName: fileName, content: txtView.text)
+        editController.saveFile(fileName, strContent: txtView.text)
         updateTopButtons(isDoneVisible: false)
     }
     
     @IBAction func onBtnSetting(_ sender: Any) {
         updateTopButtons(isDoneVisible: false)
     }
+}
+//MARK: - EditView View Protocol
+protocol EditViewProtocol : class{
+    func showFileContent(strContent : String?)
     
+    func addScanData(strLine : String)
     
+    func showScangDlg()
+    func closeScanDlg()
     
+    func showCompanionDlg()
     
+    func getOverlayContextForSoftScan () -> UIViewController
+    func showAlert(_ msg : String)
+    
+}
+extension EditViewController : EditViewProtocol {
+    private func setCursorToEnd() {
+        let curPosition = txtView.endOfDocument
+        txtView.selectedTextRange = txtView.textRange(from: curPosition, to: curPosition)
+    }
+    func showFileContent(strContent: String?) {
+        txtView.text = strContent
+        setCursorToEnd()
+    }
+    func addScanData(strLine: String) {
+        var curContent = txtView.text ?? ""
+        curContent += strLine
+        
+        txtView.text = curContent
+        setCursorToEnd()
+        
+        editController.saveFile(fileName, strContent: curContent)
+    }
+    
+    func showScangDlg() {
+        self.view.endEditing(true)
+        
+        scanDlg = ScanDlg()
+        scanDlg?.show(animated: true)
+        
+    }
+    func closeScanDlg() {
+        scanDlg?.dismiss(animated: true)
+        txtView.becomeFirstResponder()
+    }
+    
+    func showCompanionDlg() {
+        self.view.endEditing(true)
+        
+        let companionDlg = CompanionDlg()
+        companionDlg.delegate = self
+        companionDlg.show(animated: true)
+    }
+    
+    func getOverlayContextForSoftScan() -> UIViewController {
+        return self
+    }
+    func showAlert(_ msg : String) {
+        let alertController = UIAlertController(title: "alert".localized, message: msg, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "ok".localized, style: .default, handler: nil)
+        alertController.addAction(okAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+}
+//MARK: - CompanionDlg Delegate
+extension EditViewController : CompanionDlgDelegate {
+    func companionDlg(_ companionDlg: CompanionDlg?, closeAction: enumCompanionDlgCloseAction) {
+        switch closeAction {
+        case .continueWithCamera:
+            editController.setSoftScan()
+        default:
+            txtView.becomeFirstResponder()
+            break
+        }
+    }
 }
