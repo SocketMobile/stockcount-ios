@@ -10,7 +10,15 @@ import Foundation
 import UIKit
 import SKTCapture
 
-class SettingViewController : UIViewController {
+class SettingViewController : CustomNavBarViewController {
+    
+    @IBOutlet weak var btnContainer: UIView!
+    
+    private func updateBtnCtrlState() {
+        btnContainer.isUserInteractionEnabled = SettingMgr.autoAddQuantity
+        btnContainer.alpha = SettingMgr.autoAddQuantity ? 1.0 : 0.3
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,9 +26,21 @@ class SettingViewController : UIViewController {
         switchSupportD600.isOn = SettingMgr.supportD600
         showQuantityFormat(SettingMgr.delineatorComma)
         showNewLineFormat(SettingMgr.newLineForNewScan)
+        
+        updateBtnCtrlState()
     }
     
-    @IBAction func onBtnBack(_ sender: Any) {
+    //MARK: - NavigationBar
+    override func initNavBarItems() {
+        super.initNavBarItems()
+        
+        self.navigationItem.leftItemsSupplementBackButton = true
+        if let btnOption = createBarButtonFromImage("NavBar_Option", target: self, action: #selector(self.onBtnBack)) {
+            self.navigationItem.leftBarButtonItem = btnOption
+        }
+    }
+    
+    @objc func onBtnBack() {
         navigationController?.popViewController(animated: true)
     }
     
@@ -31,6 +51,7 @@ class SettingViewController : UIViewController {
     @IBAction func didAutoQuantityChanged(_ sender: Any) {
         SettingMgr.autoAddQuantity = switchAutoQuantity.isOn
         
+        updateBtnCtrlState()
         updateTxtPreview()
     }
     

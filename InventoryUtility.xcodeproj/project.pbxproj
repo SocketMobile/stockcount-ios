@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8904B00620326F5600BE2B05 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8904B00520326F5600BE2B05 /* NibView.swift */; };
+		8904B0082032701100BE2B05 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8904B0072032701100BE2B05 /* UIView.swift */; };
+		8904B00B2032729500BE2B05 /* KeyboardToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8904B00A2032729500BE2B05 /* KeyboardToolBar.xib */; };
+		8904B00D2032768400BE2B05 /* KeyboardToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8904B00C2032768400BE2B05 /* KeyboardToolBar.swift */; };
 		8909E2ED1FF0427F0026B356 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8909E2EC1FF0427F0026B356 /* HomeViewController.swift */; };
 		8909E2F01FF055280026B356 /* SettingMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8909E2EF1FF055280026B356 /* SettingMgr.swift */; };
 		8909E2F21FF069670026B356 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8909E2F11FF069670026B356 /* EditViewController.swift */; };
@@ -33,6 +37,7 @@
 		8956133620111DCA0004E74C /* icon_check.png in Resources */ = {isa = PBXBuildFile; fileRef = 8956133520111DCA0004E74C /* icon_check.png */; };
 		8956133820112A740004E74C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956133720112A740004E74C /* SettingViewController.swift */; };
 		89AE9498200C2DF700C3C901 /* EditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE9497200C2DF700C3C901 /* EditController.swift */; };
+		89B6F0892030F811002A91F2 /* CustomNavBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B6F0882030F811002A91F2 /* CustomNavBarViewController.swift */; };
 		89C035B41FF57333003F9BEC /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C035B31FF57333003F9BEC /* Date.swift */; };
 		89C035B71FF57678003F9BEC /* FileMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C035B61FF57678003F9BEC /* FileMgr.swift */; };
 		89C035B91FF58A43003F9BEC /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C035B81FF58A43003F9BEC /* DBHelper.swift */; };
@@ -67,6 +72,10 @@
 /* Begin PBXFileReference section */
 		2B5B95EEB4872FE410A8FA05 /* Pods-InventoryUtility.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InventoryUtility.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InventoryUtility/Pods-InventoryUtility.debug.xcconfig"; sourceTree = "<group>"; };
 		5DDD8EB874D72C10B663572E /* Pods_InventoryUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InventoryUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8904B00520326F5600BE2B05 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
+		8904B0072032701100BE2B05 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		8904B00A2032729500BE2B05 /* KeyboardToolBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardToolBar.xib; sourceTree = "<group>"; };
+		8904B00C2032768400BE2B05 /* KeyboardToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolBar.swift; sourceTree = "<group>"; };
 		8909E2EC1FF0427F0026B356 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8909E2EF1FF055280026B356 /* SettingMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMgr.swift; sourceTree = "<group>"; };
 		8909E2F11FF069670026B356 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +108,7 @@
 		8956133520111DCA0004E74C /* icon_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_check.png; sourceTree = "<group>"; };
 		8956133720112A740004E74C /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		89AE9497200C2DF700C3C901 /* EditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditController.swift; sourceTree = "<group>"; };
+		89B6F0882030F811002A91F2 /* CustomNavBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBarViewController.swift; sourceTree = "<group>"; };
 		89C035B31FF57333003F9BEC /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		89C035B61FF57678003F9BEC /* FileMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileMgr.swift; sourceTree = "<group>"; };
 		89C035B81FF58A43003F9BEC /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
@@ -148,13 +158,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8904B00420326F4200BE2B05 /* NibView */ = {
+			isa = PBXGroup;
+			children = (
+				8904B0092032725E00BE2B05 /* KeyboardToolBar */,
+				8904B00520326F5600BE2B05 /* NibView.swift */,
+			);
+			path = NibView;
+			sourceTree = "<group>";
+		};
+		8904B0092032725E00BE2B05 /* KeyboardToolBar */ = {
+			isa = PBXGroup;
+			children = (
+				8904B00A2032729500BE2B05 /* KeyboardToolBar.xib */,
+				8904B00C2032768400BE2B05 /* KeyboardToolBar.swift */,
+			);
+			path = KeyboardToolBar;
+			sourceTree = "<group>";
+		};
 		8909E2EB1FF0425A0026B356 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8904B00420326F4200BE2B05 /* NibView */,
 				8909E2EC1FF0427F0026B356 /* HomeViewController.swift */,
 				8909E2F11FF069670026B356 /* EditViewController.swift */,
 				89C0CA852010048C00D5F108 /* OptionViewController.swift */,
 				8956133720112A740004E74C /* SettingViewController.swift */,
+				89B6F0882030F811002A91F2 /* CustomNavBarViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -306,6 +336,7 @@
 			children = (
 				89C035B31FF57333003F9BEC /* Date.swift */,
 				89C035BA1FF58D3F003F9BEC /* String.swift */,
+				8904B0072032701100BE2B05 /* UIView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -455,6 +486,7 @@
 				89E787802020D62E00DDA268 /* Localizable.strings in Resources */,
 				89520F611FEEF19B00B7E351 /* LaunchScreen.storyboard in Resources */,
 				890F09DE2010F80000005711 /* img_device.png in Resources */,
+				8904B00B2032729500BE2B05 /* KeyboardToolBar.xib in Resources */,
 				8921B7901FF9762F0004CC18 /* btn_remove.png in Resources */,
 				8921B7931FF9762F0004CC18 /* btn_new.png in Resources */,
 				89520F5E1FEEF19B00B7E351 /* Assets.xcassets in Resources */,
@@ -577,6 +609,10 @@
 				89C0CA862010048C00D5F108 /* OptionViewController.swift in Sources */,
 				89C035B71FF57678003F9BEC /* FileMgr.swift in Sources */,
 				8916F9B4200F4258006827DD /* CompanionDlg.swift in Sources */,
+				89B6F0892030F811002A91F2 /* CustomNavBarViewController.swift in Sources */,
+				8904B00620326F5600BE2B05 /* NibView.swift in Sources */,
+				8904B00D2032768400BE2B05 /* KeyboardToolBar.swift in Sources */,
+				8904B0082032701100BE2B05 /* UIView.swift in Sources */,
 				8909E2F01FF055280026B356 /* SettingMgr.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

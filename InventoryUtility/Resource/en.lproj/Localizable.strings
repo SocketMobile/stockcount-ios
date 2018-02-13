@@ -10,3 +10,6 @@
 "alert" = "Alert";
 
 "version" = "Socket Mobile\nInventory Counting Utility\nVersion ";
+
+"key_alphabet" = "abc";
+"key_decimal" = "123";

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class EditViewController: UIViewController, UITextViewDelegate
+class EditViewController: CustomNavBarViewController, UITextViewDelegate
 {
     lazy var editController = EditController(view: self)
     
@@ -20,10 +20,7 @@ class EditViewController: UIViewController, UITextViewDelegate
     @IBOutlet weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var txtView: UITextView!
     
-    @IBOutlet weak var btnSettingTrailing: NSLayoutConstraint!
-    @IBOutlet weak var btnDoneTrailing: NSLayoutConstraint!
-    @IBOutlet weak var btnDone: UIButton!
-    
+    var keyboardToolBar : KeyboardToolBar?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +31,7 @@ class EditViewController: UIViewController, UITextViewDelegate
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
         
         //Keyboard Toolbar
-        let numberToolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50))
+        /*let numberToolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50))
         numberToolBar.barStyle = UIBarStyle.default
         numberToolBar.items = [
             UIBarButtonItem(title: "Scan", style: .plain, target: self, action: #selector(onKeyboardScan)),
@@ -44,7 +41,11 @@ class EditViewController: UIViewController, UITextViewDelegate
         ]
         
         numberToolBar.sizeToFit()
-        txtView.inputAccessoryView = numberToolBar
+        txtView.inputAccessoryView = numberToolBar*/
+        
+        keyboardToolBar = KeyboardToolBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50))
+        keyboardToolBar?.delegate = self
+        txtView.inputAccessoryView = keyboardToolBar
         
         editController.readFile(fileName)        
     }
@@ -64,9 +65,9 @@ class EditViewController: UIViewController, UITextViewDelegate
     
     //MARK: - Back
     
-    @IBAction func onBtnBack(_ sender: Any) {
+    override func willMove(toParentViewController parent: UIViewController?) {
+        super.willMove(toParentViewController: parent)
         editController.setSoftScan(false)
-        navigationController?.popViewController(animated: true)
     }
 
     //MARK: - TextField Delegate
@@ -98,9 +99,27 @@ class EditViewController: UIViewController, UITextViewDelegate
         }
     }
 
-    //MARK: - Delete & Share
     
-    @IBAction func onBtnRemove(_ sender: Any) {
+    
+    //MARK: - NavigationBar
+    private func updateTopButtons(isDoneVisible : Bool) {
+        var barButtonGroup : [UIBarButtonItem] = []
+        if isDoneVisible {
+            if let btnDone = createBarButtonFromImage("NavBar_Done", target: self, action: #selector(self.onBtnDone)) {
+                barButtonGroup.append(btnDone)
+            }
+        }
+        if let btnShare = createBarButtonFromImage("NavBar_Upload", target: self, action: #selector(self.onBtnShare)) {
+            barButtonGroup.append(btnShare)
+        }
+        if let btnDelete = createBarButtonFromImage("NavBar_Delete", target: self, action: #selector(self.onBtnDelete)) {
+            barButtonGroup.append(btnDelete)
+        }
+        
+        self.navigationItem.rightBarButtonItems = barButtonGroup
+    }
+    
+    @objc func onBtnDelete() {
         let alertController = UIAlertController(title: "confirmation".localized, message: "removeFile".localized + "\'\(fileName)\'", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "ok".localized, style: .default ) {(_) in
             self.editController.removeFile(self.fileName)
@@ -113,8 +132,7 @@ class EditViewController: UIViewController, UITextViewDelegate
         
         present(alertController, animated: true, completion: nil)
     }
-    
-    @IBAction func onBtnShare(_ sender: Any) {
+    @objc func onBtnShare() {
         editController.saveFile(fileName, strContent: txtView.text)
         if let fileURL = FileMgr.getURL(fileName: fileName) {
             let activityViewController = UIActivityViewController(activityItems: [fileURL], applicationActivities: nil)
@@ -123,25 +141,9 @@ class EditViewController: UIViewController, UITextViewDelegate
             self.present(activityViewController, animated: true, completion: nil)
         }
     }
-    
-    //MARK: - Setting & Done Buttons
-    private func updateTopButtons(isDoneVisible : Bool) {
-        
-        btnDone.isHidden = !isDoneVisible
-        
-        btnSettingTrailing.constant = btnDoneTrailing.constant
-        if (isDoneVisible) {
-            btnSettingTrailing.constant = -btnDone.frame.width + 2 * btnDoneTrailing.constant
-        }
-    }
-    
-    @IBAction func onBtnDone(_ sender: Any) {
+    @objc func onBtnDone() {
         self.view.endEditing(true)
         editController.saveFile(fileName, strContent: txtView.text)
-        updateTopButtons(isDoneVisible: false)
-    }
-    
-    @IBAction func onBtnSetting(_ sender: Any) {
         updateTopButtons(isDoneVisible: false)
     }
 }
@@ -170,13 +172,19 @@ extension EditViewController : EditViewProtocol {
         setCursorToEnd()
     }
     func addScanData(strLine: String) {
-        var curContent = txtView.text ?? ""
-        curContent += strLine
+        if let selectedRange = txtView.selectedTextRange {
+            if selectedRange.start == selectedRange.end {
+                txtView.replace(selectedRange, withText: strLine)
+            }
+        } else {
+            var curContent = txtView.text ?? ""
+            curContent += strLine
+            
+            txtView.text = curContent
+            setCursorToEnd()
+        }
         
-        txtView.text = curContent
-        setCursorToEnd()
-        
-        editController.saveFile(fileName, strContent: curContent)
+        editController.saveFile(fileName, strContent: txtView.text)
     }
     
     func showScangDlg() {
@@ -221,5 +229,23 @@ extension EditViewController : CompanionDlgDelegate {
             txtView.becomeFirstResponder()
             break
         }
+    }
+}
+
+//MARK: - KeyboardToolBar
+extension EditViewController : KeyboardToolBarDelegate {
+    func didTriggerScan() {
+        editController.triggerScan()
+    }
+    func didSwitchKeyboard() {
+        
+        let destType = txtView.keyboardType == .decimalPad ? UIKeyboardType.alphabet : UIKeyboardType.decimalPad
+        txtView.keyboardType = destType
+        txtView.reloadInputViews()
+        
+        let keyTitle = txtView.keyboardType == .decimalPad ? "key_alphabet".localized : "key_decimal".localized
+        keyboardToolBar?.setKeyboardTitle(keyTitle)
+        
+        
     }
 }

@@ -70,10 +70,12 @@ class SettingMgr {
             }
         }
         
-        if newLineForNewScan {
-            strLine = strLine + "\n"
+        let newLineSymbol = newLineForNewScan ? "\n" : ";"
+        
+        if let _ = barcode { //For Real Scan Data
+            strLine = newLineSymbol + strLine
         } else {
-            strLine = strLine + ";"
+            strLine = strLine + newLineSymbol
         }
         
         return strLine

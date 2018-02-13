@@ -21,10 +21,4 @@ class OptionViewController : UIViewController {
         
         lblVersion.text = "version".localized + versionString
     }
-    
-    //MARK: - Back
-    
-    @IBAction func onBtnBack(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
 }

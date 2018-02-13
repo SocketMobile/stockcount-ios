@@ -29,7 +29,8 @@ class CompanionDlg : UIView, Modal {
     
     @IBOutlet weak var _backgroundView: UIView!
     @IBOutlet weak var _dialogView: UIView!
-    @IBOutlet weak var btnOpenCompanion: UIButton!
+    @IBOutlet weak var btnUseCamera: UIButton!
+    @IBOutlet weak var btnCompanion: UIButton!
     
     weak var delegate : CompanionDlgDelegate? = nil
     
@@ -64,7 +65,8 @@ class CompanionDlg : UIView, Modal {
         
         addSubview(view)
         
-        btnOpenCompanion.layer.borderColor = tintColor.cgColor
+        btnUseCamera.layer.borderColor = tintColor.cgColor
+        btnCompanion.titleLabel?.textAlignment = .center
     }
     
     //MARK: - Events
@@ -83,9 +85,7 @@ class CompanionDlg : UIView, Modal {
     @IBAction func onBtnOpenCompanion(_ sender: Any) {
         closeDlgWithAction(.openCompanionApp)
     }
-    @IBAction func onBtnLearnMore(_ sender: Any) {
-        closeDlgWithAction(.learnMore)
-    }
+    
     @IBAction func onBtnCamera(_ sender: Any) {
         closeDlgWithAction(.continueWithCamera)
     }
@@ -94,7 +94,6 @@ class CompanionDlg : UIView, Modal {
 enum enumCompanionDlgCloseAction {
     case none
     case openCompanionApp
-    case learnMore
     case continueWithCamera
     
 }
