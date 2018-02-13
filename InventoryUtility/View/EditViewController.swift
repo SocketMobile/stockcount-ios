@@ -161,6 +161,7 @@ protocol EditViewProtocol : class{
     func getOverlayContextForSoftScan () -> UIViewController
     func showAlert(_ msg : String)
     
+    func notifyScannerConnected(isConnected : Bool)
 }
 extension EditViewController : EditViewProtocol {
     private func setCursorToEnd() {
@@ -216,6 +217,10 @@ extension EditViewController : EditViewProtocol {
         alertController.addAction(okAction)
         
         present(alertController, animated: true, completion: nil)
+    }
+    
+    func notifyScannerConnected(isConnected : Bool) {
+        keyboardToolBar?.updateConnection(isConnected: isConnected)
     }
     
 }

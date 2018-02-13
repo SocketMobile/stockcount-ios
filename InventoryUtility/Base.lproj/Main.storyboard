@@ -301,7 +301,7 @@ Version 0.8</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LxG-aO-QRQ">
-                                                <rect key="frame" x="0.0" y="50" width="320" height="314"/>
+                                                <rect key="frame" x="0.0" y="50" width="320" height="396"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ooE-Wt-6nr" userLabel="QuantityFormatOption">
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
@@ -523,6 +523,21 @@ Version 0.8</string>
                                                             <constraint firstAttribute="height" constant="50" id="zRZ-lU-9Bz"/>
                                                         </constraints>
                                                     </view>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ky6-C9-E5Y">
+                                                        <rect key="frame" x="0.0" y="326" width="320" height="70"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <accessibility key="accessibilityConfiguration">
+                                                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                                                        </accessibility>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="70" id="qYZ-Lp-bZZ"/>
+                                                        </constraints>
+                                                        <string key="text">The result will look like:
+[barcode], 1
+[barcode], 1</string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -537,32 +552,20 @@ Version 0.8</string>
                                                     <constraint firstItem="xmI-A6-Rvr" firstAttribute="top" secondItem="2be-Tw-o34" secondAttribute="bottom" id="K01-NQ-RSC"/>
                                                     <constraint firstAttribute="trailing" secondItem="ooE-Wt-6nr" secondAttribute="trailing" id="KIX-Ij-ZPj"/>
                                                     <constraint firstItem="NJD-w6-JZD" firstAttribute="leading" secondItem="LxG-aO-QRQ" secondAttribute="leading" id="VAB-Ih-6g6"/>
-                                                    <constraint firstAttribute="height" priority="750" constant="320" id="aHH-Il-6PG"/>
+                                                    <constraint firstAttribute="height" priority="750" constant="400" id="aHH-Il-6PG"/>
+                                                    <constraint firstItem="ky6-C9-E5Y" firstAttribute="leading" secondItem="LxG-aO-QRQ" secondAttribute="leading" id="agg-bw-Gkj"/>
                                                     <constraint firstItem="E8e-z0-eWM" firstAttribute="leading" secondItem="LxG-aO-QRQ" secondAttribute="leading" id="bbx-FB-yOP"/>
                                                     <constraint firstItem="0AG-DX-gIy" firstAttribute="leading" secondItem="LxG-aO-QRQ" secondAttribute="leading" id="cci-oT-4qy"/>
                                                     <constraint firstAttribute="trailing" secondItem="E8e-z0-eWM" secondAttribute="trailing" id="f5z-Ex-IYF"/>
                                                     <constraint firstAttribute="trailing" secondItem="NJD-w6-JZD" secondAttribute="trailing" id="fMt-UR-qf9"/>
                                                     <constraint firstItem="NJD-w6-JZD" firstAttribute="top" secondItem="0AG-DX-gIy" secondAttribute="bottom" id="jSP-Rr-uWY"/>
                                                     <constraint firstItem="E8e-z0-eWM" firstAttribute="top" secondItem="xmI-A6-Rvr" secondAttribute="bottom" constant="12" id="k1b-Pn-Crr"/>
-                                                    <constraint firstAttribute="bottom" secondItem="NJD-w6-JZD" secondAttribute="bottom" id="kfO-cs-dcc"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ky6-C9-E5Y" secondAttribute="trailing" id="pla-no-NaM"/>
                                                     <constraint firstItem="2be-Tw-o34" firstAttribute="leading" secondItem="LxG-aO-QRQ" secondAttribute="leading" id="sEv-Hl-Gz7"/>
+                                                    <constraint firstItem="ky6-C9-E5Y" firstAttribute="top" secondItem="NJD-w6-JZD" secondAttribute="bottom" constant="12" id="w2c-IU-xV9"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ky6-C9-E5Y" secondAttribute="bottom" id="xJF-Xy-vds"/>
                                                 </constraints>
                                             </view>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ky6-C9-E5Y">
-                                                <rect key="frame" x="0.0" y="376" width="320" height="70"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <accessibility key="accessibilityConfiguration">
-                                                    <accessibilityTraits key="traits" notEnabled="YES"/>
-                                                </accessibility>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="70" id="qYZ-Lp-bZZ"/>
-                                                </constraints>
-                                                <string key="text">The result will look like:
-[barcode], 1
-[barcode], 1</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0F-N7-uk3">
                                                 <rect key="frame" x="0.0" y="458" width="320" height="50"/>
                                                 <subviews>
@@ -592,16 +595,13 @@ Version 0.8</string>
                                         <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="d3p-Kl-USO" firstAttribute="top" secondItem="6yO-b3-iGj" secondAttribute="top" id="0FZ-cQ-mYA"/>
-                                            <constraint firstItem="ky6-C9-E5Y" firstAttribute="top" secondItem="LxG-aO-QRQ" secondAttribute="bottom" constant="12" id="2iG-2r-8bn"/>
                                             <constraint firstItem="x0F-N7-uk3" firstAttribute="leading" secondItem="6yO-b3-iGj" secondAttribute="leading" id="3pD-hs-4vW"/>
                                             <constraint firstItem="LxG-aO-QRQ" firstAttribute="leading" secondItem="6yO-b3-iGj" secondAttribute="leading" id="Gy1-zP-h06"/>
-                                            <constraint firstAttribute="trailing" secondItem="ky6-C9-E5Y" secondAttribute="trailing" id="MRT-uE-dV4"/>
                                             <constraint firstItem="LxG-aO-QRQ" firstAttribute="top" secondItem="d3p-Kl-USO" secondAttribute="bottom" id="NWO-ke-l7z"/>
                                             <constraint firstAttribute="trailing" secondItem="d3p-Kl-USO" secondAttribute="trailing" id="SPe-16-lyq"/>
                                             <constraint firstAttribute="bottom" secondItem="x0F-N7-uk3" secondAttribute="bottom" constant="12" id="cZk-sg-Kus"/>
                                             <constraint firstAttribute="trailing" secondItem="x0F-N7-uk3" secondAttribute="trailing" id="jLu-k1-AZe"/>
-                                            <constraint firstItem="x0F-N7-uk3" firstAttribute="top" secondItem="ky6-C9-E5Y" secondAttribute="bottom" constant="12" id="qCe-22-6IM"/>
-                                            <constraint firstItem="ky6-C9-E5Y" firstAttribute="leading" secondItem="6yO-b3-iGj" secondAttribute="leading" id="sjB-go-Ryh"/>
+                                            <constraint firstItem="x0F-N7-uk3" firstAttribute="top" secondItem="LxG-aO-QRQ" secondAttribute="bottom" constant="12" id="rsx-he-Veh"/>
                                             <constraint firstItem="d3p-Kl-USO" firstAttribute="leading" secondItem="6yO-b3-iGj" secondAttribute="leading" id="wPI-4q-1KO"/>
                                             <constraint firstAttribute="trailing" secondItem="LxG-aO-QRQ" secondAttribute="trailing" id="yBG-Fn-unB"/>
                                         </constraints>
