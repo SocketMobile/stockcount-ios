@@ -39,6 +39,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
         }
         
+        if UserDefaults.standard.object(forKey: "isStarted") == nil {
+            let storyBoard = UIStoryboard(name: "Instruction", bundle: nil)
+            let viewController = storyBoard.instantiateInitialViewController()
+            
+            window?.rootViewController = viewController
+        }
+        
         return true
     }
 

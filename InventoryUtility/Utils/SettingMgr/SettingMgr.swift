@@ -10,11 +10,15 @@ import Foundation
 
 class SettingMgr {
     enum  enumKey : String{
-        case autoAddQuantity = "KEY_AutoAddQuantity"
-        case supportD600 = "KEY_D600Support"
-        case delineatorComma = "KEY_DelineatorCommaSet" //1 : Comma Space Quantity, 0 : Space Quantity
-        case defaultQuantity = "KEY_DefaultQuantity"
-        case newLineForNewScan = "KEY_NewLineForNewScan"
+        case autoAddQuantity        = "KEY_AutoAddQuantity"
+        case supportD600            = "KEY_D600Support"
+        case delineatorComma        = "KEY_DelineatorCommaSet" //1 : Comma Space Quantity, 0 : Space Quantity
+        case defaultQuantity        = "KEY_DefaultQuantity"
+        case newLineForNewScan      = "KEY_NewLineForNewScan"
+        case vibrationOnScan        = "KEY_VibrationOnScan"
+        
+        case scanDate               = "KEY_ScanDate"
+        case scanCount              = "KEY_ScanCount"
     }
     
     static let key_AutoAddQuantity = "KEY_AutoAddQuantity"
@@ -56,6 +60,21 @@ class SettingMgr {
     class var newLineForNewScan : Bool {
         get {return getSetting(keyName: .newLineForNewScan, typeIndicator: Bool.self) ?? true}
         set (argValue) {setSetting(keyName: .newLineForNewScan, newValue: argValue)}
+    }
+    
+    class var vibrationOnScan : Bool {
+        get {return getSetting(keyName: .vibrationOnScan, typeIndicator: Bool.self) ?? false}
+        set (argValue) { setSetting(keyName: .vibrationOnScan, newValue: argValue) }
+    }
+    
+    class var scanDate : String {
+        get {return getSetting(keyName: .scanDate, typeIndicator: String.self) ?? ""}
+        set (argValue) { setSetting(keyName: .scanDate, newValue: argValue)}
+    }
+    
+    class var scanCount : Int {
+        get {return getSetting(keyName: .scanCount, typeIndicator: Int.self) ?? 0}
+        set (argVale) { setSetting(keyName: .scanCount, newValue: argVale)}
     }
     
     

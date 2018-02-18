@@ -24,6 +24,7 @@ class SettingViewController : CustomNavBarViewController {
         
         switchAutoQuantity.isOn = SettingMgr.autoAddQuantity
         switchSupportD600.isOn = SettingMgr.supportD600
+        switchVibrate.isOn = SettingMgr.vibrationOnScan
         showQuantityFormat(SettingMgr.delineatorComma)
         showNewLineFormat(SettingMgr.newLineForNewScan)
         
@@ -121,7 +122,12 @@ class SettingViewController : CustomNavBarViewController {
         strPreview = strPreview + SettingMgr.getLineForBarcode()
         
         txtPreview.text = strPreview
-        
-        
     }
+    
+    //MARK: - Vibrate on Scan
+    @IBOutlet weak var switchVibrate: UISwitch!
+    @IBAction func didVibrationChanged(_ sender: Any) {
+        SettingMgr.vibrationOnScan = switchVibrate.isOn
+    }
+    
 }

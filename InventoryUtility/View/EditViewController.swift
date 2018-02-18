@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AudioToolbox
 
 class EditViewController: CustomNavBarViewController, UITextViewDelegate
 {
@@ -30,28 +31,11 @@ class EditViewController: CustomNavBarViewController, UITextViewDelegate
         //Keyboard Notification
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
         
-        //Keyboard Toolbar
-        /*let numberToolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50))
-        numberToolBar.barStyle = UIBarStyle.default
-        numberToolBar.items = [
-            UIBarButtonItem(title: "Scan", style: .plain, target: self, action: #selector(onKeyboardScan)),
-            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
-            UIBarButtonItem(image: UIImage(named: "btn_done"), style: .plain, target: self, action: nil),
-            UIBarButtonItem(title: "Scan", style: .plain, target: self, action: #selector(onKeyboardScan))
-        ]
-        
-        numberToolBar.sizeToFit()
-        txtView.inputAccessoryView = numberToolBar*/
-        
         keyboardToolBar = KeyboardToolBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50))
         keyboardToolBar?.delegate = self
         txtView.inputAccessoryView = keyboardToolBar
         
         editController.readFile(fileName)        
-    }
-    
-    @objc func onKeyboardScan() {
-        editController.triggerScan()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -185,6 +169,12 @@ extension EditViewController : EditViewProtocol {
             setCursorToEnd()
         }
         
+        if SettingMgr.vibrationOnScan {
+            DispatchQueue.main.async {
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+            }
+        }
+        
         editController.saveFile(fileName, strContent: txtView.text)
     }
     
@@ -230,6 +220,10 @@ extension EditViewController : CompanionDlgDelegate {
         switch closeAction {
         case .continueWithCamera:
             editController.setSoftScan()
+        case .openCompanionApp:
+            if let companionURL = URL(string: "https://itunes.apple.com/us/app/socket-mobile-companion/id1175638950") {
+                UIApplication.shared.open(companionURL, options: [:], completionHandler: nil)
+            }
         default:
             txtView.becomeFirstResponder()
             break
