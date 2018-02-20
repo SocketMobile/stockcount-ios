@@ -79,7 +79,7 @@ class SettingMgr {
     
     
     class func getLineForBarcode(_ barcode:String? = nil) -> String {
-        var strLine = barcode == nil ?  "[barcode]" : barcode!
+        var strLine = barcode == nil ?  "txt_barcode".localized : barcode!
         
         if autoAddQuantity {
             if delineatorComma {

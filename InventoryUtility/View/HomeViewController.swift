@@ -91,13 +91,6 @@ class HomeViewController: CustomNavBarViewController, UITableViewDataSource, UIT
         }
     }
     
-    //MARK: - Create New
-    /*@IBAction func onBtnNew(_ sender: Any) {
-        if let fileName = FileMgr.createFile() {
-            performSegue(withIdentifier: "SEGUE_EditViewController", sender: fileName)
-        }
-    }*/
-    
     //MARK: - Page Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -107,8 +100,5 @@ class HomeViewController: CustomNavBarViewController, UITableViewDataSource, UIT
             }
         }
     }
-    
-    
-
 }
 

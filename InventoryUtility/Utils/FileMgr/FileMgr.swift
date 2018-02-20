@@ -85,9 +85,8 @@ class FileMgr  {
             do {
                 try fileMgr.removeItem(at: fileURL)
             } catch {
-                
+                print(error)
             }
-            
             DBHelper.deleteFile(fileName: fileName)
         }
         

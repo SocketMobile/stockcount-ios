@@ -55,24 +55,7 @@ class InstructionViewController : UIViewController, UIScrollViewDelegate {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
-//        updatePageControl()
     }
-    
-    
-    /*private func updatePageControl() {
-        for (index, dot) in pageControl.subviews.enumerated() {
-            if index == pageControl.currentPage {
-                dot.backgroundColor = UIColor.red
-                dot.layer.cornerRadius = dot.frame.size.height / 2
-            } else {
-                dot.backgroundColor = UIColor.clear
-                dot.layer.cornerRadius = dot.frame.size.height / 2
-                dot.layer.borderColor = UIColor.blue.cgColor
-                dot.layer.borderWidth = 0.4
-            }
-        }
-    }*/
     
     //MARK: - ScrollView
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -81,13 +64,12 @@ class InstructionViewController : UIViewController, UIScrollViewDelegate {
         
         pageControl.currentPage = Int(currentPage)
         
-        lblDesc.attributedText = getAttributedString(txt_name_list[Int(currentPage)].localized ?? "")
+        lblDesc.attributedText = getAttributedString(txt_name_list[Int(currentPage)].localized)
         
         if Int(currentPage) == img_name_list.count - 1 {
             btnStart.alpha = 1.0
             btnStart.isEnabled = true
         }
-//        updatePageControl()
     }
     
     //MARK: - Event
@@ -103,5 +85,4 @@ class InstructionViewController : UIViewController, UIScrollViewDelegate {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window?.rootViewController = viewController
     }
-    
 }
