@@ -22,7 +22,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s4m-q6-wec">
                                 <rect key="frame" x="0.0" y="20" width="320" height="320"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="s4m-q6-wec" secondAttribute="height" multiplier="1:1" id="P5X-X5-J1W"/>
+                                    <constraint firstAttribute="width" secondItem="s4m-q6-wec" secondAttribute="height" multiplier="1:1" id="XFV-vb-GSu"/>
                                 </constraints>
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="kqJ-6Q-23A">
@@ -71,15 +71,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="s4m-q6-wec" firstAttribute="top" secondItem="vQS-En-laI" secondAttribute="top" id="5Ii-iw-b53"/>
+                            <constraint firstItem="s4m-q6-wec" firstAttribute="width" secondItem="UZU-Ko-atO" secondAttribute="width" id="0NY-69-Evs"/>
+                            <constraint firstItem="s4m-q6-wec" firstAttribute="centerX" secondItem="UZU-Ko-atO" secondAttribute="centerX" id="6nY-cQ-kV6"/>
                             <constraint firstItem="DHo-TO-JCs" firstAttribute="leading" secondItem="vQS-En-laI" secondAttribute="leading" constant="24" id="GZo-xq-ehs"/>
                             <constraint firstItem="phG-fJ-Zvk" firstAttribute="width" secondItem="UZU-Ko-atO" secondAttribute="width" multiplier="1:2" id="IgY-fL-ych"/>
                             <constraint firstItem="phG-fJ-Zvk" firstAttribute="top" secondItem="kqJ-6Q-23A" secondAttribute="bottom" constant="12" id="Qcc-qf-oti"/>
-                            <constraint firstItem="s4m-q6-wec" firstAttribute="leading" secondItem="vQS-En-laI" secondAttribute="leading" id="TfF-Ok-U6L"/>
-                            <constraint firstItem="s4m-q6-wec" firstAttribute="trailing" secondItem="vQS-En-laI" secondAttribute="trailing" id="UwT-mS-ByF"/>
-                            <constraint firstItem="DHo-TO-JCs" firstAttribute="top" secondItem="s4m-q6-wec" secondAttribute="bottom" constant="24" id="gb4-ws-cdO"/>
+                            <constraint firstItem="s4m-q6-wec" firstAttribute="top" secondItem="vQS-En-laI" secondAttribute="top" id="TNO-Rk-cRF"/>
                             <constraint firstItem="vQS-En-laI" firstAttribute="trailing" secondItem="DHo-TO-JCs" secondAttribute="trailing" constant="24" id="iDw-gl-iIU"/>
                             <constraint firstItem="vQS-En-laI" firstAttribute="bottom" secondItem="phG-fJ-Zvk" secondAttribute="bottom" constant="48" id="ica-zV-Ji3"/>
+                            <constraint firstItem="DHo-TO-JCs" firstAttribute="top" secondItem="s4m-q6-wec" secondAttribute="bottom" constant="24" id="kgY-sc-2dG"/>
                             <constraint firstItem="phG-fJ-Zvk" firstAttribute="centerX" secondItem="UZU-Ko-atO" secondAttribute="centerX" id="oxk-aa-fes"/>
                             <constraint firstItem="kqJ-6Q-23A" firstAttribute="centerX" secondItem="UZU-Ko-atO" secondAttribute="centerX" id="xGo-XN-UMC"/>
                         </constraints>

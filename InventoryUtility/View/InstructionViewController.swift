@@ -23,7 +23,7 @@ class InstructionViewController : UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let scrollViewWidth : CGFloat = scrollView.frame.width
+        let scrollViewWidth : CGFloat = self.view.frame.width
         for index in 0 ..< img_name_list.count {
             let imgView = UIImageView(frame: CGRect(x: scrollViewWidth * CGFloat(index), y: 0, width: scrollViewWidth, height: scrollViewWidth))
             imgView.image = UIImage(named: img_name_list[index])
@@ -59,8 +59,8 @@ class InstructionViewController : UIViewController, UIScrollViewDelegate {
     
     //MARK: - ScrollView
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let pageWidth = scrollView.frame.width
-        let currentPage : CGFloat = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1
+        let pageWidth = self.view.frame.width
+        let currentPage = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1
         
         pageControl.currentPage = Int(currentPage)
         

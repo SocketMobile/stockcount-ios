@@ -19,14 +19,13 @@ class SettingViewController : CustomNavBarViewController {
     @IBOutlet weak var imgCheckQuantityComma: UIImageView!
     @IBOutlet weak var imgCheckQuantityNoComma: UIImageView!
     
-    @IBOutlet weak var pickerDefaultQuantity: UIPickerView!
-    @IBOutlet weak var quantityContainerHeight: NSLayoutConstraint!
+    @IBOutlet weak var stepperQuantity: UIStepper!
+    @IBOutlet weak var txtQuantity: UITextField!
     
     @IBOutlet weak var imgCheckNewLine: UIImageView!
     @IBOutlet weak var imgCheckNoNewLine: UIImageView!
     
     @IBOutlet weak var txtPreview: UITextView!
-    
     
     @IBOutlet weak var switchVibrate: UISwitch!
     
@@ -45,8 +44,9 @@ class SettingViewController : CustomNavBarViewController {
         switchVibrate.isOn = SettingMgr.vibrationOnScan
         showQuantityFormat(SettingMgr.delineatorComma)
         showNewLineFormat(SettingMgr.newLineForNewScan)
-        
-        pickerDefaultQuantity.selectRow(SettingMgr.defaultQuantity - 1, inComponent: 0, animated: true)
+
+        stepperQuantity.value = Double(SettingMgr.defaultQuantity)
+        txtQuantity.text = "\(SettingMgr.defaultQuantity)"
         
         updateBtnCtrlState()
         updateTxtPreview()
@@ -74,20 +74,6 @@ class SettingViewController : CustomNavBarViewController {
         updateTxtPreview()
     }
     
-    //MARK: - Support D600
-    @IBAction func didSupportD600Changed(_ sender: Any) {
-        SettingMgr.supportD600 = switchSupportD600.isOn
-        
-        let strFavorite = switchSupportD600.isOn ? "*" : ""
-        
-        let capture = CaptureHelper.sharedInstance
-        for deviceManager in capture.getDeviceManagers() {
-            deviceManager.setFavoriteDevices(strFavorite, withCompletionHandler: { (result) in
-                print("DeviceManager set favorite result :\(result.rawValue)")
-            })
-        }
-    }
-    
     //MARK: - Quantity format options
     @IBAction func didQuantityFormatChanged(_ sender: UIButton) {
         let withComma = sender.tag == 1
@@ -100,6 +86,17 @@ class SettingViewController : CustomNavBarViewController {
     func showQuantityFormat(_ withComma : Bool){
         imgCheckQuantityComma.isHidden = !withComma
         imgCheckQuantityNoComma.isHidden = withComma
+    }
+    
+    //MARK: - Default Quantity
+    
+    @IBAction func didDefaultQuantityChanged(_ sender: Any) {
+        let curDefaultQuantity = Int(stepperQuantity.value)
+        
+        SettingMgr.defaultQuantity = curDefaultQuantity
+        txtQuantity.text = "\(curDefaultQuantity)"
+        
+        updateTxtPreview()
     }
     
     //Mark: - New Line
@@ -130,37 +127,19 @@ class SettingViewController : CustomNavBarViewController {
     @IBAction func didVibrationChanged(_ sender: Any) {
         SettingMgr.vibrationOnScan = switchVibrate.isOn
     }
-}
-
-extension SettingViewController : UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
     
-    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 50
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return quantityContainerHeight.constant / 3.0
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        var pickerLabel : UILabel? = (view as? UILabel)
-        if pickerLabel == nil {
-            pickerLabel = UILabel()
-            pickerLabel?.font = UIFont.systemFont(ofSize: 15)
-            pickerLabel?.textAlignment = .center
+    //MARK: - Support D600
+    @IBAction func didSupportD600Changed(_ sender: Any) {
+        SettingMgr.supportD600 = switchSupportD600.isOn
+        
+        let strFavorite = switchSupportD600.isOn ? "*" : ""
+        
+        let capture = CaptureHelper.sharedInstance
+        for deviceManager in capture.getDeviceManagers() {
+            deviceManager.setFavoriteDevices(strFavorite, withCompletionHandler: { (result) in
+                print("DeviceManager set favorite result :\(result.rawValue)")
+            })
         }
-        
-        pickerLabel?.text = "\(row + 1)"
-        
-        return pickerLabel!
     }
-}
-extension SettingViewController : UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        SettingMgr.defaultQuantity = row + 1
-        updateTxtPreview()
-    }
+    
 }
