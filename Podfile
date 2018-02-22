@@ -1,7 +1,7 @@
 platform :ios, '10.0'
 use_frameworks!
 
-target 'InventoryUtility' do
+target 'StockCount' do
 pod 'Fabric'
 pod 'Crashlytics'
 pod 'RealmSwift'
