@@ -2,7 +2,7 @@
 //  Modal.swift
 //  ModalView
 //
-//  Created by IT Star 1/17/18.
+//  Created by Sohel Dhanani 1/17/18.
 //  Copyright © 2018 Socket Mobile, Inc.
 //
 

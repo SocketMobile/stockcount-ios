@@ -2,7 +2,7 @@
 //  ScanDlg.swift
 //  StockCount
 //
-//  Created by IT Star on 1/17/18.
+//  Created by Sohel Dhanani on 1/17/18.
 //  Copyright © 2018 Socket Mobile, Inc.
 //
 

@@ -2,7 +2,7 @@
 //  EditController.swift
 //  StockCount
 //
-//  Created by IT Star on 1/14/18.
+//  Created by Sohel Dhanani on 1/14/18.
 //  Copyright © 2018 Socket Mobile, Inc.
 //
 
@@ -21,7 +21,7 @@ class EditController : CaptureHelperDeviceDecodedDataDelegate, EditControllerPro
     CaptureHelperDeviceManagerPresenceDelegate,
 CaptureHelperDevicePresenceDelegate {
     
-    var viewer : EditViewProtocol?
+    weak var viewer : EditViewProtocol?
     
     let captureHelper = CaptureHelper.sharedInstance
     

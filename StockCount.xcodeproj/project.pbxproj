@@ -781,7 +781,7 @@
 				DEVELOPMENT_TEAM = 9L64TUQ2Y2;
 				INFOPLIST_FILE = "$(SRCROOT)/StockCount/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.socketmobile.inventoryCounting;
+				PRODUCT_BUNDLE_IDENTIFIER = com.socketmobile.stockCount;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "dbb005a9-539e-499f-839a-f36559dca13a";
 				PROVISIONING_PROFILE_SPECIFIER = WildCard_Paramount_Dev;
@@ -800,7 +800,7 @@
 				DEVELOPMENT_TEAM = 9L64TUQ2Y2;
 				INFOPLIST_FILE = "$(SRCROOT)/StockCount/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.socketmobile.inventoryCounting;
+				PRODUCT_BUNDLE_IDENTIFIER = com.socketmobile.stockCount;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "766e2435-8c0a-4223-9e42-2bad1cc5021a";
 				PROVISIONING_PROFILE_SPECIFIER = "Inventory Counting AdHoc";

@@ -2,7 +2,7 @@
 //  OptionViewController.swift
 //  StockCount
 //
-//  Created by IT Star on 01/20/18.
+//  Created by Sohel Dhanani on 01/20/18.
 //  Copyright © 2018 Socket Mobile, Inc.
 //
 

@@ -2,7 +2,7 @@
 //  DBHelper.swift
 //  StockCount
 //
-//  Created by IT Star on 12/28/17.
+//  Created by Sohel Dhanani on 12/28/17.
 //  Copyright © 2018 Socket Mobile, Inc.
 //
 

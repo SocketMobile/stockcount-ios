@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  StockCount
 //
-//  Created by IT Star on 12/23/17.
+//  Created by Sohel Dhanani on 12/23/17.
 //  Copyright © 2018 Socket Mobile, Inc.
 //
 
@@ -24,8 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Initialize CaptureHelper
         let AppInfo = SKTAppInfo()
-//        AppInfo.appKey="MC0CFHPYIb54AaQQ0h90lh6iOTzSi38nAhUA4nA2VM8Dim+NAnTDKwx+BOCr4p0="
-//        AppInfo.bundleID="ios:com.socketmobile.inventoryCounting"
         AppInfo.appKey="MC4CFQDdEFdODdiceD4YGANGb3Q/MK9U0AIVAMUpLrTNqBkOlpMpLd2GATJuSt47"
         AppInfo.bundleID="ios:com.socketmobile.stockCount"
 

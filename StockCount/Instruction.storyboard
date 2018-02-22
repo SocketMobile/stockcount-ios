@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rem-J1-5we">
-    <device id="ipad9_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,23 +16,23 @@
             <objects>
                 <viewController id="rem-J1-5we" customClass="InstructionViewController" customModule="StockCount" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UZU-Ko-atO">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fJ-w1-51C">
-                                <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pwN-xe-t90">
-                                        <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                         <subviews>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s4m-q6-wec">
-                                                <rect key="frame" x="0.0" y="0.0" width="768" height="768"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="s4m-q6-wec" secondAttribute="height" multiplier="1:1" id="XFV-vb-GSu"/>
                                                 </constraints>
                                             </scrollView>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="kqJ-6Q-23A">
-                                                <rect key="frame" x="364.5" y="780" width="39" height="37"/>
+                                                <rect key="frame" x="140.5" y="332" width="39" height="37"/>
                                                 <color key="pageIndicatorTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="currentPageIndicatorTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <userDefinedRuntimeAttributes>
@@ -45,7 +45,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </pageControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHo-TO-JCs">
-                                                <rect key="frame" x="24" y="829" width="720" height="19.5"/>
+                                                <rect key="frame" x="24" y="381" width="272" height="19.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Connect your Socket scanner in Application Mode (with Socket Mobile Companion app)">
                                                         <attributes>
@@ -57,7 +57,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phG-fJ-Zvk">
-                                                <rect key="frame" x="192" y="940" width="384" height="40"/>
+                                                <rect key="frame" x="80" y="484" width="160" height="40"/>
                                                 <color key="backgroundColor" red="0.0" green="0.53725490196078429" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="sF8-wv-7Ck"/>

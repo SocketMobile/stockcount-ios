@@ -2,7 +2,7 @@
 //  UIView.swift
 //  StockCount
 //
-//  Created by IT Star on 2/12/18.
+//  Created by Sohel Dhanani on 2/12/18.
 //  Copyright © 2018 Socket Mobile Inc.
 //
 

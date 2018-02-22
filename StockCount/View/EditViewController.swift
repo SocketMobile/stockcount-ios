@@ -2,7 +2,7 @@
 //  EditViewController.swift
 //  StockCount
 //
-//  Created by IT Star on 12/24/17.
+//  Created by Sohel Dhanani on 12/24/17.
 //  Copyright © 2018 Socket Mobile, Inc.
 //
 
@@ -22,7 +22,7 @@ class EditViewController: CustomNavBarViewController, UITextViewDelegate
     @IBOutlet weak var txtView: UITextView!
     
     var keyboardToolBar : KeyboardToolBar?
-    private let appleKeyboardIdentifier = "en_US@hw=Automatic;sw=QWERTY"
+    private let appleKeyboardIdentifier = ["en_US@hw=Automatic;sw=QWERTY", "en_US@sw=QWERTY;hw=Automatic"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,17 +47,11 @@ class EditViewController: CustomNavBarViewController, UITextViewDelegate
         
     deinit {
         NotificationCenter.default.removeObserver(self)
-    }
-    
-    //MARK: - Back
-    
-    override func willMove(toParentViewController parent: UIViewController?) {
-        super.willMove(toParentViewController: parent)
         
         editController.viewer = nil
         editController.isSoftScan = false
     }
-
+    
     //MARK: - TextField Delegate
     func textViewDidBeginEditing(_ textView: UITextView) {
         updateTopButtons(isDoneVisible: true)
@@ -89,8 +83,7 @@ class EditViewController: CustomNavBarViewController, UITextViewDelegate
     }
     
     @objc func keyboardInputModeChanged() {
-        print(UITextInputMode.activeInputModes[0].value(forKey: "identifier") as? String)
-        if let currentKeyboardId = UITextInputMode.activeInputModes[0].value(forKey: "identifier") as? String, currentKeyboardId == appleKeyboardIdentifier {
+        if let currentKeyboardId = UITextInputMode.activeInputModes[0].value(forKey: "identifier") as? String, appleKeyboardIdentifier.contains(currentKeyboardId) {
             keyboardToolBar?.setTypeUpdateEnabled(true)
         } else {
             keyboardToolBar?.setTypeUpdateEnabled(false)

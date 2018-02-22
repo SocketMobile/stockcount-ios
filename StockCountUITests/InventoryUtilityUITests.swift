@@ -2,7 +2,7 @@
 //  StockCountUITests.swift
 //  StockCountUITests
 //
-//  Created by IT Star on 12/23/17.
+//  Created by Sohel Dhanani on 12/23/17.
 //  Copyright © 2018 Socket Mobile, Inc.
 //
 
