@@ -13,7 +13,20 @@ class FileMgr  {
      Return file name if success. Else nil
      */
     class func createFile() -> String? {
-        let fileTitle = "Inventory Scan - " + Date().toStringWithFormat("MM/dd/yyyy") + "\n"
+        
+        let curDate = Date().toStringWithFormat("MM/dd/yyyy")
+        var scanCount = 1
+        
+        let lastScanDate = SettingMgr.scanDate
+        if curDate == lastScanDate {
+            scanCount = SettingMgr.scanCount + 1
+        } else {
+            SettingMgr.scanDate = curDate
+            SettingMgr.scanCount = 0
+        }
+        
+        
+        let fileTitle = "Inventory Scan - " + Date().toStringWithFormat("MM/dd/yyyy") + "-\(scanCount)\n"
         let fileName = "InventoryScan_" + Date().toStringWithFormat("yyMMddHHmmss") + ".txt"
         
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
@@ -26,6 +39,8 @@ class FileMgr  {
             }
             DBHelper.updateFile(fileName: fileName, fileTitle: fileTitle, firstScan: "")
         }
+        
+        SettingMgr.scanCount = scanCount
         
         return fileName
     }
@@ -70,9 +85,8 @@ class FileMgr  {
             do {
                 try fileMgr.removeItem(at: fileURL)
             } catch {
-                
+                print(error)
             }
-            
             DBHelper.deleteFile(fileName: fileName)
         }
         

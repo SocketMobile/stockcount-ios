@@ -10,11 +10,15 @@ import Foundation
 
 class SettingMgr {
     enum  enumKey : String{
-        case autoAddQuantity = "KEY_AutoAddQuantity"
-        case supportD600 = "KEY_D600Support"
-        case delineatorComma = "KEY_DelineatorCommaSet" //1 : Comma Space Quantity, 0 : Space Quantity
-        case defaultQuantity = "KEY_DefaultQuantity"
-        case newLineForNewScan = "KEY_NewLineForNewScan"
+        case autoAddQuantity        = "KEY_AutoAddQuantity"
+        case supportD600            = "KEY_D600Support"
+        case delineatorComma        = "KEY_DelineatorCommaSet" //1 : Comma Space Quantity, 0 : Space Quantity
+        case defaultQuantity        = "KEY_DefaultQuantity"
+        case newLineForNewScan      = "KEY_NewLineForNewScan"
+        case vibrationOnScan        = "KEY_VibrationOnScan"
+        
+        case scanDate               = "KEY_ScanDate"
+        case scanCount              = "KEY_ScanCount"
     }
     
     static let key_AutoAddQuantity = "KEY_AutoAddQuantity"
@@ -58,9 +62,24 @@ class SettingMgr {
         set (argValue) {setSetting(keyName: .newLineForNewScan, newValue: argValue)}
     }
     
+    class var vibrationOnScan : Bool {
+        get {return getSetting(keyName: .vibrationOnScan, typeIndicator: Bool.self) ?? false}
+        set (argValue) { setSetting(keyName: .vibrationOnScan, newValue: argValue) }
+    }
+    
+    class var scanDate : String {
+        get {return getSetting(keyName: .scanDate, typeIndicator: String.self) ?? ""}
+        set (argValue) { setSetting(keyName: .scanDate, newValue: argValue)}
+    }
+    
+    class var scanCount : Int {
+        get {return getSetting(keyName: .scanCount, typeIndicator: Int.self) ?? 0}
+        set (argVale) { setSetting(keyName: .scanCount, newValue: argVale)}
+    }
+    
     
     class func getLineForBarcode(_ barcode:String? = nil) -> String {
-        var strLine = barcode == nil ?  "[barcode]" : barcode!
+        var strLine = barcode == nil ?  "txt_barcode".localized : barcode!
         
         if autoAddQuantity {
             if delineatorComma {
@@ -70,10 +89,12 @@ class SettingMgr {
             }
         }
         
-        if newLineForNewScan {
-            strLine = strLine + "\n"
+        let newLineSymbol = newLineForNewScan ? "\n" : ";"
+        
+        if let _ = barcode { //For Real Scan Data
+            strLine = newLineSymbol + strLine
         } else {
-            strLine = strLine + ";"
+            strLine = strLine + newLineSymbol
         }
         
         return strLine

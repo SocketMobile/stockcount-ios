@@ -21,7 +21,7 @@ class HomeViewCell : UITableViewCell {
     
 }
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class HomeViewController: CustomNavBarViewController, UITableViewDataSource, UITableViewDelegate{
     var realmResult : Results<RMFile>?
     @IBOutlet weak var tableView: UITableView!
     
@@ -45,6 +45,30 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: - Init NavigationBar
+    override func initNavBarItems() {
+        super.initNavBarItems()
+        
+        if let newBtn = createBarButtonFromImage("NavBar_New", target: self, action: #selector(self.onBtnNew)) {
+            self.navigationItem.rightBarButtonItem = newBtn
+        }
+        
+        if let optionBtn = createBarButtonFromImage("NavBar_Option", target: self, action: #selector(self.onBtnOption)) {
+            self.navigationItem.leftBarButtonItem = optionBtn
+        }
+    }
+    
+    @objc func onBtnNew(){
+        if let fileName = FileMgr.createFile() {
+            performSegue(withIdentifier: "SEGUE_EditViewController", sender: fileName)
+        }
+    }
+    
+    @objc func onBtnOption(){
+        performSegue(withIdentifier: "SEGUE_OptionViewController", sender: nil)
+    }
+    
+    
     //MARK: - TableView DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return realmResult?.count ?? 0
@@ -67,13 +91,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
-    //MARK: - Create New
-    @IBAction func onBtnNew(_ sender: Any) {       
-        if let fileName = FileMgr.createFile() {
-            performSegue(withIdentifier: "SEGUE_EditViewController", sender: fileName)
-        }
-    }
-    
     //MARK: - Page Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -83,8 +100,5 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
         }
     }
-    
-    
-
 }
 

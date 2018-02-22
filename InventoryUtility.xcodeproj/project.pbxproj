@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8904B00620326F5600BE2B05 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8904B00520326F5600BE2B05 /* NibView.swift */; };
+		8904B0082032701100BE2B05 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8904B0072032701100BE2B05 /* UIView.swift */; };
+		8904B00B2032729500BE2B05 /* KeyboardToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8904B00A2032729500BE2B05 /* KeyboardToolBar.xib */; };
+		8904B00D2032768400BE2B05 /* KeyboardToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8904B00C2032768400BE2B05 /* KeyboardToolBar.swift */; };
 		8909E2ED1FF0427F0026B356 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8909E2EC1FF0427F0026B356 /* HomeViewController.swift */; };
 		8909E2F01FF055280026B356 /* SettingMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8909E2EF1FF055280026B356 /* SettingMgr.swift */; };
 		8909E2F21FF069670026B356 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8909E2F11FF069670026B356 /* EditViewController.swift */; };
@@ -17,13 +21,8 @@
 		8916F9B0200F35BC006827DD /* CompanionDlg.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8916F9AF200F35BC006827DD /* CompanionDlg.xib */; };
 		8916F9B2200F38FF006827DD /* btn_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 8916F9B1200F38FF006827DD /* btn_close.png */; };
 		8916F9B4200F4258006827DD /* CompanionDlg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8916F9B3200F4258006827DD /* CompanionDlg.swift */; };
-		8921B78F1FF9762F0004CC18 /* btn_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 8921B78A1FF9762F0004CC18 /* btn_back.png */; };
-		8921B7901FF9762F0004CC18 /* btn_remove.png in Resources */ = {isa = PBXBuildFile; fileRef = 8921B78B1FF9762F0004CC18 /* btn_remove.png */; };
-		8921B7911FF9762F0004CC18 /* btn_setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 8921B78C1FF9762F0004CC18 /* btn_setting.png */; };
-		8921B7921FF9762F0004CC18 /* btn_upload.png in Resources */ = {isa = PBXBuildFile; fileRef = 8921B78D1FF9762F0004CC18 /* btn_upload.png */; };
-		8921B7931FF9762F0004CC18 /* btn_new.png in Resources */ = {isa = PBXBuildFile; fileRef = 8921B78E1FF9762F0004CC18 /* btn_new.png */; };
 		8921B7951FF986C60004CC18 /* img_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8921B7941FF986C60004CC18 /* img_bg.png */; };
-		8921B7971FF9921D0004CC18 /* btn_done.png in Resources */ = {isa = PBXBuildFile; fileRef = 8921B7961FF9921D0004CC18 /* btn_done.png */; };
+		89484C9D20395F8C0078C0A1 /* icon_setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 89484C9C20395F8C0078C0A1 /* icon_setting.png */; };
 		89520F571FEEF19B00B7E351 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89520F561FEEF19B00B7E351 /* AppDelegate.swift */; };
 		89520F5C1FEEF19B00B7E351 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89520F5A1FEEF19B00B7E351 /* Main.storyboard */; };
 		89520F5E1FEEF19B00B7E351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89520F5D1FEEF19B00B7E351 /* Assets.xcassets */; };
@@ -33,6 +32,7 @@
 		8956133620111DCA0004E74C /* icon_check.png in Resources */ = {isa = PBXBuildFile; fileRef = 8956133520111DCA0004E74C /* icon_check.png */; };
 		8956133820112A740004E74C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956133720112A740004E74C /* SettingViewController.swift */; };
 		89AE9498200C2DF700C3C901 /* EditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE9497200C2DF700C3C901 /* EditController.swift */; };
+		89B6F0892030F811002A91F2 /* CustomNavBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B6F0882030F811002A91F2 /* CustomNavBarViewController.swift */; };
 		89C035B41FF57333003F9BEC /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C035B31FF57333003F9BEC /* Date.swift */; };
 		89C035B71FF57678003F9BEC /* FileMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C035B61FF57678003F9BEC /* FileMgr.swift */; };
 		89C035B91FF58A43003F9BEC /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C035B81FF58A43003F9BEC /* DBHelper.swift */; };
@@ -40,8 +40,9 @@
 		89C0CA862010048C00D5F108 /* OptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C0CA852010048C00D5F108 /* OptionViewController.swift */; };
 		89C0CA882010051800D5F108 /* btn_option.png in Resources */ = {isa = PBXBuildFile; fileRef = 89C0CA872010051800D5F108 /* btn_option.png */; };
 		89C0CA8B2010076000D5F108 /* icon_info.png in Resources */ = {isa = PBXBuildFile; fileRef = 89C0CA892010076000D5F108 /* icon_info.png */; };
-		89C0CA8C2010076000D5F108 /* icon_setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 89C0CA8A2010076000D5F108 /* icon_setting.png */; };
 		89C0CA8E20100BFE00D5F108 /* icon_detail.png in Resources */ = {isa = PBXBuildFile; fileRef = 89C0CA8D20100BFE00D5F108 /* icon_detail.png */; };
+		89CBCF832035D48800CFA85F /* Instruction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CBCF822035D48800CFA85F /* Instruction.storyboard */; };
+		89CBCF852035DD0700CFA85F /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CBCF842035DD0700CFA85F /* InstructionViewController.swift */; };
 		89DAF7801FEF0D6000510F1D /* RMFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DAF77F1FEF0D6000510F1D /* RMFile.swift */; };
 		89E787802020D62E00DDA268 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 89E7877E2020D62E00DDA268 /* Localizable.strings */; };
 		9B0914B0C3BC47B5A6688A59 /* Pods_InventoryUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDD8EB874D72C10B663572E /* Pods_InventoryUtility.framework */; };
@@ -67,6 +68,10 @@
 /* Begin PBXFileReference section */
 		2B5B95EEB4872FE410A8FA05 /* Pods-InventoryUtility.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InventoryUtility.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InventoryUtility/Pods-InventoryUtility.debug.xcconfig"; sourceTree = "<group>"; };
 		5DDD8EB874D72C10B663572E /* Pods_InventoryUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InventoryUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8904B00520326F5600BE2B05 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
+		8904B0072032701100BE2B05 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		8904B00A2032729500BE2B05 /* KeyboardToolBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardToolBar.xib; sourceTree = "<group>"; };
+		8904B00C2032768400BE2B05 /* KeyboardToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolBar.swift; sourceTree = "<group>"; };
 		8909E2EC1FF0427F0026B356 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8909E2EF1FF055280026B356 /* SettingMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMgr.swift; sourceTree = "<group>"; };
 		8909E2F11FF069670026B356 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
@@ -77,13 +82,8 @@
 		8916F9AF200F35BC006827DD /* CompanionDlg.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanionDlg.xib; sourceTree = "<group>"; };
 		8916F9B1200F38FF006827DD /* btn_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_close.png; sourceTree = "<group>"; };
 		8916F9B3200F4258006827DD /* CompanionDlg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionDlg.swift; sourceTree = "<group>"; };
-		8921B78A1FF9762F0004CC18 /* btn_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_back.png; sourceTree = "<group>"; };
-		8921B78B1FF9762F0004CC18 /* btn_remove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_remove.png; sourceTree = "<group>"; };
-		8921B78C1FF9762F0004CC18 /* btn_setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_setting.png; sourceTree = "<group>"; };
-		8921B78D1FF9762F0004CC18 /* btn_upload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_upload.png; sourceTree = "<group>"; };
-		8921B78E1FF9762F0004CC18 /* btn_new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_new.png; sourceTree = "<group>"; };
 		8921B7941FF986C60004CC18 /* img_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_bg.png; sourceTree = "<group>"; };
-		8921B7961FF9921D0004CC18 /* btn_done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_done.png; sourceTree = "<group>"; };
+		89484C9C20395F8C0078C0A1 /* icon_setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_setting.png; sourceTree = "<group>"; };
 		89520F531FEEF19B00B7E351 /* InventoryUtility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InventoryUtility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89520F561FEEF19B00B7E351 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89520F5B1FEEF19B00B7E351 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,6 +99,7 @@
 		8956133520111DCA0004E74C /* icon_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_check.png; sourceTree = "<group>"; };
 		8956133720112A740004E74C /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		89AE9497200C2DF700C3C901 /* EditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditController.swift; sourceTree = "<group>"; };
+		89B6F0882030F811002A91F2 /* CustomNavBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBarViewController.swift; sourceTree = "<group>"; };
 		89C035B31FF57333003F9BEC /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		89C035B61FF57678003F9BEC /* FileMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileMgr.swift; sourceTree = "<group>"; };
 		89C035B81FF58A43003F9BEC /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
@@ -106,8 +107,9 @@
 		89C0CA852010048C00D5F108 /* OptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionViewController.swift; sourceTree = "<group>"; };
 		89C0CA872010051800D5F108 /* btn_option.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_option.png; sourceTree = "<group>"; };
 		89C0CA892010076000D5F108 /* icon_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_info.png; sourceTree = "<group>"; };
-		89C0CA8A2010076000D5F108 /* icon_setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_setting.png; sourceTree = "<group>"; };
 		89C0CA8D20100BFE00D5F108 /* icon_detail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_detail.png; sourceTree = "<group>"; };
+		89CBCF822035D48800CFA85F /* Instruction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Instruction.storyboard; sourceTree = "<group>"; };
+		89CBCF842035DD0700CFA85F /* InstructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
 		89DAF77F1FEF0D6000510F1D /* RMFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMFile.swift; sourceTree = "<group>"; };
 		89E787812020D64600DDA268 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		89E787822020D6AF00DDA268 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -148,13 +150,34 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8904B00420326F4200BE2B05 /* NibView */ = {
+			isa = PBXGroup;
+			children = (
+				8904B0092032725E00BE2B05 /* KeyboardToolBar */,
+				8904B00520326F5600BE2B05 /* NibView.swift */,
+			);
+			path = NibView;
+			sourceTree = "<group>";
+		};
+		8904B0092032725E00BE2B05 /* KeyboardToolBar */ = {
+			isa = PBXGroup;
+			children = (
+				8904B00A2032729500BE2B05 /* KeyboardToolBar.xib */,
+				8904B00C2032768400BE2B05 /* KeyboardToolBar.swift */,
+			);
+			path = KeyboardToolBar;
+			sourceTree = "<group>";
+		};
 		8909E2EB1FF0425A0026B356 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8904B00420326F4200BE2B05 /* NibView */,
 				8909E2EC1FF0427F0026B356 /* HomeViewController.swift */,
 				8909E2F11FF069670026B356 /* EditViewController.swift */,
 				89C0CA852010048C00D5F108 /* OptionViewController.swift */,
 				8956133720112A740004E74C /* SettingViewController.swift */,
+				89B6F0882030F811002A91F2 /* CustomNavBarViewController.swift */,
+				89CBCF842035DD0700CFA85F /* InstructionViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -227,6 +250,7 @@
 				897B85B41FEEF9E200B387FD /* Utils */,
 				89520F561FEEF19B00B7E351 /* AppDelegate.swift */,
 				89520F5A1FEEF19B00B7E351 /* Main.storyboard */,
+				89CBCF822035D48800CFA85F /* Instruction.storyboard */,
 				89520F5D1FEEF19B00B7E351 /* Assets.xcassets */,
 				89520F5F1FEEF19B00B7E351 /* LaunchScreen.storyboard */,
 				89520F621FEEF19B00B7E351 /* Info.plist */,
@@ -285,16 +309,10 @@
 			children = (
 				89C0CA8D20100BFE00D5F108 /* icon_detail.png */,
 				8956133520111DCA0004E74C /* icon_check.png */,
+				89484C9C20395F8C0078C0A1 /* icon_setting.png */,
 				89C0CA892010076000D5F108 /* icon_info.png */,
-				89C0CA8A2010076000D5F108 /* icon_setting.png */,
 				89C0CA872010051800D5F108 /* btn_option.png */,
 				8916F9B1200F38FF006827DD /* btn_close.png */,
-				8921B7961FF9921D0004CC18 /* btn_done.png */,
-				8921B78A1FF9762F0004CC18 /* btn_back.png */,
-				8921B78E1FF9762F0004CC18 /* btn_new.png */,
-				8921B78B1FF9762F0004CC18 /* btn_remove.png */,
-				8921B78C1FF9762F0004CC18 /* btn_setting.png */,
-				8921B78D1FF9762F0004CC18 /* btn_upload.png */,
 				890F09DD2010F80000005711 /* img_device.png */,
 				8921B7941FF986C60004CC18 /* img_bg.png */,
 			);
@@ -306,6 +324,7 @@
 			children = (
 				89C035B31FF57333003F9BEC /* Date.swift */,
 				89C035BA1FF58D3F003F9BEC /* String.swift */,
+				8904B0072032701100BE2B05 /* UIView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -450,22 +469,18 @@
 				8916F9B0200F35BC006827DD /* CompanionDlg.xib in Resources */,
 				8921B7951FF986C60004CC18 /* img_bg.png in Resources */,
 				8956133620111DCA0004E74C /* icon_check.png in Resources */,
-				8921B7921FF9762F0004CC18 /* btn_upload.png in Resources */,
 				89C0CA8E20100BFE00D5F108 /* icon_detail.png in Resources */,
 				89E787802020D62E00DDA268 /* Localizable.strings in Resources */,
 				89520F611FEEF19B00B7E351 /* LaunchScreen.storyboard in Resources */,
 				890F09DE2010F80000005711 /* img_device.png in Resources */,
-				8921B7901FF9762F0004CC18 /* btn_remove.png in Resources */,
-				8921B7931FF9762F0004CC18 /* btn_new.png in Resources */,
+				8904B00B2032729500BE2B05 /* KeyboardToolBar.xib in Resources */,
 				89520F5E1FEEF19B00B7E351 /* Assets.xcassets in Resources */,
+				89484C9D20395F8C0078C0A1 /* icon_setting.png in Resources */,
 				8916F9B2200F38FF006827DD /* btn_close.png in Resources */,
 				89520F5C1FEEF19B00B7E351 /* Main.storyboard in Resources */,
-				89C0CA8C2010076000D5F108 /* icon_setting.png in Resources */,
 				89C0CA882010051800D5F108 /* btn_option.png in Resources */,
-				8921B78F1FF9762F0004CC18 /* btn_back.png in Resources */,
 				89C0CA8B2010076000D5F108 /* icon_info.png in Resources */,
-				8921B7971FF9921D0004CC18 /* btn_done.png in Resources */,
-				8921B7911FF9762F0004CC18 /* btn_setting.png in Resources */,
+				89CBCF832035D48800CFA85F /* Instruction.storyboard in Resources */,
 				8916F9AB200F1502006827DD /* ScanDlg.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -577,6 +592,11 @@
 				89C0CA862010048C00D5F108 /* OptionViewController.swift in Sources */,
 				89C035B71FF57678003F9BEC /* FileMgr.swift in Sources */,
 				8916F9B4200F4258006827DD /* CompanionDlg.swift in Sources */,
+				89B6F0892030F811002A91F2 /* CustomNavBarViewController.swift in Sources */,
+				89CBCF852035DD0700CFA85F /* InstructionViewController.swift in Sources */,
+				8904B00620326F5600BE2B05 /* NibView.swift in Sources */,
+				8904B00D2032768400BE2B05 /* KeyboardToolBar.swift in Sources */,
+				8904B0082032701100BE2B05 /* UIView.swift in Sources */,
 				8909E2F01FF055280026B356 /* SettingMgr.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

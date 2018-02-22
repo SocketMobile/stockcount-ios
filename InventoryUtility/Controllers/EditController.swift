@@ -26,6 +26,8 @@ CaptureHelperDevicePresenceDelegate {
     
     let captureHelper = CaptureHelper.sharedInstance
     
+    var connectedScannerCount = 0
+    
     init(view : EditViewProtocol? = nil) {
         viewer = view
         
@@ -116,11 +118,21 @@ CaptureHelperDevicePresenceDelegate {
                     })
                 })
             }
+        } else {
+            connectedScannerCount += 1
+            viewer?.notifyScannerConnected(isConnected: true)
         }
     }
     
     func didNotifyRemovalForDevice(_ device: CaptureHelperDevice, withResult result: SKTResult) {
-        
+        let name = device.deviceInfo.name
+        if name?.caseInsensitiveCompare("SoftScanner") != ComparisonResult.orderedSame {
+            connectedScannerCount -= 1
+            if connectedScannerCount < 0 {
+                connectedScannerCount = 0
+            }
+            viewer?.notifyScannerConnected(isConnected: connectedScannerCount > 0)
+        }
     }
     
 }
