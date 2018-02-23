@@ -67,7 +67,6 @@
 
 /* Begin PBXFileReference section */
 		0E5F8EBE43FDAF87BB65AFEF /* Pods-StockCount.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockCount.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockCount/Pods-StockCount.debug.xcconfig"; sourceTree = "<group>"; };
-		2B5B95EEB4872FE410A8FA05 /* Pods-InventoryUtility.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InventoryUtility.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InventoryUtility/Pods-InventoryUtility.debug.xcconfig"; sourceTree = "<group>"; };
 		8904B00520326F5600BE2B05 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
 		8904B0072032701100BE2B05 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		8904B00A2032729500BE2B05 /* KeyboardToolBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardToolBar.xib; sourceTree = "<group>"; };
@@ -115,7 +114,6 @@
 		89E787822020D6AF00DDA268 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9C2F7B0E203B0ED79A7F4BC7 /* Pods-StockCount.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockCount.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockCount/Pods-StockCount.release.xcconfig"; sourceTree = "<group>"; };
 		D6922E074A76514EFC5F2710 /* Pods_StockCount.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockCount.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FEE44E0D2A22D874C8693F84 /* Pods-InventoryUtility.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InventoryUtility.release.xcconfig"; path = "Pods/Target Support Files/Pods-InventoryUtility/Pods-InventoryUtility.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -351,8 +349,6 @@
 		ABBDDEC6A1971E14FD2E8BD5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2B5B95EEB4872FE410A8FA05 /* Pods-InventoryUtility.debug.xcconfig */,
-				FEE44E0D2A22D874C8693F84 /* Pods-InventoryUtility.release.xcconfig */,
 				0E5F8EBE43FDAF87BB65AFEF /* Pods-StockCount.debug.xcconfig */,
 				9C2F7B0E203B0ED79A7F4BC7 /* Pods-StockCount.release.xcconfig */,
 			);
@@ -533,7 +529,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" eae4cffcb1fd88ffcdf1bd62f4a67a29c253cc3e cfc587651f40483a5d6b7a572eb9f2d7095902babc0ef8bf8857e3a246dfbad2\n\n# Assumes that you tag versions with the version number (e.g., \"1.1\") and then the build number is\n# that plus the number of commits since the tag (e.g., \"1.1.17\")\n# using the annotated tag with git: git tag -a 1.1 -m \"new version whatever\"\n\necho \"Updating version/build number from git...\"\nplist=${PROJECT_DIR}/${INFOPLIST_FILE}\n\n# increment the build number (ie 115 to 116)\nversionnum=`git describe | awk '{split($0,a,\"-\"); print a[1]}'`\nbuildnum=`git describe --long | awk '{split($0,a,\"-\"); print a[1] \".\" a[2]}'`\n\nif [[ \"${versionnum}\" == \"\" ]]; then\necho \"No version number from git!!!!!\"\nexit 2\nfi\n\nif [[ \"${buildnum}\" == \"\" ]]; then\necho \"No build number from git!!!!!\"\nexit 2\nfi\n\n/usr/libexec/Plistbuddy -c \"Set CFBundleShortVersionString $versionnum\" \"${plist}\"\necho \"Updated version number to $versionnum\"\n\n/usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\necho \"Updated build number to $buildnum\"\n";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" eae4cffcb1fd88ffcdf1bd62f4a67a29c253cc3e cfc587651f40483a5d6b7a572eb9f2d7095902babc0ef8bf8857e3a246dfbad2\n\n# Assumes that you tag versions with the version number (e.g., \"1.1\") and then the build number is\n# that plus the number of commits since the tag (e.g., \"1.1.17\")\n# using the annotated tag with git: git tag -a 1.1 -m \"new version whatever\"\n\necho \"Updating version/build number from git...\"\nplist=${PROJECT_DIR}/${INFOPLIST_FILE}\n\necho \"$plist\"\n\n# increment the build number (ie 115 to 116)\nversionnum=`git describe | awk '{split($0,a,\"-\"); print a[1]}'`\nbuildnum=`git describe --long | awk '{split($0,a,\"-\"); print a[1] \".\" a[2]}'`\n\nif [[ \"${versionnum}\" == \"\" ]]; then\necho \"No version number from git!!!!!\"\nexit 2\nfi\n\nif [[ \"${buildnum}\" == \"\" ]]; then\necho \"No build number from git!!!!!\"\nexit 2\nfi\n\n/usr/libexec/Plistbuddy -c \"Set CFBundleShortVersionString $versionnum\" \"${plist}\"\necho \"Updated version number to $versionnum\"\n\n/usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\necho \"Updated build number to $buildnum\"\n";
 		};
 		A9A1141D656F0B1D46461E87 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -696,7 +692,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -779,7 +775,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 9L64TUQ2Y2;
-				INFOPLIST_FILE = "$(SRCROOT)/StockCount/Info.plist";
+				INFOPLIST_FILE = StockCount/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.socketmobile.stockCount;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -798,7 +794,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 9L64TUQ2Y2;
-				INFOPLIST_FILE = "$(SRCROOT)/StockCount/Info.plist";
+				INFOPLIST_FILE = StockCount/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.socketmobile.stockCount;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -817,7 +813,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = StockCountTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.paramount.InventoryUtilityTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.socketmobile.stockCountTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -833,7 +829,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = StockCountTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.paramount.InventoryUtilityTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.socketmobile.stockCountTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -848,11 +844,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = StockCountUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.paramount.InventoryUtilityUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.socketmobile.stockCountUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = InventoryUtility;
+				TEST_TARGET_NAME = StockCount;
 			};
 			name = Debug;
 		};
@@ -863,11 +859,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = StockCountUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.paramount.InventoryUtilityUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.socketmobile.stockCountUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = InventoryUtility;
+				TEST_TARGET_NAME = StockCount;
 			};
 			name = Release;
 		};
