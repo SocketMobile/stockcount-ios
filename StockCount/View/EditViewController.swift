@@ -37,7 +37,7 @@ class EditViewController: CustomNavBarViewController, UITextViewDelegate
         keyboardToolBar?.delegate = self
         txtView.inputAccessoryView = keyboardToolBar
         
-        editController.readFile(fileName)        
+        editController.readFile(fileName)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -83,6 +83,7 @@ class EditViewController: CustomNavBarViewController, UITextViewDelegate
     }
     
     @objc func keyboardInputModeChanged() {
+        print("Keyboard Identifier : \(UITextInputMode.activeInputModes[0].value(forKey: "identifier") as? String)")
         if let currentKeyboardId = UITextInputMode.activeInputModes[0].value(forKey: "identifier") as? String, appleKeyboardIdentifier.contains(currentKeyboardId) {
             keyboardToolBar?.setTypeUpdateEnabled(true)
         } else {

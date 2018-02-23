@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GHl-yp-HpZ">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,22 +16,22 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="StockCount" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gdL-i4-nJJ">
-                                <rect key="frame" x="0.0" y="72" width="320" height="496"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="595"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="CELL_ITEM" id="RPq-qK-5r4" customClass="HomeViewCell" customModule="StockCount" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="75"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="CELL_ITEM" id="RPq-qK-5r4" customClass="HomeViewCell" customModule="StockCount" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RPq-qK-5r4" id="PLc-er-l4f">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEo-rf-LwR">
-                                                    <rect key="frame" x="8" y="0.0" width="304" height="67"/>
+                                                    <rect key="frame" x="8" y="0.0" width="359" height="67"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="shelf 1-8 2017-10-02" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgF-0V-cJV">
                                                             <rect key="frame" x="12" y="12" width="162" height="21"/>
@@ -50,8 +50,10 @@
                                                     <constraints>
                                                         <constraint firstItem="2sy-Hg-6FH" firstAttribute="leading" secondItem="EgF-0V-cJV" secondAttribute="leading" id="1hb-DT-tlZ"/>
                                                         <constraint firstItem="EgF-0V-cJV" firstAttribute="leading" secondItem="wEo-rf-LwR" secondAttribute="leading" constant="12" id="9Kw-6u-FLy"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EgF-0V-cJV" secondAttribute="trailing" id="EMD-aJ-Yvb"/>
                                                         <constraint firstItem="2sy-Hg-6FH" firstAttribute="top" secondItem="EgF-0V-cJV" secondAttribute="bottom" constant="4" id="XHb-sa-IvN"/>
                                                         <constraint firstItem="EgF-0V-cJV" firstAttribute="top" secondItem="wEo-rf-LwR" secondAttribute="top" constant="12" id="bhb-B9-7Pt"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2sy-Hg-6FH" secondAttribute="trailing" id="n9B-tt-DS4"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
@@ -108,14 +110,14 @@
             <objects>
                 <viewController id="vQ4-Cq-4Is" customClass="OptionViewController" customModule="StockCount" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="010-su-NIN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BBN-hL-QdY">
-                                <rect key="frame" x="0.0" y="64" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpj-Jg-5ZS">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                         <connections>
                                             <segue destination="9an-oy-szK" kind="show" id="b3C-fG-2He"/>
                                         </connections>
@@ -134,14 +136,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_detail.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wjh-9q-yqi">
-                                        <rect key="frame" x="294" y="17" width="10" height="16"/>
+                                        <rect key="frame" x="349" y="17" width="10" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="qH1-ab-FKe"/>
                                             <constraint firstAttribute="width" secondItem="Wjh-9q-yqi" secondAttribute="height" multiplier="38:60" id="vxD-yq-Ce2"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXk-J2-XOk" userLabel="divider">
-                                        <rect key="frame" x="0.0" y="49" width="320" height="1"/>
+                                        <rect key="frame" x="0.0" y="49" width="375" height="1"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="jRh-ts-WEY"/>
@@ -164,13 +166,14 @@
                                     <constraint firstItem="cpj-Jg-5ZS" firstAttribute="top" secondItem="BBN-hL-QdY" secondAttribute="top" id="nlY-cF-7P8"/>
                                     <constraint firstAttribute="bottom" secondItem="cpj-Jg-5ZS" secondAttribute="bottom" id="o9r-dt-fiG"/>
                                     <constraint firstAttribute="trailing" secondItem="sXk-J2-XOk" secondAttribute="trailing" id="pyY-5h-lIK"/>
+                                    <constraint firstItem="Wjh-9q-yqi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HVv-7u-pp3" secondAttribute="trailing" id="skj-6I-iVM"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SD9-YG-zdc">
-                                <rect key="frame" x="0.0" y="114" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="114" width="375" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVa-ui-4hD">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                         <connections>
                                             <action selector="onBtnGetStarted:" destination="vQ4-Cq-4Is" eventType="touchUpInside" id="fBt-9n-HYq"/>
                                         </connections>
@@ -189,14 +192,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_detail.png" translatesAutoresizingMaskIntoConstraints="NO" id="koe-52-cJ4">
-                                        <rect key="frame" x="294" y="17" width="10" height="16"/>
+                                        <rect key="frame" x="349" y="17" width="10" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="FqK-iv-NUU"/>
                                             <constraint firstAttribute="width" secondItem="koe-52-cJ4" secondAttribute="height" multiplier="38:60" id="Uhq-9k-Jzt"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kx0-e8-gLH" userLabel="divider">
-                                        <rect key="frame" x="0.0" y="49" width="320" height="1"/>
+                                        <rect key="frame" x="0.0" y="49" width="375" height="1"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="gNu-M2-kTY"/>
@@ -216,19 +219,20 @@
                                     <constraint firstAttribute="trailing" secondItem="koe-52-cJ4" secondAttribute="trailing" constant="16" id="bXY-bJ-exq"/>
                                     <constraint firstAttribute="trailing" secondItem="kx0-e8-gLH" secondAttribute="trailing" id="nwX-U7-Tlb"/>
                                     <constraint firstAttribute="height" constant="50" id="qbs-RD-4AO"/>
+                                    <constraint firstItem="koe-52-cJ4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Pq6-Ca-b5l" secondAttribute="trailing" id="tJ6-cN-giG"/>
                                     <constraint firstItem="vVa-ui-4hD" firstAttribute="leading" secondItem="SD9-YG-zdc" secondAttribute="leading" id="uRO-RR-CFk"/>
                                     <constraint firstAttribute="bottom" secondItem="kx0-e8-gLH" secondAttribute="bottom" id="w4o-zp-fvL"/>
                                     <constraint firstItem="koe-52-cJ4" firstAttribute="centerY" secondItem="SD9-YG-zdc" secondAttribute="centerY" id="zGP-5H-Bsv"/>
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_device.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ixt-4F-BsC">
-                                <rect key="frame" x="96" y="228" width="128" height="112"/>
+                                <rect key="frame" x="112.5" y="268" width="150" height="131"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ixt-4F-BsC" secondAttribute="height" multiplier="345:303" id="RdD-hf-Btj"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmc-xK-7pR">
-                                <rect key="frame" x="111.5" y="348" width="97.5" height="36"/>
+                                <rect key="frame" x="139" y="407" width="97.5" height="36"/>
                                 <string key="text">Socket Mobile
 Version 0.8</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -236,7 +240,7 @@ Version 0.8</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2AH-YX-18f">
-                                <rect key="frame" x="8" y="402" width="304" height="142"/>
+                                <rect key="frame" x="9.5" y="461" width="356" height="182"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -290,17 +294,17 @@ Learn more about the Capture SDK.</string>
             <objects>
                 <viewController id="9an-oy-szK" customClass="SettingViewController" customModule="StockCount" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rAH-4M-BKG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7C-qG-5pt">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6yO-b3-iGj">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="562"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="562"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3p-Kl-USO">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Automatically add quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARM-f8-e4D">
                                                         <rect key="frame" x="18" y="16" width="193" height="19.5"/>
@@ -309,7 +313,7 @@ Learn more about the Capture SDK.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FS7-CQ-mOh">
-                                                        <rect key="frame" x="253" y="9.5" width="51" height="31"/>
+                                                        <rect key="frame" x="308" y="9.5" width="51" height="31"/>
                                                         <connections>
                                                             <action selector="didAutoQuantityChanged:" destination="9an-oy-szK" eventType="valueChanged" id="795-x6-tCo"/>
                                                         </connections>
@@ -317,6 +321,7 @@ Learn more about the Capture SDK.</string>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="FS7-CQ-mOh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ARM-f8-e4D" secondAttribute="trailing" constant="4" id="0uH-fx-eQE"/>
                                                     <constraint firstAttribute="trailing" secondItem="FS7-CQ-mOh" secondAttribute="trailing" constant="18" id="KTJ-ir-aO0"/>
                                                     <constraint firstAttribute="height" constant="50" id="U4d-AB-06n"/>
                                                     <constraint firstItem="FS7-CQ-mOh" firstAttribute="centerY" secondItem="d3p-Kl-USO" secondAttribute="centerY" id="hSv-0z-TfW"/>
@@ -325,10 +330,10 @@ Learn more about the Capture SDK.</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LxG-aO-QRQ">
-                                                <rect key="frame" x="0.0" y="50" width="320" height="384"/>
+                                                <rect key="frame" x="0.0" y="50" width="375" height="384"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ooE-Wt-6nr" userLabel="QuantityFormatOption">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity format options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSc-U8-QIE">
                                                                 <rect key="frame" x="18" y="14" width="172" height="20"/>
@@ -341,14 +346,15 @@ Learn more about the Capture SDK.</string>
                                                         <constraints>
                                                             <constraint firstItem="FSc-U8-QIE" firstAttribute="leading" secondItem="ooE-Wt-6nr" secondAttribute="leading" constant="18" id="H4C-RH-CTN"/>
                                                             <constraint firstAttribute="height" constant="40" id="Lo9-yj-XSU"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FSc-U8-QIE" secondAttribute="trailing" constant="16" id="PeB-Yb-RB8"/>
                                                             <constraint firstAttribute="bottom" secondItem="FSc-U8-QIE" secondAttribute="bottom" constant="6" id="xg1-rm-JL3"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2be-Tw-o34">
-                                                        <rect key="frame" x="0.0" y="40" width="320" height="50"/>
+                                                        <rect key="frame" x="0.0" y="40" width="375" height="50"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Yz-Cw-Ddw">
-                                                                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <connections>
                                                                     <action selector="didQuantityFormatChanged:" destination="9an-oy-szK" eventType="touchUpInside" id="gRN-0U-9YL"/>
@@ -362,13 +368,13 @@ Learn more about the Capture SDK.</string>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comma, space and quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Pn-fZ-VTh">
-                                                                <rect key="frame" x="54" y="16" width="192" height="18"/>
+                                                                <rect key="frame" x="54" y="16" width="191.5" height="18"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8mK-pC-I0g">
-                                                                <rect key="frame" x="18" y="49" width="302" height="1"/>
+                                                                <rect key="frame" x="18" y="49" width="357" height="1"/>
                                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="Pf6-HT-huu"/>
@@ -383,6 +389,7 @@ Learn more about the Capture SDK.</string>
                                                             <constraint firstItem="0YU-1Y-5Lo" firstAttribute="centerY" secondItem="2be-Tw-o34" secondAttribute="centerY" id="Ls1-PA-Ke1"/>
                                                             <constraint firstAttribute="trailing" secondItem="9Yz-Cw-Ddw" secondAttribute="trailing" id="OaM-3v-d13"/>
                                                             <constraint firstItem="0YU-1Y-5Lo" firstAttribute="leading" secondItem="2be-Tw-o34" secondAttribute="leading" constant="18" id="Psn-6G-wre"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2Pn-fZ-VTh" secondAttribute="trailing" constant="16" id="SQy-fQ-vtd"/>
                                                             <constraint firstItem="8mK-pC-I0g" firstAttribute="leading" secondItem="0YU-1Y-5Lo" secondAttribute="leading" id="ZUZ-ll-BBX"/>
                                                             <constraint firstAttribute="trailing" secondItem="8mK-pC-I0g" secondAttribute="trailing" id="k3Q-hK-cXB"/>
                                                             <constraint firstAttribute="height" constant="50" id="kH3-hg-HSD"/>
@@ -392,10 +399,10 @@ Learn more about the Capture SDK.</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xmI-A6-Rvr">
-                                                        <rect key="frame" x="0.0" y="90" width="320" height="50"/>
+                                                        <rect key="frame" x="0.0" y="90" width="375" height="50"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMu-al-Mig">
-                                                                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <connections>
                                                                     <action selector="didQuantityFormatChanged:" destination="9an-oy-szK" eventType="touchUpInside" id="hx7-Sh-cEa"/>
@@ -420,6 +427,7 @@ Learn more about the Capture SDK.</string>
                                                             <constraint firstItem="fNs-rW-v5t" firstAttribute="leading" secondItem="DLM-mF-ajW" secondAttribute="trailing" constant="16" id="7Tg-wd-WFv"/>
                                                             <constraint firstItem="DLM-mF-ajW" firstAttribute="centerY" secondItem="xmI-A6-Rvr" secondAttribute="centerY" id="CwQ-c0-zFP"/>
                                                             <constraint firstItem="dMu-al-Mig" firstAttribute="leading" secondItem="xmI-A6-Rvr" secondAttribute="leading" id="Knq-r5-N4p"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fNs-rW-v5t" secondAttribute="trailing" constant="16" id="b77-XP-C6y"/>
                                                             <constraint firstAttribute="height" constant="50" id="exd-u7-4kR"/>
                                                             <constraint firstAttribute="trailing" secondItem="dMu-al-Mig" secondAttribute="trailing" id="gpj-fy-hRQ"/>
                                                             <constraint firstItem="fNs-rW-v5t" firstAttribute="centerY" secondItem="xmI-A6-Rvr" secondAttribute="centerY" id="iQu-eE-ypi"/>
@@ -429,16 +437,16 @@ Learn more about the Capture SDK.</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E8e-z0-eWM">
-                                                        <rect key="frame" x="0.0" y="148" width="320" height="50"/>
+                                                        <rect key="frame" x="0.0" y="148" width="375" height="50"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="700" text="Set default quantity as" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bhj-UB-cFw">
-                                                                <rect key="frame" x="18" y="16" width="142" height="18"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="700" text="Set default quantity as" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="bhj-UB-cFw">
+                                                                <rect key="frame" x="18" y="16.5" width="154" height="18"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="right" contentVerticalAlignment="center" text="50" borderStyle="roundedRect" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="EZg-6t-r95">
-                                                                <rect key="frame" x="164" y="7" width="36" height="36"/>
+                                                                <rect key="frame" x="219" y="7" width="36" height="36"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="36" id="3aw-u7-JXp"/>
                                                                     <constraint firstAttribute="height" constant="36" id="zHH-Zz-lWi"/>
@@ -448,7 +456,7 @@ Learn more about the Capture SDK.</string>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                                             </textField>
                                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="nle-GW-b3g">
-                                                                <rect key="frame" x="208" y="11" width="94" height="29"/>
+                                                                <rect key="frame" x="263" y="11" width="94" height="29"/>
                                                                 <color key="tintColor" red="0.1333333333" green="0.44705882349999998" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <connections>
                                                                     <action selector="didDefaultQuantityChanged:" destination="9an-oy-szK" eventType="valueChanged" id="qYh-ER-jmz"/>
@@ -468,10 +476,10 @@ Learn more about the Capture SDK.</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0AG-DX-gIy">
-                                                        <rect key="frame" x="0.0" y="206" width="320" height="50"/>
+                                                        <rect key="frame" x="0.0" y="206" width="375" height="50"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fP4-fd-xMt">
-                                                                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <connections>
                                                                     <action selector="didNewLineSetChanged:" destination="9an-oy-szK" eventType="touchUpInside" id="QC8-Qm-miC"/>
@@ -491,7 +499,7 @@ Learn more about the Capture SDK.</string>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Fu-an-VAl">
-                                                                <rect key="frame" x="18" y="49" width="302" height="1"/>
+                                                                <rect key="frame" x="18" y="49" width="357" height="1"/>
                                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="uNl-1w-zvN"/>
@@ -500,6 +508,7 @@ Learn more about the Capture SDK.</string>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7sb-Ke-Dii" secondAttribute="trailing" constant="16" id="1S7-i5-yEq"/>
                                                             <constraint firstItem="fP4-fd-xMt" firstAttribute="top" secondItem="0AG-DX-gIy" secondAttribute="top" id="2aX-zT-V45"/>
                                                             <constraint firstItem="fP4-fd-xMt" firstAttribute="leading" secondItem="0AG-DX-gIy" secondAttribute="leading" id="3QJ-5i-WOu"/>
                                                             <constraint firstAttribute="trailing" secondItem="5Fu-an-VAl" secondAttribute="trailing" id="9RQ-8h-shW"/>
@@ -515,10 +524,10 @@ Learn more about the Capture SDK.</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NJD-w6-JZD">
-                                                        <rect key="frame" x="0.0" y="256" width="320" height="50"/>
+                                                        <rect key="frame" x="0.0" y="256" width="375" height="50"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0g-YQ-C1c">
-                                                                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <connections>
                                                                     <action selector="didNewLineSetChanged:" destination="9an-oy-szK" eventType="touchUpInside" id="SK9-3N-nRZ"/>
@@ -547,12 +556,13 @@ Learn more about the Capture SDK.</string>
                                                             <constraint firstItem="cB1-oJ-z4u" firstAttribute="centerY" secondItem="NJD-w6-JZD" secondAttribute="centerY" id="EGh-g8-6uw"/>
                                                             <constraint firstAttribute="trailing" secondItem="n0g-YQ-C1c" secondAttribute="trailing" id="WXs-DE-9iH"/>
                                                             <constraint firstItem="cB1-oJ-z4u" firstAttribute="leading" secondItem="TLy-Xj-pEj" secondAttribute="trailing" constant="16" id="ied-g3-ZCc"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cB1-oJ-z4u" secondAttribute="trailing" constant="16" id="nDL-hd-XA6"/>
                                                             <constraint firstItem="n0g-YQ-C1c" firstAttribute="top" secondItem="NJD-w6-JZD" secondAttribute="top" id="o5s-cN-5oD"/>
                                                             <constraint firstAttribute="height" constant="50" id="zRZ-lU-9Bz"/>
                                                         </constraints>
                                                     </view>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ky6-C9-E5Y">
-                                                        <rect key="frame" x="0.0" y="314" width="320" height="70"/>
+                                                        <rect key="frame" x="0.0" y="314" width="375" height="70"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <accessibility key="accessibilityConfiguration">
                                                             <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -592,7 +602,7 @@ Learn more about the Capture SDK.</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Sc-xD-AgG">
-                                                <rect key="frame" x="0.0" y="442" width="320" height="50"/>
+                                                <rect key="frame" x="0.0" y="442" width="375" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vibrate when scans" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0P8-vc-Bpg">
                                                         <rect key="frame" x="18" y="16" width="142" height="19.5"/>
@@ -601,7 +611,7 @@ Learn more about the Capture SDK.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8ZH-hi-LkA">
-                                                        <rect key="frame" x="253" y="9.5" width="51" height="31"/>
+                                                        <rect key="frame" x="308" y="9.5" width="51" height="31"/>
                                                         <connections>
                                                             <action selector="didVibrationChanged:" destination="9an-oy-szK" eventType="valueChanged" id="mzz-o0-lB7"/>
                                                         </connections>
@@ -612,12 +622,13 @@ Learn more about the Capture SDK.</string>
                                                     <constraint firstItem="8ZH-hi-LkA" firstAttribute="centerY" secondItem="4Sc-xD-AgG" secondAttribute="centerY" id="0k7-IR-LUj"/>
                                                     <constraint firstItem="0P8-vc-Bpg" firstAttribute="leading" secondItem="4Sc-xD-AgG" secondAttribute="leading" constant="18" id="6oi-Zz-KJQ"/>
                                                     <constraint firstAttribute="trailing" secondItem="8ZH-hi-LkA" secondAttribute="trailing" constant="18" id="KRM-E7-vbZ"/>
+                                                    <constraint firstItem="8ZH-hi-LkA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0P8-vc-Bpg" secondAttribute="trailing" constant="4" id="f5E-O2-UHp"/>
                                                     <constraint firstAttribute="height" constant="50" id="gjw-dN-dFc"/>
                                                     <constraint firstItem="0P8-vc-Bpg" firstAttribute="centerY" secondItem="4Sc-xD-AgG" secondAttribute="centerY" id="oy1-FG-LUa"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0F-N7-uk3">
-                                                <rect key="frame" x="0.0" y="500" width="320" height="50"/>
+                                                <rect key="frame" x="0.0" y="500" width="375" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Support D600" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5w-ff-Umz">
                                                         <rect key="frame" x="18" y="16" width="104" height="19.5"/>
@@ -626,7 +637,7 @@ Learn more about the Capture SDK.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fDR-W3-Ugg">
-                                                        <rect key="frame" x="253" y="9.5" width="51" height="31"/>
+                                                        <rect key="frame" x="308" y="9.5" width="51" height="31"/>
                                                         <connections>
                                                             <action selector="didSupportD600Changed:" destination="9an-oy-szK" eventType="valueChanged" id="2mK-zz-Ipb"/>
                                                         </connections>
@@ -637,6 +648,7 @@ Learn more about the Capture SDK.</string>
                                                     <constraint firstItem="fDR-W3-Ugg" firstAttribute="centerY" secondItem="x0F-N7-uk3" secondAttribute="centerY" id="5wr-XT-CQJ"/>
                                                     <constraint firstAttribute="height" constant="50" id="dDU-GC-ROD"/>
                                                     <constraint firstItem="N5w-ff-Umz" firstAttribute="leading" secondItem="x0F-N7-uk3" secondAttribute="leading" constant="18" id="gNz-Jz-AHX"/>
+                                                    <constraint firstItem="fDR-W3-Ugg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="N5w-ff-Umz" secondAttribute="trailing" constant="4" id="po4-YK-S4S"/>
                                                     <constraint firstItem="N5w-ff-Umz" firstAttribute="centerY" secondItem="x0F-N7-uk3" secondAttribute="centerY" id="vTy-mq-eNF"/>
                                                     <constraint firstAttribute="trailing" secondItem="fDR-W3-Ugg" secondAttribute="trailing" constant="18" id="wfC-Ct-mGE"/>
                                                 </constraints>
@@ -705,11 +717,11 @@ Learn more about the Capture SDK.</string>
             <objects>
                 <viewController id="NH5-hy-EA9" customClass="EditViewController" customModule="StockCount" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dzp-O8-nRA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uKA-vK-aOb">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Text Title
 ABC, 1</string>
@@ -745,7 +757,7 @@ ABC, 1</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GHl-yp-HpZ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3T9-vs-rRf">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
