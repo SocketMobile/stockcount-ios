@@ -39,12 +39,6 @@ class KeyboardToolBar : NibView {
     func setKeyboardTitle(_ title:String) {
         btnKeytype.setTitle(title, for: .normal)
     }
-    
-    func setTypeUpdateEnabled(_ isEnabled : Bool) {
-        btnKeytype.isEnabled = isEnabled
-        btnKeytype.alpha = isEnabled ? 1.0 : 0.5
-    }
-    
     //MARK: - Events
     
     @IBAction func onBtnScan(_ sender: Any) {

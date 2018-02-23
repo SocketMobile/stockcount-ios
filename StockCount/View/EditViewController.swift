@@ -31,7 +31,6 @@ class EditViewController: CustomNavBarViewController, UITextViewDelegate
         
         //Keyboard Notification
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardInputModeChanged), name: NSNotification.Name.UITextInputCurrentInputModeDidChange, object: nil)
         
         keyboardToolBar = KeyboardToolBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50))
         keyboardToolBar?.delegate = self
@@ -72,7 +71,6 @@ class EditViewController: CustomNavBarViewController, UITextViewDelegate
                 self.keyboardHeightLayoutConstraint?.constant = 0
             } else {
                 self.keyboardHeightLayoutConstraint?.constant = endFrame?.size.height ?? 0.0
-                keyboardInputModeChanged()
             }
             UIView.animate(withDuration: duration,
                            delay: TimeInterval(0),
@@ -81,16 +79,6 @@ class EditViewController: CustomNavBarViewController, UITextViewDelegate
                            completion: nil)
         }
     }
-    
-    @objc func keyboardInputModeChanged() {
-        print("Keyboard Identifier : \(UITextInputMode.activeInputModes[0].value(forKey: "identifier") as? String)")
-        if let currentKeyboardId = UITextInputMode.activeInputModes[0].value(forKey: "identifier") as? String, appleKeyboardIdentifier.contains(currentKeyboardId) {
-            keyboardToolBar?.setTypeUpdateEnabled(true)
-        } else {
-            keyboardToolBar?.setTypeUpdateEnabled(false)
-        }
-    }
-
     
     
     //MARK: - NavigationBar
