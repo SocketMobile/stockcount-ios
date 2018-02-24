@@ -533,7 +533,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" eae4cffcb1fd88ffcdf1bd62f4a67a29c253cc3e cfc587651f40483a5d6b7a572eb9f2d7095902babc0ef8bf8857e3a246dfbad2\n\n# Assumes that you tag versions with the version number (e.g., \"1.1\") and then the build number is\n# that plus the number of commits since the tag (e.g., \"1.1.17\")\n# using the annotated tag with git: git tag -a 1.1 -m \"new version whatever\"\n\necho \"Updating version/build number from git...\"\nplist=${PROJECT_DIR}/${INFOPLIST_FILE}\n\n# increment the build number (ie 115 to 116)\nversionnum=`git describe | awk '{split($0,a,\"-\"); print a[1]}'`\nbuildnum=`git describe --long | awk '{split($0,a,\"-\"); print a[1] \".\" a[2]}'`\n\nif [[ \"${versionnum}\" == \"\" ]]; then\necho \"No version number from git!!!!!\"\nexit 2\nfi\n\nif [[ \"${buildnum}\" == \"\" ]]; then\necho \"No build number from git!!!!!\"\nexit 2\nfi\n\n/usr/libexec/Plistbuddy -c \"Set CFBundleShortVersionString $versionnum\" \"${plist}\"\necho \"Updated version number to $versionnum\"\n\n/usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\necho \"Updated build number to $buildnum\"\n";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" c8e0cc0c0ba2daa331415be090a4f7ead5e65570 02bb68c2dc000ff369be6d47fe976ff3509e7534bc0ade56206d935653c75480\n#\"${PODS_ROOT}/Fabric/run\" eae4cffcb1fd88ffcdf1bd62f4a67a29c253cc3e cfc587651f40483a5d6b7a572eb9f2d7095902babc0ef8bf8857e3a246dfbad2\n\n# Assumes that you tag versions with the version number (e.g., \"1.1\") and then the build number is\n# that plus the number of commits since the tag (e.g., \"1.1.17\")\n# using the annotated tag with git: git tag -a 1.1 -m \"new version whatever\"\n\necho \"Updating version/build number from git...\"\nplist=${PROJECT_DIR}/${INFOPLIST_FILE}\n\n# increment the build number (ie 115 to 116)\nversionnum=`git describe | awk '{split($0,a,\"-\"); print a[1]}'`\nbuildnum=`git describe --long | awk '{split($0,a,\"-\"); print a[1] \".\" a[2]}'`\n\nif [[ \"${versionnum}\" == \"\" ]]; then\necho \"No version number from git!!!!!\"\nexit 2\nfi\n\nif [[ \"${buildnum}\" == \"\" ]]; then\necho \"No build number from git!!!!!\"\nexit 2\nfi\n\n/usr/libexec/Plistbuddy -c \"Set CFBundleShortVersionString $versionnum\" \"${plist}\"\necho \"Updated version number to $versionnum\"\n\n/usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\necho \"Updated build number to $buildnum\"\n";
 		};
 		A9A1141D656F0B1D46461E87 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -777,14 +777,15 @@
 			baseConfigurationReference = 0E5F8EBE43FDAF87BB65AFEF /* Pods-StockCount.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 9L64TUQ2Y2;
+				DEVELOPMENT_TEAM = GCJ274LWEE;
 				INFOPLIST_FILE = "$(SRCROOT)/StockCount/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.socketmobile.stockCount;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "dbb005a9-539e-499f-839a-f36559dca13a";
-				PROVISIONING_PROFILE_SPECIFIER = WildCard_Paramount_Dev;
+				PROVISIONING_PROFILE = "89ea4c7e-38dd-4176-ba74-8c5a90bc3009";
+				PROVISIONING_PROFILE_SPECIFIER = "development test com.socketmobile.*";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -797,13 +798,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 9L64TUQ2Y2;
+				DEVELOPMENT_TEAM = GCJ274LWEE;
 				INFOPLIST_FILE = "$(SRCROOT)/StockCount/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.socketmobile.stockCount;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "766e2435-8c0a-4223-9e42-2bad1cc5021a";
-				PROVISIONING_PROFILE_SPECIFIER = "Inventory Counting AdHoc";
+				PROVISIONING_PROFILE = "52a7212b-dcaa-4494-adbd-100093676b29";
+				PROVISIONING_PROFILE_SPECIFIER = "crashlytics distribution";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
