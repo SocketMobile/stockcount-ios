@@ -1,13 +1,13 @@
 PODS:
-  - Crashlytics (3.9.3):
-    - Fabric (~> 1.7.2)
-  - Fabric (1.7.2)
-  - Realm (3.1.0):
-    - Realm/Headers (= 3.1.0)
-  - Realm/Headers (3.1.0)
-  - RealmSwift (3.1.0):
-    - Realm (= 3.1.0)
-  - SKTCapture (1.0.61)
+  - Crashlytics (3.10.0):
+    - Fabric (~> 1.7.3)
+  - Fabric (1.7.3)
+  - Realm (3.1.1):
+    - Realm/Headers (= 3.1.1)
+  - Realm/Headers (3.1.1)
+  - RealmSwift (3.1.1):
+    - Realm (= 3.1.1)
+  - SKTCapture (1.0.67)
 
 DEPENDENCIES:
   - Crashlytics
@@ -16,11 +16,11 @@ DEPENDENCIES:
   - SKTCapture (~> 1.0)
 
 SPEC CHECKSUMS:
-  Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
-  Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
-  Realm: 09513d7c054678d65cd02ce09871f805b0d758ac
-  RealmSwift: e868fee9b10e5490ad94b6b6ecd9027944da1824
-  SKTCapture: 49fe5e6571d22f0c63563231bf58ab5e89bc1fce
+  Crashlytics: a989ef242b66605577a425733797f810bd2725eb
+  Fabric: bb495bb9a7a7677c6d03a1f8b83d95bc49b47e41
+  Realm: 42d1c38a5b1bbcc828b48a7ce702cb86fc68adf4
+  RealmSwift: d31937ca6a6ee54acde64ec839523c0a3c04924b
+  SKTCapture: 1d238bbd5450023956c378dd56312be33970930f
 
 PODFILE CHECKSUM: 1038d73b9c21f1059ddb08cc88f7b441970fcb91
 
