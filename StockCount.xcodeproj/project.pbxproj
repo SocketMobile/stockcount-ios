@@ -367,6 +367,7 @@
 			buildConfigurationList = 89520F7B1FEEF19B00B7E351 /* Build configuration list for PBXNativeTarget "StockCount" */;
 			buildPhases = (
 				FE5B96C061222A906B0AD339 /* [CP] Check Pods Manifest.lock */,
+				E704F41020410094009600FC /* ShellScript */,
 				89520F4F1FEEF19B00B7E351 /* Sources */,
 				89520F501FEEF19B00B7E351 /* Frameworks */,
 				89520F511FEEF19B00B7E351 /* Resources */,
@@ -533,7 +534,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" c8e0cc0c0ba2daa331415be090a4f7ead5e65570 02bb68c2dc000ff369be6d47fe976ff3509e7534bc0ade56206d935653c75480\n#\"${PODS_ROOT}/Fabric/run\" eae4cffcb1fd88ffcdf1bd62f4a67a29c253cc3e cfc587651f40483a5d6b7a572eb9f2d7095902babc0ef8bf8857e3a246dfbad2\n\n# Assumes that you tag versions with the version number (e.g., \"1.1\") and then the build number is\n# that plus the number of commits since the tag (e.g., \"1.1.17\")\n# using the annotated tag with git: git tag -a 1.1 -m \"new version whatever\"\n\necho \"Updating version/build number from git...\"\nplist=${INFOPLIST_FILE}\n\n# increment the build number (ie 115 to 116)\nversionnum=`git describe | awk '{split($0,a,\"-\"); print a[1]}'`\nbuildnum=`git describe --long | awk '{split($0,a,\"-\"); print a[1] \".\" a[2]}'`\n\nif [[ \"${versionnum}\" == \"\" ]]; then\necho \"No version number from git!!!!!\"\nexit 2\nfi\n\nif [[ \"${buildnum}\" == \"\" ]]; then\necho \"No build number from git!!!!!\"\nexit 2\nfi\n\n/usr/libexec/Plistbuddy -c \"Set CFBundleShortVersionString $versionnum\" \"${plist}\"\necho \"Updated version number to $versionnum\"\n\n/usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\necho \"Updated build number to $buildnum\"\n";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" c8e0cc0c0ba2daa331415be090a4f7ead5e65570 02bb68c2dc000ff369be6d47fe976ff3509e7534bc0ade56206d935653c75480\n#\"${PODS_ROOT}/Fabric/run\" eae4cffcb1fd88ffcdf1bd62f4a67a29c253cc3e cfc587651f40483a5d6b7a572eb9f2d7095902babc0ef8bf8857e3a246dfbad2\n\n";
 		};
 		A9A1141D656F0B1D46461E87 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -556,6 +557,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StockCount/Pods-StockCount-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		E704F41020410094009600FC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Assumes that you tag versions with the version number (e.g., \"1.1\") and then the build number is\n# that plus the number of commits since the tag (e.g., \"1.1.17\")\n# using the annotated tag with git: git tag -a 1.1 -m \"new version whatever\"\n\necho \"Updating version/build number from git...\"\nplist=${INFOPLIST_FILE}\n\n# increment the build number (ie 115 to 116)\nversionnum=`git describe | awk '{split($0,a,\"-\"); print a[1]}'`\nbuildnum=`git describe --long | awk '{split($0,a,\"-\"); print a[1] \".\" a[2]}'`\n\nif [[ \"${versionnum}\" == \"\" ]]; then\necho \"No version number from git!!!!!\"\nexit 2\nfi\n\nif [[ \"${buildnum}\" == \"\" ]]; then\necho \"No build number from git!!!!!\"\nexit 2\nfi\n\n/usr/libexec/Plistbuddy -c \"Set CFBundleShortVersionString $versionnum\" \"${plist}\"\necho \"Updated version number to $versionnum\"\n\n/usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\necho \"Updated build number to $buildnum\"\n";
 		};
 		FE5B96C061222A906B0AD339 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
