@@ -794,7 +794,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.socketmobile.stockCount;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "89ea4c7e-38dd-4176-ba74-8c5a90bc3009";
+				PROVISIONING_PROFILE = "15ff4b18-5282-47fb-ad40-37358200659f";
 				PROVISIONING_PROFILE_SPECIFIER = "development test com.socketmobile.*";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -813,7 +813,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.socketmobile.stockCount;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "52a7212b-dcaa-4494-adbd-100093676b29";
+				PROVISIONING_PROFILE = "096a71a8-2cc5-4cea-aa3d-f4c4fe5396cc";
 				PROVISIONING_PROFILE_SPECIFIER = "crashlytics distribution";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
