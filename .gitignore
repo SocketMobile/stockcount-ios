@@ -4,3 +4,6 @@ InventoryUtility.xcworkspace/xcuserdata
 Pods
 StockCount.xcodeproj/xcuserdata
 StockCount.xcworkspace/xcuserdata
+buildscripts/StockCount
+StockCount.xcarchive
+
