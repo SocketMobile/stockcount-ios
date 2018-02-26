@@ -20,4 +20,5 @@ fi
 echo "buildscripts dir:" $1
 
 security -v unlock-keychain -p $KEYCHAIN_PASSWORD $HOME/Library/Keychains/login.keychain
+pod install --project-directory="$1.."
 xcodebuild -workspace "$1../StockCount.xcworkspace" -configuration Release -scheme StockCount -sdk $iosTarget clean build
