@@ -30,4 +30,4 @@ The app integrates Socket Mobile Capture SDK and is free for adaptation per your
 
 ### Contact us ###
 
-For inquiries regarding the development of this app as well as Capture SDK integration, please email CaptureSDK@socketmobile.com. 
+For inquiries regarding the development of this app as well as Capture SDK integration, please email CaptureDevelopers@socketmobile.com. 
