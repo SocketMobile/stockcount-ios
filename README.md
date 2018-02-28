@@ -11,7 +11,6 @@ Stock Count is a utility app to help Socket Mobile customers leverage Socket Mob
 
 * Requires iOS 11.0 or later version
 * Supports iPhone and iPod Touch (6th generation)
-* App version 1.0
 
 
 ### How to use the app ###
@@ -30,4 +29,4 @@ The app integrates Socket Mobile Capture SDK and is free for adaptation per your
 
 ### Contact us ###
 
-For inquiries regarding the development of this app as well as Capture SDK integration, please email CaptureDevelopers@socketmobile.com. 
+For inquiries regarding the development of this app as well as Capture SDK integration, please email developers@socketmobile.com. 
