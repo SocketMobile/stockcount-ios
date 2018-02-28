@@ -1,5 +1,11 @@
 #!/bin/sh
+#####################################################
+# crashlytics publish script
+# © 2018 Socket Mobile, inc.
 #
+# This script publish the archive to Crashlytics only
+# if it happens on the master branch
+#####################################################
 
 # if there is no parameter then assume
 # the root dir is the current folder
