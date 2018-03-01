@@ -19,7 +19,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.0</string>
+	<string>1.0.1</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -38,6 +38,8 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>This application could use the camera to scan barcodes.</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>This application uses Bluetooth to communicate with barcode scanner.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
