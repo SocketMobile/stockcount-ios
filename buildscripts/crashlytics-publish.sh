@@ -18,7 +18,7 @@ then
 
 fi
 
-echo publish Capture NuGet for Windows
+echo publish IPA file on Crashlytics
 # branch="$(git branch | head -n 1)"
 # branch="$(git symbolic-ref HEAD 2>/dev/null)"
 branch=`git rev-parse --short HEAD`
@@ -28,10 +28,15 @@ echo "hash for master: " $master
 
 if [ "$branch" == "$master" ]
 then
-LastCommitEmail=`git show --format="%aE" | head -n 1`
-echo "send a notification to " $LastCommitEmail
-echo "for this file " $1StockCount/SockCount.ipa
-# $1../Pods/Crashlytics/submit $CrashlyticsApiKey $CrashlyticsSecret -ipaPath $1StockCount/StockCount.ipa -emails $LastCommitEmail -notifications YES
+	if [ -f ../env-vars.sh ]
+	then
+		source ../env-vars.sh
+		LastCommitEmail=`git show --format="%aE" | head -n 1`
+		echo "send a notification to " $LastCommitEmail
+		echo "for this file " $1StockCount/SockCount.ipa
+		# $1../Pods/Crashlytics/submit $CrashlyticsApiKey $CrashlyticsSecret -ipaPath $1StockCount/StockCount.ipa -emails $LastCommitEmail -notifications YES
+	else
+		echo "there is no env-vars.sh"
 else
 	echo "not on master branch so nothing gets published through Crashlytics"
 fi

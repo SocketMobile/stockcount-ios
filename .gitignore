@@ -4,6 +4,7 @@ InventoryUtility.xcworkspace/xcuserdata
 Pods
 StockCount.xcodeproj/xcuserdata
 StockCount.xcworkspace/xcuserdata
+StockCount.xcworkspace/xcshareddata
 buildscripts/StockCount
 StockCount.xcarchive
-
+env-vars.sh
