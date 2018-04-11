@@ -19,11 +19,11 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.1</string>
+	<string>1.0.2</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
-		<string>c8e0cc0c0ba2daa331415be090a4f7ead5e65570</string>
+		<string>yourCrashlyticsAPIKeyHere</string>
 		<key>Kits</key>
 		<array>
 			<dict>
@@ -36,10 +36,10 @@
 	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSCameraUsageDescription</key>
-	<string>This application could use the camera to scan barcodes.</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>This application uses Bluetooth to communicate with barcode scanner.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This application could use the camera to scan barcodes.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
