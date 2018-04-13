@@ -24,10 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Initialize CaptureHelper
         let AppInfo = SKTAppInfo()
-        AppInfo.appKey="MC4CFQDdEFdODdiceD4YGANGb3Q/MK9U0AIVAMUpLrTNqBkOlpMpLd2GATJuSt47"
+    AppInfo.appKey="MCwCFDqSvrhLenQ9qu49ADSL3K+9mWV8AhQIamqcj1fjbGZVcJ3r+t5ijm+/ow=="
         AppInfo.bundleID="ios:com.socketmobile.stockCount"
 
-        AppInfo.developerID="EF62BC15-59E0-4E86-82A3-493101D7DB4E"
+        AppInfo.developerID="bb57d8e1-f911-47ba-b510-693be162686a"
         
         let captureHelper = CaptureHelper.sharedInstance
         captureHelper.delegateDispatchQueue = DispatchQueue.main
