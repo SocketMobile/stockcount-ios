@@ -218,7 +218,11 @@ extension EditViewController : CompanionDlgDelegate {
             editController.isSoftScan = true
         case .openCompanionApp:
             if let companionURL = URL(string: "https://itunes.apple.com/us/app/socket-mobile-companion/id1175638950") {
-                UIApplication.shared.open(companionURL, options: [:], completionHandler: nil)
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(companionURL, options: [:], completionHandler: nil)
+                } else {
+                    // Fallback on earlier versions
+                }
             }
         default:
             txtView.becomeFirstResponder()
