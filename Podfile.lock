@@ -7,7 +7,7 @@ PODS:
   - Realm/Headers (3.5.0)
   - RealmSwift (3.5.0):
     - Realm (= 3.5.0)
-  - SKTCapture (1.0.117)
+  - SKTCapture (1.0.151)
 
 DEPENDENCIES:
   - Crashlytics
@@ -20,7 +20,7 @@ SPEC CHECKSUMS:
   Fabric: f8d42c893bb187326a7968b62abe55c36a987a46
   Realm: 0378021c424e4e2bd6a0e63b27881e929d9b9ad1
   RealmSwift: 3322562622fda2ad596985ead4d8d8be30cf838c
-  SKTCapture: ffd4a636b780560caac234cfce6c22cb57d1c078
+  SKTCapture: 4b8b70a7e533db304e6a4f1d03d52a057b0bba5e
 
 PODFILE CHECKSUM: 1038d73b9c21f1059ddb08cc88f7b441970fcb91
 
