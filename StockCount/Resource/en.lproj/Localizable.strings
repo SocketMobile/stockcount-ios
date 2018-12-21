@@ -20,3 +20,6 @@
 
 "txt_preview" = "The result will look like:\n";
 "txt_barcode" = "[barcode]";
+
+"mobile_sdk" = "This demo app uses Socket Mobile's Capture SDK. As part of the SDK, the source code is available for adaptation per your business under the Socket Mobile terms and agreements.\n\n";
+"capture_sdk" = "Learn more about the Capture SDK";

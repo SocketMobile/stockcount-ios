@@ -21,14 +21,18 @@ class OptionViewController : UIViewController {
         let versionString = (Bundle.main.infoDictionary?["CFBundleVersion"] as? String) ?? ""
         lblVersion.text = "version".localized + versionString
         
-        let attributedString = NSMutableAttributedString(attributedString: txtLink.attributedText)
+        let sdkString = "mobile_sdk".localized + "capture_sdk".localized
+        let myAttribute = [ NSAttributedStringKey.font: UIFont(name: "System Font Regular", size: 15.0)! ]
         
-        let linkStrLength = "Capture SDK".count
+        let attributedString = NSMutableAttributedString(string: sdkString, attributes: myAttribute)
+
+        let linkStrLength = "capture_sdk".localized.count
         
-        let range = NSMakeRange(attributedString.length - linkStrLength - 1, linkStrLength)
+        let range = NSMakeRange(attributedString.length - linkStrLength, linkStrLength)
         attributedString.addAttributes([.link : URL(string: "https://github.com/SocketMobile")!], range: range)
         
         txtLink.attributedText = attributedString
+        txtLink.textAlignment = NSTextAlignment.center
         txtLink.delegate = self
     }
     

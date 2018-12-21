@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  StockCount
+*/
+"txt_preview" = "結果の表示:\n";
+"mobile_sdk" = "このデモアプリケーションはSocket Mobile Capture SDKを利用します。SDKの一部として、Socket Mobileの条件・規約の範囲内でご自身のビジネスに適したソースコードの編集が可能です。\n\n";
+"capture_sdk" = "Capture SDKに関する詳細情報";
+
+"txt_instruction_1" = "あなたのソケットスキャナをアプリケーションモードで接続します（Socket Mobile Companionアプリで）";
+"txt_instruction_2" = "アイテムバーコードをテキストファイルにスキャンを開始します。 スキャンごとに数量（デフォルトは1）が自動的に追加されます。";
+"txt_instruction_3" = "スキャン設定を必要に応じて変更します。";

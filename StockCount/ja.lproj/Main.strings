@@ -1,0 +1,57 @@
+
+/* Class = "UILabel"; text = "Vibrate when scans"; ObjectID = "0P8-vc-Bpg"; */
+"0P8-vc-Bpg.text" = "スキャン時にバイブレーション";
+
+/* Class = "UILabel"; text = "Comma, space and quantity"; ObjectID = "2Pn-fZ-VTh"; */
+"2Pn-fZ-VTh.text" = "カンマ、スペース、数量";
+
+/* Class = "UILabel"; text = "1234560D, 1"; ObjectID = "2sy-Hg-6FH"; */
+"2sy-Hg-6FH.text" = "1234560D, 1";
+
+/* Class = "UILabel"; text = "Start new scan in a new line"; ObjectID = "7sb-Ke-Dii"; */
+"7sb-Ke-Dii.text" = "スキャン毎に改行";
+
+/* Class = "UILabel"; text = "Automatically add quantity"; ObjectID = "ARM-f8-e4D"; */
+"ARM-f8-e4D.text" = "自動数量追加";
+
+/* Class = "UINavigationItem"; title = "All Files"; ObjectID = "CEW-ZG-CHd"; */
+"CEW-ZG-CHd.title" = "すべてのファイル";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "CNX-Hw-bwv"; */
+"CNX-Hw-bwv.title" = " ";
+
+/* Class = "UILabel"; text = "Socket Mobile\nVersion 0.8"; ObjectID = "Cmc-xK-7pR"; */
+"Cmc-xK-7pR.text" = "Socket Mobile\nVersion 0.8";
+
+/* Class = "UITextField"; text = "50"; ObjectID = "EZg-6t-r95"; */
+"EZg-6t-r95.text" = "50";
+
+/* Class = "UILabel"; text = "shelf 1-8 2017-10-02"; ObjectID = "EgF-0V-cJV"; */
+"EgF-0V-cJV.text" = "shelf 1-8 2017-10-02";
+
+/* Class = "UILabel"; text = "Quantity format options"; ObjectID = "FSc-U8-QIE"; */
+"FSc-U8-QIE.text" = "数量形式の選択";
+
+/* Class = "UILabel"; text = "Scan Settings"; ObjectID = "HVv-7u-pp3"; */
+"HVv-7u-pp3.text" = "スキャン設定";
+
+/* Class = "UILabel"; text = "Support D600"; ObjectID = "N5w-ff-Umz"; */
+"N5w-ff-Umz.text" = "D600サポート";
+
+/* Class = "UILabel"; text = "Get Started"; ObjectID = "Pq6-Ca-b5l"; */
+"Pq6-Ca-b5l.text" = "クイックスタートガイド";
+
+/* Class = "UINavigationItem"; title = "Scan Settings"; ObjectID = "VPZ-Z0-c3i"; */
+"VPZ-Z0-c3i.title" = "スキャン設定";
+
+/* Class = "UILabel"; text = "Set default quantity as"; ObjectID = "bhj-UB-cFw"; */
+"bhj-UB-cFw.text" = "デフォルトの数量を設定";
+
+/* Class = "UILabel"; text = "Start new scan after semicolon"; ObjectID = "cB1-oJ-z4u"; */
+"cB1-oJ-z4u.text" = "セミコロン追加後にスキャン開始";
+
+/* Class = "UILabel"; text = "Space and quantity"; ObjectID = "fNs-rW-v5t"; */
+"fNs-rW-v5t.text" = "スペースと数量";
+
+/* Class = "UITextView"; text = "Text Title\nABC, 1"; ObjectID = "uKA-vK-aOb"; */
+"uKA-vK-aOb.text" = "Text Title\nABC, 1";
