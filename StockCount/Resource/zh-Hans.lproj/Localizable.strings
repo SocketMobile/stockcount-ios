@@ -6,6 +6,6 @@
 "mobile_sdk" = "本app使用Socket Mobile的Capture SDK开发，用于演示Capture SDK的功能。\n做为Socket Mobile 软件开发包的一部分，\n本app的源代码可以通过GitHub下载。\n只要遵循Socket Mobile公司的条款和协议，\n可自由使用并改编以满足你自己的商业需求。\n\n";
 "capture_sdk" = "关于Capture SDK的更多详情";
 
-"txt_instruction_1" = "在应用程序模式下连接Socket扫描仪（使用Socket Mobile Companion应用程序）";
-"txt_instruction_2" = "开始将项目条形码扫描到文本文件。 每次扫描都会自动添加数量（默认为1）";
-"txt_instruction_3" = "更改扫描设置以满足您的需要";
+"txt_instruction_1" = "在Application (应用程序) 模式下连接Socket Mobile 扫描器";
+"txt_instruction_2" = "打开文档扫描条码。数量信息（默认设置为1）会被自动添加到条码信息后面。";
+"txt_instruction_3" = "根据个人需求调整扫描设置";

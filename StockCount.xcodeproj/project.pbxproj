@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6AB766BB21CD733F00FAD43B /* KeyboardToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB766BD21CD733F00FAD43B /* KeyboardToolBar.xib */; };
 		8904B00620326F5600BE2B05 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8904B00520326F5600BE2B05 /* NibView.swift */; };
 		8904B0082032701100BE2B05 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8904B0072032701100BE2B05 /* UIView.swift */; };
-		8904B00B2032729500BE2B05 /* KeyboardToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8904B00A2032729500BE2B05 /* KeyboardToolBar.xib */; };
 		8904B00D2032768400BE2B05 /* KeyboardToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8904B00C2032768400BE2B05 /* KeyboardToolBar.swift */; };
 		8909E2ED1FF0427F0026B356 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8909E2EC1FF0427F0026B356 /* HomeViewController.swift */; };
 		8909E2F01FF055280026B356 /* SettingMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8909E2EF1FF055280026B356 /* SettingMgr.swift */; };
@@ -67,9 +67,11 @@
 
 /* Begin PBXFileReference section */
 		04F20284CCAEE92258B8A69F /* Pods_StockCount.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockCount.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AB766BF21CD735400FAD43B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/KeyboardToolBar.strings; sourceTree = "<group>"; };
+		6AB766C021CD735A00FAD43B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/KeyboardToolBar.xib; sourceTree = "<group>"; };
+		6AB766C121CD750D00FAD43B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/KeyboardToolBar.strings"; sourceTree = "<group>"; };
 		8904B00520326F5600BE2B05 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
 		8904B0072032701100BE2B05 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		8904B00A2032729500BE2B05 /* KeyboardToolBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardToolBar.xib; sourceTree = "<group>"; };
 		8904B00C2032768400BE2B05 /* KeyboardToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolBar.swift; sourceTree = "<group>"; };
 		8909E2EC1FF0427F0026B356 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8909E2EF1FF055280026B356 /* SettingMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMgr.swift; sourceTree = "<group>"; };
@@ -182,7 +184,7 @@
 		8904B0092032725E00BE2B05 /* KeyboardToolBar */ = {
 			isa = PBXGroup;
 			children = (
-				8904B00A2032729500BE2B05 /* KeyboardToolBar.xib */,
+				6AB766BD21CD733F00FAD43B /* KeyboardToolBar.xib */,
 				8904B00C2032768400BE2B05 /* KeyboardToolBar.swift */,
 			);
 			path = KeyboardToolBar;
@@ -486,7 +488,7 @@
 				89E787802020D62E00DDA268 /* Localizable.strings in Resources */,
 				89520F611FEEF19B00B7E351 /* LaunchScreen.storyboard in Resources */,
 				890F09DE2010F80000005711 /* img_device.png in Resources */,
-				8904B00B2032729500BE2B05 /* KeyboardToolBar.xib in Resources */,
+				6AB766BB21CD733F00FAD43B /* KeyboardToolBar.xib in Resources */,
 				89520F5E1FEEF19B00B7E351 /* Assets.xcassets in Resources */,
 				89484C9D20395F8C0078C0A1 /* icon_setting.png in Resources */,
 				8916F9B2200F38FF006827DD /* btn_close.png in Resources */,
@@ -652,6 +654,16 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		6AB766BD21CD733F00FAD43B /* KeyboardToolBar.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6AB766BF21CD735400FAD43B /* ja */,
+				6AB766C021CD735A00FAD43B /* Base */,
+				6AB766C121CD750D00FAD43B /* zh-Hans */,
+			);
+			name = KeyboardToolBar.xib;
+			sourceTree = "<group>";
+		};
 		89520F5A1FEEF19B00B7E351 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -846,7 +858,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.socketmobile.stockCount;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7f708c3c-7b8b-4090-9c7b-fe08a209dab1";
-				PROVISIONING_PROFILE_SPECIFIER = BillWildDevProvision;
+				PROVISIONING_PROFILE_SPECIFIER = "XC Ad Hoc: *";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
