@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6AB766BB21CD733F00FAD43B /* KeyboardToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB766BD21CD733F00FAD43B /* KeyboardToolBar.xib */; };
 		8904B00620326F5600BE2B05 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8904B00520326F5600BE2B05 /* NibView.swift */; };
 		8904B0082032701100BE2B05 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8904B0072032701100BE2B05 /* UIView.swift */; };
-		8904B00B2032729500BE2B05 /* KeyboardToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8904B00A2032729500BE2B05 /* KeyboardToolBar.xib */; };
 		8904B00D2032768400BE2B05 /* KeyboardToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8904B00C2032768400BE2B05 /* KeyboardToolBar.swift */; };
 		8909E2ED1FF0427F0026B356 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8909E2EC1FF0427F0026B356 /* HomeViewController.swift */; };
 		8909E2F01FF055280026B356 /* SettingMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8909E2EF1FF055280026B356 /* SettingMgr.swift */; };
@@ -41,11 +41,11 @@
 		89C0CA882010051800D5F108 /* btn_option.png in Resources */ = {isa = PBXBuildFile; fileRef = 89C0CA872010051800D5F108 /* btn_option.png */; };
 		89C0CA8B2010076000D5F108 /* icon_info.png in Resources */ = {isa = PBXBuildFile; fileRef = 89C0CA892010076000D5F108 /* icon_info.png */; };
 		89C0CA8E20100BFE00D5F108 /* icon_detail.png in Resources */ = {isa = PBXBuildFile; fileRef = 89C0CA8D20100BFE00D5F108 /* icon_detail.png */; };
-		89CBCF832035D48800CFA85F /* Instruction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CBCF822035D48800CFA85F /* Instruction.storyboard */; };
 		89CBCF852035DD0700CFA85F /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CBCF842035DD0700CFA85F /* InstructionViewController.swift */; };
 		89DAF7801FEF0D6000510F1D /* RMFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DAF77F1FEF0D6000510F1D /* RMFile.swift */; };
 		89E787802020D62E00DDA268 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 89E7877E2020D62E00DDA268 /* Localizable.strings */; };
-		CBC59E71482784D89A231AAB /* Pods_StockCount.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6922E074A76514EFC5F2710 /* Pods_StockCount.framework */; };
+		9C24F9ADEF01D3702DE666D1 /* Pods_StockCount.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F20284CCAEE92258B8A69F /* Pods_StockCount.framework */; };
+		D31504BB21CAC82200D963B3 /* Instruction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D31504BD21CAC82200D963B3 /* Instruction.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,10 +66,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E5F8EBE43FDAF87BB65AFEF /* Pods-StockCount.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockCount.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockCount/Pods-StockCount.debug.xcconfig"; sourceTree = "<group>"; };
+		04F20284CCAEE92258B8A69F /* Pods_StockCount.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockCount.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AB766BF21CD735400FAD43B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/KeyboardToolBar.strings; sourceTree = "<group>"; };
+		6AB766C021CD735A00FAD43B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/KeyboardToolBar.xib; sourceTree = "<group>"; };
+		6AB766C121CD750D00FAD43B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/KeyboardToolBar.strings"; sourceTree = "<group>"; };
 		8904B00520326F5600BE2B05 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
 		8904B0072032701100BE2B05 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		8904B00A2032729500BE2B05 /* KeyboardToolBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardToolBar.xib; sourceTree = "<group>"; };
 		8904B00C2032768400BE2B05 /* KeyboardToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolBar.swift; sourceTree = "<group>"; };
 		8909E2EC1FF0427F0026B356 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8909E2EF1FF055280026B356 /* SettingMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMgr.swift; sourceTree = "<group>"; };
@@ -107,13 +109,24 @@
 		89C0CA872010051800D5F108 /* btn_option.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_option.png; sourceTree = "<group>"; };
 		89C0CA892010076000D5F108 /* icon_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_info.png; sourceTree = "<group>"; };
 		89C0CA8D20100BFE00D5F108 /* icon_detail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_detail.png; sourceTree = "<group>"; };
-		89CBCF822035D48800CFA85F /* Instruction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Instruction.storyboard; sourceTree = "<group>"; };
 		89CBCF842035DD0700CFA85F /* InstructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
 		89DAF77F1FEF0D6000510F1D /* RMFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMFile.swift; sourceTree = "<group>"; };
 		89E787812020D64600DDA268 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		89E787822020D6AF00DDA268 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		9C2F7B0E203B0ED79A7F4BC7 /* Pods-StockCount.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockCount.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockCount/Pods-StockCount.release.xcconfig"; sourceTree = "<group>"; };
-		D6922E074A76514EFC5F2710 /* Pods_StockCount.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockCount.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C9C7FA4B001357F03903923 /* Pods-StockCount.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockCount.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockCount/Pods-StockCount.debug.xcconfig"; sourceTree = "<group>"; };
+		CC1090F83D7ECB48B2015D8D /* Pods-StockCount.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockCount.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockCount/Pods-StockCount.release.xcconfig"; sourceTree = "<group>"; };
+		D31504B421CAC15A00D963B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		D31504B521CAC29100D963B3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		D31504B621CAC29100D963B3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		D31504B721CAC29100D963B3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		D31504B821CAC2A400D963B3 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		D31504B921CAC2A400D963B3 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		D31504BA21CAC2A400D963B3 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D31504BC21CAC82200D963B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Instruction.storyboard; sourceTree = "<group>"; };
+		D31504BF21CAC82700D963B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Instruction.strings; sourceTree = "<group>"; };
+		D31504C121CAC82D00D963B3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Instruction.strings"; sourceTree = "<group>"; };
+		D31504C321CAC82F00D963B3 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Instruction.strings; sourceTree = "<group>"; };
+		D31504C521CAC83700D963B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBC59E71482784D89A231AAB /* Pods_StockCount.framework in Frameworks */,
+				9C24F9ADEF01D3702DE666D1 /* Pods_StockCount.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,10 +155,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		46B5110483F55DC521C69D72 /* Frameworks */ = {
+		2BFC71758167A68D3BCC3DDC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D6922E074A76514EFC5F2710 /* Pods_StockCount.framework */,
+				9C9C7FA4B001357F03903923 /* Pods-StockCount.debug.xcconfig */,
+				CC1090F83D7ECB48B2015D8D /* Pods-StockCount.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2CA288C83FAC2B3ACCF1B33F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04F20284CCAEE92258B8A69F /* Pods_StockCount.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -162,7 +184,7 @@
 		8904B0092032725E00BE2B05 /* KeyboardToolBar */ = {
 			isa = PBXGroup;
 			children = (
-				8904B00A2032729500BE2B05 /* KeyboardToolBar.xib */,
+				6AB766BD21CD733F00FAD43B /* KeyboardToolBar.xib */,
 				8904B00C2032768400BE2B05 /* KeyboardToolBar.swift */,
 			);
 			path = KeyboardToolBar;
@@ -225,8 +247,8 @@
 				89520F6A1FEEF19B00B7E351 /* StockCountTests */,
 				89520F751FEEF19B00B7E351 /* StockCountUITests */,
 				89520F541FEEF19B00B7E351 /* Products */,
-				ABBDDEC6A1971E14FD2E8BD5 /* Pods */,
-				46B5110483F55DC521C69D72 /* Frameworks */,
+				2BFC71758167A68D3BCC3DDC /* Pods */,
+				2CA288C83FAC2B3ACCF1B33F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -250,7 +272,7 @@
 				897B85B41FEEF9E200B387FD /* Utils */,
 				89520F561FEEF19B00B7E351 /* AppDelegate.swift */,
 				89520F5A1FEEF19B00B7E351 /* Main.storyboard */,
-				89CBCF822035D48800CFA85F /* Instruction.storyboard */,
+				D31504BD21CAC82200D963B3 /* Instruction.storyboard */,
 				89520F5D1FEEF19B00B7E351 /* Assets.xcassets */,
 				89520F5F1FEEF19B00B7E351 /* LaunchScreen.storyboard */,
 				89520F621FEEF19B00B7E351 /* Info.plist */,
@@ -346,15 +368,6 @@
 			path = DBMgr;
 			sourceTree = "<group>";
 		};
-		ABBDDEC6A1971E14FD2E8BD5 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				0E5F8EBE43FDAF87BB65AFEF /* Pods-StockCount.debug.xcconfig */,
-				9C2F7B0E203B0ED79A7F4BC7 /* Pods-StockCount.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -362,14 +375,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89520F7B1FEEF19B00B7E351 /* Build configuration list for PBXNativeTarget "StockCount" */;
 			buildPhases = (
-				FE5B96C061222A906B0AD339 /* [CP] Check Pods Manifest.lock */,
+				E6E9C7B2077D9EE362690A75 /* [CP] Check Pods Manifest.lock */,
 				E704F41020410094009600FC /* ShellScript */,
 				89520F4F1FEEF19B00B7E351 /* Sources */,
 				89520F501FEEF19B00B7E351 /* Frameworks */,
 				89520F511FEEF19B00B7E351 /* Resources */,
-				A9A1141D656F0B1D46461E87 /* [CP] Embed Pods Frameworks */,
-				7C81361E4083E88DD51D85B0 /* [CP] Copy Pods Resources */,
 				89CAE6681FEF00E900547B54 /* Run Script */,
+				38C9BD25E441D1B6D38D1C9A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -449,6 +461,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				ja,
 			);
 			mainGroup = 89520F4A1FEEF19B00B7E351;
 			productRefGroup = 89520F541FEEF19B00B7E351 /* Products */;
@@ -474,14 +488,14 @@
 				89E787802020D62E00DDA268 /* Localizable.strings in Resources */,
 				89520F611FEEF19B00B7E351 /* LaunchScreen.storyboard in Resources */,
 				890F09DE2010F80000005711 /* img_device.png in Resources */,
-				8904B00B2032729500BE2B05 /* KeyboardToolBar.xib in Resources */,
+				6AB766BB21CD733F00FAD43B /* KeyboardToolBar.xib in Resources */,
 				89520F5E1FEEF19B00B7E351 /* Assets.xcassets in Resources */,
 				89484C9D20395F8C0078C0A1 /* icon_setting.png in Resources */,
 				8916F9B2200F38FF006827DD /* btn_close.png in Resources */,
 				89520F5C1FEEF19B00B7E351 /* Main.storyboard in Resources */,
 				89C0CA882010051800D5F108 /* btn_option.png in Resources */,
 				89C0CA8B2010076000D5F108 /* icon_info.png in Resources */,
-				89CBCF832035D48800CFA85F /* Instruction.storyboard in Resources */,
+				D31504BB21CAC82200D963B3 /* Instruction.storyboard in Resources */,
 				8916F9AB200F1502006827DD /* ScanDlg.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,19 +517,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7C81361E4083E88DD51D85B0 /* [CP] Copy Pods Resources */ = {
+		38C9BD25E441D1B6D38D1C9A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
+			inputFileListPaths = (
 			);
-			name = "[CP] Copy Pods Resources";
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-StockCount/Pods-StockCount-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SKTCapture/SKTCapture.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKTCapture.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StockCount/Pods-StockCount-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StockCount/Pods-StockCount-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		89CAE6681FEF00E900547B54 /* Run Script */ = {
@@ -532,26 +557,26 @@
 			shellPath = /bin/sh;
 			shellScript = "if [ -f buildscripts/env-vars.sh ]\nthen\nsource buildscripts/env-vars.sh\n    echo \"deploy the build to Crashlytics\"\n    \"${PODS_ROOT}/Fabric/run\" $CrashlyticsApiKey $CrashlyticsSecret\nfi\n\n";
 		};
-		A9A1141D656F0B1D46461E87 /* [CP] Embed Pods Frameworks */ = {
+		E6E9C7B2077D9EE362690A75 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-StockCount/Pods-StockCount-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SKTCapture/SKTCapture.framework",
+			inputFileListPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKTCapture.framework",
+				"$(DERIVED_FILE_DIR)/Pods-StockCount-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StockCount/Pods-StockCount-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E704F41020410094009600FC /* ShellScript */ = {
@@ -566,24 +591,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Assumes that you tag versions with the version number (e.g., \"1.1\") and then the build number is\n# that plus the number of commits since the tag (e.g., \"1.1.17\")\n# using the annotated tag with git: git tag -a 1.1 -m \"new version whatever\"\n\necho \"Updating version/build number from git...\"\nplist=${INFOPLIST_FILE}\n\n# increment the build number (ie 115 to 116)\nversionnum=`git describe | awk '{split($0,a,\"-\"); print a[1]}'`\nbuildnum=`git describe --long | awk '{split($0,a,\"-\"); print a[1] \".\" a[2]}'`\n\nif [[ \"${versionnum}\" == \"\" ]]; then\necho \"No version number from git!!!!!\"\nexit 2\nfi\n\nif [[ \"${buildnum}\" == \"\" ]]; then\necho \"No build number from git!!!!!\"\nexit 2\nfi\n\n/usr/libexec/Plistbuddy -c \"Set CFBundleShortVersionString $versionnum\" \"${plist}\"\necho \"Updated version number to $versionnum\"\n\n/usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\necho \"Updated build number to $buildnum\"\n\nif [ -f buildscripts/env-vars.sh ]\nthen\n    source buildscripts/env-vars.sh\necho \"add $Crashlytics in APIKey of $plist\"\n/usr/libexec/Plistbuddy -c \"Set Fabric:APIKey $CrashlyticsApiKey\" \"${plist}\"\nfi\n";
-		};
-		FE5B96C061222A906B0AD339 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-StockCount-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -647,10 +654,23 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		6AB766BD21CD733F00FAD43B /* KeyboardToolBar.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6AB766BF21CD735400FAD43B /* ja */,
+				6AB766C021CD735A00FAD43B /* Base */,
+				6AB766C121CD750D00FAD43B /* zh-Hans */,
+			);
+			name = KeyboardToolBar.xib;
+			sourceTree = "<group>";
+		};
 		89520F5A1FEEF19B00B7E351 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				89520F5B1FEEF19B00B7E351 /* Base */,
+				D31504B421CAC15A00D963B3 /* en */,
+				D31504B521CAC29100D963B3 /* zh-Hans */,
+				D31504B821CAC2A400D963B3 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -659,6 +679,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				89520F601FEEF19B00B7E351 /* Base */,
+				D31504B621CAC29100D963B3 /* zh-Hans */,
+				D31504B921CAC2A400D963B3 /* ja */,
+				D31504C521CAC83700D963B3 /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -668,8 +691,21 @@
 			children = (
 				89E787812020D64600DDA268 /* Base */,
 				89E787822020D6AF00DDA268 /* en */,
+				D31504B721CAC29100D963B3 /* zh-Hans */,
+				D31504BA21CAC2A400D963B3 /* ja */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		D31504BD21CAC82200D963B3 /* Instruction.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D31504BC21CAC82200D963B3 /* Base */,
+				D31504BF21CAC82700D963B3 /* en */,
+				D31504C121CAC82D00D963B3 /* zh-Hans */,
+				D31504C321CAC82F00D963B3 /* ja */,
+			);
+			name = Instruction.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -679,6 +715,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -738,6 +775,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -788,18 +826,19 @@
 		};
 		89520F7C1FEEF19B00B7E351 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E5F8EBE43FDAF87BB65AFEF /* Pods-StockCount.debug.xcconfig */;
+			baseConfigurationReference = 9C9C7FA4B001357F03903923 /* Pods-StockCount.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = GCJ274LWEE;
+				DEVELOPMENT_TEAM = Q9U5XG63LF;
 				INFOPLIST_FILE = "$(SRCROOT)/StockCount/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.socketmobile.stockCount;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8cbd640b-14c6-47d0-96fd-728a81f48cd2";
-				PROVISIONING_PROFILE_SPECIFIER = "development test com.socketmobile.*";
+				PROVISIONING_PROFILE_SPECIFIER = BillWildDevProvision;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -807,18 +846,19 @@
 		};
 		89520F7D1FEEF19B00B7E351 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C2F7B0E203B0ED79A7F4BC7 /* Pods-StockCount.release.xcconfig */;
+			baseConfigurationReference = CC1090F83D7ECB48B2015D8D /* Pods-StockCount.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = GCJ274LWEE;
+				DEVELOPMENT_TEAM = Q9U5XG63LF;
 				INFOPLIST_FILE = "$(SRCROOT)/StockCount/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.socketmobile.stockCount;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7f708c3c-7b8b-4090-9c7b-fe08a209dab1";
-				PROVISIONING_PROFILE_SPECIFIER = "crashlytics distribution";
+				PROVISIONING_PROFILE_SPECIFIER = "XC Ad Hoc: *";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
