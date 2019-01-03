@@ -20,14 +20,14 @@ class OptionViewController : UIViewController {
         super.viewDidLoad()
         
         let versionString = (Bundle.main.infoDictionary?["CFBundleVersion"] as? String) ?? ""
-        lblVersion.text = "version".localized + versionString + "\nCapture [ver]"
+        lblVersion.text = "version".localized + versionString + "\nCapture ver"
         CaptureHelper.sharedInstance.getVersionWithCompletionHandler { (result, version) in
             DispatchQueue.main.async {
                 let majorVersionString = String(version?.major ?? 0)
                 let middleVersionString = String(version?.middle ?? 0)
                 let minorVersionString = String(version?.minor ?? 0)
                 let captureVersion = majorVersionString + "." + middleVersionString + "." + minorVersionString
-                self.lblVersion.text = "version".localized + versionString + "\nCapture [\(captureVersion)]"
+                self.lblVersion.text = "version".localized + versionString + "\nCapture \(captureVersion)"
             }
         }
         let sdkString = "mobile_sdk".localized + "capture_sdk".localized
