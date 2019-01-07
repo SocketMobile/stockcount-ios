@@ -10,6 +10,9 @@
 "alert" = "Alert";
 
 "version" = "Stock Count by Socket Mobile\nVersion ";
+"Capture" = "Capture";
+"fetching" = "fetching";
+"error" = "error";
 
 "key_alphabet" = "abc";
 "key_decimal" = "123";
