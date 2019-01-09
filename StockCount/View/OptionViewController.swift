@@ -24,7 +24,7 @@ class OptionViewController : UIViewController {
         updateVersion(appVer, "fetching".localized)
         CaptureHelper.sharedInstance.getVersionWithCompletionHandler { (result, version) in
             var captureVersion = "error".localized
-            if version != nil {
+            if version != nil && result == SKTResult.E_NOERROR {
                 captureVersion = "\(version!.major).\(version!.middle).\(version!.minor)"
             }
             self.updateVersion(appVer, captureVersion)
