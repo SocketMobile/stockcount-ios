@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SKTCapture
 
 class OptionViewController : UIViewController {
     
@@ -18,9 +19,16 @@ class OptionViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let versionString = (Bundle.main.infoDictionary?["CFBundleVersion"] as? String) ?? ""
-        lblVersion.text = "version".localized + versionString
-        
+        CaptureHelper.sharedInstance.dispatchQueue = DispatchQueue.main
+        let appVer = (Bundle.main.infoDictionary?["CFBundleVersion"] as? String) ?? ""
+        updateVersion(appVer, "fetching".localized)
+        CaptureHelper.sharedInstance.getVersionWithCompletionHandler { (result, version) in
+            var captureVersion = "error".localized
+            if version != nil && result == SKTResult.E_NOERROR {
+                captureVersion = "\(version!.major).\(version!.middle).\(version!.minor)"
+            }
+            self.updateVersion(appVer, captureVersion)
+        }
         let sdkString = "mobile_sdk".localized + "capture_sdk".localized
         let myAttribute = [ NSAttributedStringKey.font: UIFont(name: "System Font Regular", size: 15.0)! ]
         
@@ -44,6 +52,9 @@ class OptionViewController : UIViewController {
         appDelegate.window?.rootViewController = viewController
     }
     
+    func updateVersion(_ appVer: String, _ captureVer: String) {
+        lblVersion.text = "\("version".localized)\(appVer)\n\("Capture".localized) \(captureVer)"
+    }
 }
 
 extension OptionViewController : UITextViewDelegate {
