@@ -1,9 +1,10 @@
 platform :ios, '10.0'
-use_frameworks!
+#use_frameworks!
 
 target 'StockCount' do
-pod 'Fabric'
-pod 'Crashlytics'
-pod 'RealmSwift'
-pod 'SKTCapture', '~>1.0'
+  pod 'Fabric', '~>1.9'
+  pod 'Crashlytics', '~>3.12'
+  pod 'Realm', '~>3.13', :modular_headers => true
+  pod 'RealmSwift', '~>3.13'
+  pod 'SKTCapture', '~>1.1'
 end
