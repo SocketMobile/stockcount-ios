@@ -44,7 +44,7 @@
 		89CBCF852035DD0700CFA85F /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CBCF842035DD0700CFA85F /* InstructionViewController.swift */; };
 		89DAF7801FEF0D6000510F1D /* RMFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DAF77F1FEF0D6000510F1D /* RMFile.swift */; };
 		89E787802020D62E00DDA268 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 89E7877E2020D62E00DDA268 /* Localizable.strings */; };
-		9C24F9ADEF01D3702DE666D1 /* Pods_StockCount.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F20284CCAEE92258B8A69F /* Pods_StockCount.framework */; };
+		C56DC89B51EA39F2973EEEB0 /* libPods-StockCount.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38234F06055C1E57D462A4D3 /* libPods-StockCount.a */; };
 		D31504BB21CAC82200D963B3 /* Instruction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D31504BD21CAC82200D963B3 /* Instruction.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -66,7 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04F20284CCAEE92258B8A69F /* Pods_StockCount.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockCount.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38234F06055C1E57D462A4D3 /* libPods-StockCount.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StockCount.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AB766BF21CD735400FAD43B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/KeyboardToolBar.strings; sourceTree = "<group>"; };
 		6AB766C021CD735A00FAD43B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/KeyboardToolBar.xib; sourceTree = "<group>"; };
 		6AB766C121CD750D00FAD43B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/KeyboardToolBar.strings"; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C24F9ADEF01D3702DE666D1 /* Pods_StockCount.framework in Frameworks */,
+				C56DC89B51EA39F2973EEEB0 /* libPods-StockCount.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,7 +167,7 @@
 		2CA288C83FAC2B3ACCF1B33F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				04F20284CCAEE92258B8A69F /* Pods_StockCount.framework */,
+				38234F06055C1E57D462A4D3 /* libPods-StockCount.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -381,7 +381,7 @@
 				89520F501FEEF19B00B7E351 /* Frameworks */,
 				89520F511FEEF19B00B7E351 /* Resources */,
 				89CAE6681FEF00E900547B54 /* Run Script */,
-				38C9BD25E441D1B6D38D1C9A /* [CP] Embed Pods Frameworks */,
+				C2E18DA23A8EBC19268FA835 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -517,32 +517,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		38C9BD25E441D1B6D38D1C9A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-StockCount/Pods-StockCount-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SKTCapture/SKTCapture.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKTCapture.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StockCount/Pods-StockCount-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		89CAE6681FEF00E900547B54 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -556,6 +530,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [ -f buildscripts/env-vars.sh ]\nthen\nsource buildscripts/env-vars.sh\n    echo \"deploy the build to Crashlytics\"\n    \"${PODS_ROOT}/Fabric/run\" $CrashlyticsApiKey $CrashlyticsSecret\nfi\n\n";
+		};
+		C2E18DA23A8EBC19268FA835 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StockCount/Pods-StockCount-resources.sh",
+				"${PODS_ROOT}/SKTCapture/softScanBeep.wav",
+				"${PODS_ROOT}/SKTCapture/socketmobilepublickey.pem",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/softScanBeep.wav",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/socketmobilepublickey.pem",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StockCount/Pods-StockCount-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		E6E9C7B2077D9EE362690A75 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

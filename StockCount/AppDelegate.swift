@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppInfo.developerID="BB57D8E1-F911-47BA-B510-693BE162686A"
         
         let captureHelper = CaptureHelper.sharedInstance
-        captureHelper.delegateDispatchQueue = DispatchQueue.main
+        captureHelper.dispatchQueue = DispatchQueue.main
         
         captureHelper.openWithAppInfo(AppInfo) { (result: SKTResult) in
             print("Result of Capture initialization: \(result.rawValue)")
