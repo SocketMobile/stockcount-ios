@@ -70,6 +70,16 @@
 		6AB766BF21CD735400FAD43B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/KeyboardToolBar.strings; sourceTree = "<group>"; };
 		6AB766C021CD735A00FAD43B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/KeyboardToolBar.xib; sourceTree = "<group>"; };
 		6AB766C121CD750D00FAD43B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/KeyboardToolBar.strings"; sourceTree = "<group>"; };
+		6AE5CAED225FB97500A92959 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/KeyboardToolBar.strings; sourceTree = "<group>"; };
+		6AE5CAEE225FB97500A92959 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		6AE5CAEF225FB97500A92959 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Instruction.strings; sourceTree = "<group>"; };
+		6AE5CAF0225FB97500A92959 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		6AE5CAF1225FB97500A92959 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6AE5CAF2225FB97B00A92959 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/KeyboardToolBar.strings; sourceTree = "<group>"; };
+		6AE5CAF3225FB97B00A92959 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		6AE5CAF4225FB97B00A92959 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Instruction.strings; sourceTree = "<group>"; };
+		6AE5CAF5225FB97B00A92959 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		6AE5CAF6225FB97B00A92959 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8904B00520326F5600BE2B05 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
 		8904B0072032701100BE2B05 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		8904B00C2032768400BE2B05 /* KeyboardToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolBar.swift; sourceTree = "<group>"; };
@@ -463,6 +473,8 @@
 				Base,
 				"zh-Hans",
 				ja,
+				de,
+				fr,
 			);
 			mainGroup = 89520F4A1FEEF19B00B7E351;
 			productRefGroup = 89520F541FEEF19B00B7E351 /* Products */;
@@ -658,6 +670,8 @@
 				6AB766BF21CD735400FAD43B /* ja */,
 				6AB766C021CD735A00FAD43B /* Base */,
 				6AB766C121CD750D00FAD43B /* zh-Hans */,
+				6AE5CAED225FB97500A92959 /* de */,
+				6AE5CAF2225FB97B00A92959 /* fr */,
 			);
 			name = KeyboardToolBar.xib;
 			sourceTree = "<group>";
@@ -669,6 +683,8 @@
 				D31504B421CAC15A00D963B3 /* en */,
 				D31504B521CAC29100D963B3 /* zh-Hans */,
 				D31504B821CAC2A400D963B3 /* ja */,
+				6AE5CAEE225FB97500A92959 /* de */,
+				6AE5CAF3225FB97B00A92959 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -680,6 +696,8 @@
 				D31504B621CAC29100D963B3 /* zh-Hans */,
 				D31504B921CAC2A400D963B3 /* ja */,
 				D31504C521CAC83700D963B3 /* en */,
+				6AE5CAF0225FB97500A92959 /* de */,
+				6AE5CAF5225FB97B00A92959 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -691,6 +709,8 @@
 				89E787822020D6AF00DDA268 /* en */,
 				D31504B721CAC29100D963B3 /* zh-Hans */,
 				D31504BA21CAC2A400D963B3 /* ja */,
+				6AE5CAF1225FB97500A92959 /* de */,
+				6AE5CAF6225FB97B00A92959 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -702,6 +722,8 @@
 				D31504BF21CAC82700D963B3 /* en */,
 				D31504C121CAC82D00D963B3 /* zh-Hans */,
 				D31504C321CAC82F00D963B3 /* ja */,
+				6AE5CAEF225FB97500A92959 /* de */,
+				6AE5CAF4225FB97B00A92959 /* fr */,
 			);
 			name = Instruction.storyboard;
 			sourceTree = "<group>";
