@@ -54,7 +54,7 @@
 "fNs-rW-v5t.text" = "Leerstelle und Stückzahl";
 
 /* Class = "UIButton"; normalTitle = "Buy Scanner"; ObjectID = "frl-ii-3SM"; */
-"frl-ii-3SM.normalTitle" = "Buy Scanner";
+"frl-ii-3SM.normalTitle" = "Scanner kaufen";
 
 /* Class = "UITextView"; text = "Text Title\nABC, 1"; ObjectID = "uKA-vK-aOb"; */
 "uKA-vK-aOb.text" = "Text Title\nABC, 1";
