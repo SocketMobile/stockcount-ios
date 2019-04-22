@@ -53,5 +53,8 @@
 /* Class = "UILabel"; text = "Space and quantity"; ObjectID = "fNs-rW-v5t"; */
 "fNs-rW-v5t.text" = "空格加数量";
 
+/* Class = "UIButton"; normalTitle = "Buy Scanner"; ObjectID = "frl-ii-3SM"; */
+"frl-ii-3SM.normalTitle" = "购买扫描仪";
+
 /* Class = "UITextView"; text = "Text Title\nABC, 1"; ObjectID = "uKA-vK-aOb"; */
 "uKA-vK-aOb.text" = "Text Title\nABC, 1";
