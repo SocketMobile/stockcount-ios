@@ -57,7 +57,7 @@ class ScanDlg : UIView, Modal {
         let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
         
         view.frame = bounds
-        view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        view.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
         
         addSubview(view)
     }

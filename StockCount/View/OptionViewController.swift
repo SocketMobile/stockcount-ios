@@ -33,7 +33,7 @@ class OptionViewController : UIViewController {
             self.updateVersion(appVer, captureVersion)
         }
         let sdkString = "mobile_sdk".localized + "capture_sdk".localized
-        let myAttribute = [ NSAttributedStringKey.font: UIFont(name: "System Font Regular", size: 15.0)! ]
+        let myAttribute = [ NSAttributedString.Key.font: UIFont(name: "System Font Regular", size: 15.0)! ]
         
         let attributedString = NSMutableAttributedString(string: sdkString, attributes: myAttribute)
 
