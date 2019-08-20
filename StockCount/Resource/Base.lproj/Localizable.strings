@@ -8,6 +8,7 @@
 "cancel" = "Cancel";
 
 "alert" = "Alert";
+"JSON Parse Error" = "JSON Parse Error";
 
 "version" = "Stock Count by Socket Mobile\nVersion ";
 "Capture" = "Capture";

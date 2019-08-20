@@ -97,7 +97,10 @@ class OptionViewController : UIViewController {
                         UIApplication.shared.open(URL(string: link)!, options: [:], completionHandler: nil)
                     }
                 } catch {
-                    
+                    let alertController = UIAlertController(title: "error".localized, message: "JSON Parse Error".localized, preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: "ok".localized, style: .default, handler: nil))
+                    self.present(alertController, animated: true, completion: nil)
+                    return
                 }
             }
         }
