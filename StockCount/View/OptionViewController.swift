@@ -64,6 +64,7 @@ class OptionViewController : UIViewController {
     @IBAction func onBuyScannerClicked(_ sender: Any) {
         let regionCode = Locale.current.regionCode
         
+        //for the CN link, we don't have Socket Store suitable for China. We are using the Amazon link.
         if regionCode == "CN" {
             UIApplication.shared.open(URL(string: ChinaLink)!, options: [:], completionHandler: nil)
             return
