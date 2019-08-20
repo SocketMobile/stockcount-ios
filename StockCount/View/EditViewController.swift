@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import AudioToolbox
+import AVFoundation
+import MediaPlayer
 
 class EditViewController: CustomNavBarViewController, UITextViewDelegate
 {
@@ -24,6 +26,9 @@ class EditViewController: CustomNavBarViewController, UITextViewDelegate
     var keyboardToolBar : KeyboardToolBar?
     private let appleKeyboardIdentifier = ["en_US@hw=Automatic;sw=QWERTY", "en_US@sw=QWERTY;hw=Automatic"]
     
+    let volumeControl = MPVolumeView(frame: CGRect(x: 0, y: 0, width: 120, height: 120))
+    var isForceVolumeChange = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,13 +42,55 @@ class EditViewController: CustomNavBarViewController, UITextViewDelegate
         txtView.inputAccessoryView = keyboardToolBar
         
         editController.readFile(fileName)
+        
+        view.addSubview(volumeControl)
+    }
+    override func viewDidLayoutSubviews() {
+        volumeControl.frame = CGRect(x: -120, y: -120, width: 100, height: 100)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         txtView.becomeFirstResponder()
-    }
         
+        AVAudioSession.sharedInstance().addObserver(self, forKeyPath: "outputVolume", options: .new, context: nil)
+        
+        setVolume(0.5)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        AVAudioSession.sharedInstance().removeObserver(self, forKeyPath: "outputVolume")
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        switch keyPath {
+        case "outputVolume":
+            if !isForceVolumeChange {
+                didTriggerScan()
+            } else {
+                isForceVolumeChange = false
+            }
+            if change != nil {
+                let volume = change![NSKeyValueChangeKey.newKey] as? Float
+                if volume == 1 || volume == 0 {
+                    setVolume(0.5)
+                }
+            }
+        default:
+            break
+        }
+    }
+    
+    func setVolume(_ volume: Float) {
+        isForceVolumeChange = true
+        let slider = volumeControl.subviews.filter{NSStringFromClass($0.classForCoder) == "MPVolumeSlider"}.first as? UISlider
+        slider?.value = volume
+    }
     deinit {
         NotificationCenter.default.removeObserver(self)
         
@@ -114,7 +161,7 @@ class EditViewController: CustomNavBarViewController, UITextViewDelegate
     }
     @objc func onBtnShare() {
         editController.saveFile(fileName, strContent: txtView.text)
-        if let fileURL = FileMgr.getURL(fileName: fileName) {
+        if let fileURL = FileMgr.saveShareFile(fileName: fileName) {
             let activityViewController = UIActivityViewController(activityItems: [fileURL], applicationActivities: nil)
             activityViewController.popoverPresentationController?.sourceView = self.view
             

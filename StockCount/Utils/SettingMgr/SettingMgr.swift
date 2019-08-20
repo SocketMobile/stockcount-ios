@@ -19,6 +19,8 @@ class SettingMgr {
         
         case scanDate               = "KEY_ScanDate"
         case scanCount              = "KEY_ScanCount"
+        
+        case consolidatingCounts    = "KEY_ConsolidatingCounts"
     }
     
     static let key_AutoAddQuantity = "KEY_AutoAddQuantity"
@@ -77,6 +79,10 @@ class SettingMgr {
         set (argVale) { setSetting(keyName: .scanCount, newValue: argVale)}
     }
     
+    class var consolidatingCounts : Bool {
+        get {return getSetting(keyName: .consolidatingCounts, typeIndicator: Bool.self) ?? true}
+        set (argValue) { setSetting(keyName: .consolidatingCounts, newValue: argValue) }
+    }
     
     class func getLineForBarcode(_ barcode:String? = nil) -> String {
         var strLine = barcode == nil ?  "txt_barcode".localized : barcode!

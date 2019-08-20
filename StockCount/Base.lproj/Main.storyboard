@@ -330,7 +330,7 @@ Learn more about the Capture SDK.</string>
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6yO-b3-iGj">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="562"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="620"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3p-Kl-USO">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
@@ -656,7 +656,7 @@ Learn more about the Capture SDK.</string>
                                                     <constraint firstItem="0P8-vc-Bpg" firstAttribute="centerY" secondItem="4Sc-xD-AgG" secondAttribute="centerY" id="oy1-FG-LUa"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0F-N7-uk3">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0F-N7-uk3" userLabel="Support D600">
                                                 <rect key="frame" x="0.0" y="500" width="375" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Support D600" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5w-ff-Umz">
@@ -682,6 +682,33 @@ Learn more about the Capture SDK.</string>
                                                     <constraint firstAttribute="trailing" secondItem="fDR-W3-Ugg" secondAttribute="trailing" constant="18" id="wfC-Ct-mGE"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xZm-F0-9Oj">
+                                                <rect key="frame" x="0.0" y="558" width="375" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Consolidating counts before sharing the file" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GN3-Xd-f3o">
+                                                        <rect key="frame" x="18" y="6" width="277" height="38.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EVf-aW-jWn">
+                                                        <rect key="frame" x="308" y="9.5" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="didConsolidatingCountsChanged:" destination="9an-oy-szK" eventType="valueChanged" id="npS-xK-xud"/>
+                                                            <action selector="didSupportD600Changed:" destination="9an-oy-szK" eventType="valueChanged" id="LkU-K2-evj"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="EVf-aW-jWn" firstAttribute="centerY" secondItem="xZm-F0-9Oj" secondAttribute="centerY" id="OvW-uv-Tit"/>
+                                                    <constraint firstItem="GN3-Xd-f3o" firstAttribute="leading" secondItem="xZm-F0-9Oj" secondAttribute="leading" constant="18" id="RAK-qS-eNT"/>
+                                                    <constraint firstAttribute="height" constant="50" id="U39-D1-Wvg"/>
+                                                    <constraint firstAttribute="trailing" secondItem="GN3-Xd-f3o" secondAttribute="trailing" constant="80" id="WsG-Ly-7Lz"/>
+                                                    <constraint firstItem="GN3-Xd-f3o" firstAttribute="centerY" secondItem="xZm-F0-9Oj" secondAttribute="centerY" id="q48-vG-vbP"/>
+                                                    <constraint firstAttribute="trailing" secondItem="EVf-aW-jWn" secondAttribute="trailing" constant="18" id="qbF-Xg-D1j"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -689,13 +716,16 @@ Learn more about the Capture SDK.</string>
                                             <constraint firstItem="x0F-N7-uk3" firstAttribute="leading" secondItem="6yO-b3-iGj" secondAttribute="leading" id="3pD-hs-4vW"/>
                                             <constraint firstItem="4Sc-xD-AgG" firstAttribute="top" secondItem="LxG-aO-QRQ" secondAttribute="bottom" constant="8" id="Avs-r5-v20"/>
                                             <constraint firstItem="x0F-N7-uk3" firstAttribute="top" secondItem="4Sc-xD-AgG" secondAttribute="bottom" constant="8" id="CTj-4Z-b7V"/>
+                                            <constraint firstAttribute="bottom" secondItem="xZm-F0-9Oj" secondAttribute="bottom" constant="12" id="CTw-db-HeB"/>
                                             <constraint firstAttribute="trailing" secondItem="4Sc-xD-AgG" secondAttribute="trailing" id="Gib-iP-L3v"/>
                                             <constraint firstItem="LxG-aO-QRQ" firstAttribute="leading" secondItem="6yO-b3-iGj" secondAttribute="leading" id="Gy1-zP-h06"/>
                                             <constraint firstItem="LxG-aO-QRQ" firstAttribute="top" secondItem="d3p-Kl-USO" secondAttribute="bottom" id="NWO-ke-l7z"/>
                                             <constraint firstItem="4Sc-xD-AgG" firstAttribute="leading" secondItem="6yO-b3-iGj" secondAttribute="leading" id="RqU-Ms-HfJ"/>
                                             <constraint firstAttribute="trailing" secondItem="d3p-Kl-USO" secondAttribute="trailing" id="SPe-16-lyq"/>
-                                            <constraint firstAttribute="bottom" secondItem="x0F-N7-uk3" secondAttribute="bottom" constant="12" id="cZk-sg-Kus"/>
+                                            <constraint firstItem="xZm-F0-9Oj" firstAttribute="leading" secondItem="6yO-b3-iGj" secondAttribute="leading" id="bua-xX-C15"/>
                                             <constraint firstAttribute="trailing" secondItem="x0F-N7-uk3" secondAttribute="trailing" id="jLu-k1-AZe"/>
+                                            <constraint firstItem="xZm-F0-9Oj" firstAttribute="top" secondItem="x0F-N7-uk3" secondAttribute="bottom" constant="8" id="r2W-Cy-Ikh"/>
+                                            <constraint firstAttribute="trailing" secondItem="xZm-F0-9Oj" secondAttribute="trailing" id="vWJ-VB-TRU"/>
                                             <constraint firstItem="d3p-Kl-USO" firstAttribute="leading" secondItem="6yO-b3-iGj" secondAttribute="leading" id="wPI-4q-1KO"/>
                                             <constraint firstAttribute="trailing" secondItem="LxG-aO-QRQ" secondAttribute="trailing" id="yBG-Fn-unB"/>
                                         </constraints>
@@ -731,6 +761,7 @@ Learn more about the Capture SDK.</string>
                         <outlet property="imgCheckQuantityNoComma" destination="DLM-mF-ajW" id="7oV-aH-Jcl"/>
                         <outlet property="stepperQuantity" destination="nle-GW-b3g" id="71I-i8-ydD"/>
                         <outlet property="switchAutoQuantity" destination="FS7-CQ-mOh" id="m4T-nq-0Cg"/>
+                        <outlet property="switchConsolidatingCounts" destination="EVf-aW-jWn" id="H4R-hp-x5v"/>
                         <outlet property="switchSupportD600" destination="fDR-W3-Ugg" id="zFH-WD-ha6"/>
                         <outlet property="switchVibrate" destination="8ZH-hi-LkA" id="UHi-2U-A9t"/>
                         <outlet property="txtPreview" destination="ky6-C9-E5Y" id="KwO-V6-4nZ"/>
