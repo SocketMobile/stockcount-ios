@@ -166,6 +166,8 @@ class EditViewController: CustomNavBarViewController, UITextViewDelegate
             activityViewController.popoverPresentationController?.sourceView = self.view
             
             self.present(activityViewController, animated: true, completion: nil)
+        } else {
+            showAlert("Error on create share file.".localized)
         }
     }
     @objc func onBtnDone() {

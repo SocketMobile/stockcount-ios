@@ -24,3 +24,5 @@
 
 "txt_preview" = "The result will look like:\n";
 "txt_barcode" = "[barcode]";
+
+"Error on create share file." = "Error on create share file.";
