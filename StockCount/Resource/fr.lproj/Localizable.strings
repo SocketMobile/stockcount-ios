@@ -6,6 +6,6 @@
 "mobile_sdk" = "Cette application de démonstration utilise le SDK de capture Socket Mobile. Le code source est inclus dans le SDK pour rendre possibles les adaptations spécifiques à votre entreprise dans le cadre des conditions établies par Socket Mobile.\n\n";
 "capture_sdk" = "En savoir plus sur notre SDK de capture";
 
-"txt_instruction_1" = "Connectez votre lecteur Socket en mode Application (avec l'application Compagnon Socket Mobile)";
+"txt_instruction_1" = "Connectez votre lecteur Socket en mode Application (avec l'application Socket Mobile Companion)";
 "txt_instruction_2" = "Numériser le code-barres de votre produit dans votre fichier texte. La quantité (1 par défaut) est ajoutée automatiquement à chaque lecture.";
 "txt_instruction_3" = "Modifiez la configuration de votre lecteur pour répondre à vos besoins.";
