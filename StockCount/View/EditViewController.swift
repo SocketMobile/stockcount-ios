@@ -12,6 +12,10 @@ import AudioToolbox
 import AVFoundation
 import MediaPlayer
 
+let MAX_VOLUME : Float? = 1
+let MIN_VOLUME : Float? = 0
+let MID_VOLUME : Float = 0.5
+
 class EditViewController: CustomNavBarViewController, UITextViewDelegate
 {
     lazy var editController = EditController(view: self)
@@ -58,7 +62,7 @@ class EditViewController: CustomNavBarViewController, UITextViewDelegate
         
         AVAudioSession.sharedInstance().addObserver(self, forKeyPath: "outputVolume", options: .new, context: nil)
         
-        setVolume(0.5)
+        setVolume(MID_VOLUME)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -77,8 +81,8 @@ class EditViewController: CustomNavBarViewController, UITextViewDelegate
             }
             if change != nil {
                 let volume = change![NSKeyValueChangeKey.newKey] as? Float
-                if volume == 1 || volume == 0 {
-                    setVolume(0.5)
+                if volume == MAX_VOLUME || volume == MIN_VOLUME {
+                    setVolume(MID_VOLUME)
                 }
             }
         default:
