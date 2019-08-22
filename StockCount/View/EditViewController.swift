@@ -14,7 +14,8 @@ import MediaPlayer
 
 let MAX_VOLUME : Float? = 1
 let MIN_VOLUME : Float? = 0
-let MID_VOLUME : Float = 0.5
+let LOW_INIT_VOL : Float = 0.1
+let HIGH_INIT_VOL : Float = 0.9
 
 class EditViewController: CustomNavBarViewController, UITextViewDelegate
 {
@@ -62,7 +63,8 @@ class EditViewController: CustomNavBarViewController, UITextViewDelegate
         
         AVAudioSession.sharedInstance().addObserver(self, forKeyPath: "outputVolume", options: .new, context: nil)
         
-        setVolume(MID_VOLUME)
+        let vol = AVAudioSession.sharedInstance().outputVolume
+        initVolume(vol)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -81,15 +83,20 @@ class EditViewController: CustomNavBarViewController, UITextViewDelegate
             }
             if change != nil {
                 let volume = change![NSKeyValueChangeKey.newKey] as? Float
-                if volume == MAX_VOLUME || volume == MIN_VOLUME {
-                    setVolume(MID_VOLUME)
-                }
+                initVolume(volume)
             }
         default:
             break
         }
     }
     
+    func initVolume(_ volume: Float?) {
+        if volume == MAX_VOLUME {
+            setVolume(HIGH_INIT_VOL)
+        } else if volume == MIN_VOLUME {
+            setVolume(LOW_INIT_VOL)
+        }
+    }
     func setVolume(_ volume: Float) {
         isForceVolumeChange = true
         let slider = volumeControl.subviews.filter{NSStringFromClass($0.classForCoder) == "MPVolumeSlider"}.first as? UISlider
