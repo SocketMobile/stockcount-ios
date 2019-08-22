@@ -29,7 +29,7 @@ class DBHelper {
             newItem.updatedTime = Date()
             
             try! realm.write {
-                realm.add(newItem, update: true)
+                realm.add(newItem, update: .all)
             }
         }
     }
