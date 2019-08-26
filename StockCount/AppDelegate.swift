@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Fabric
+import Crashlytics
 
 import SKTCapture
 import AVFoundation
@@ -19,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        Fabric.with([Crashlytics.self])
+        
         // Initialize CaptureHelper
         let AppInfo = SKTAppInfo()
     AppInfo.appKey="MCwCFDqSvrhLenQ9qu49ADSL3K+9mWV8AhQIamqcj1fjbGZVcJ3r+t5ijm+/ow=="
