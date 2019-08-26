@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A6A616823144C92004DA408 /* SecKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A6A616723144C92004DA408 /* SecKeys.plist */; };
 		6AB766BB21CD733F00FAD43B /* KeyboardToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB766BD21CD733F00FAD43B /* KeyboardToolBar.xib */; };
 		6ADCF8CC22650EEF00F10082 /* RefersionKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADCF8CB22650EEF00F10082 /* RefersionKeys.swift */; };
 		8904B00620326F5600BE2B05 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8904B00520326F5600BE2B05 /* NibView.swift */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		38234F06055C1E57D462A4D3 /* libPods-StockCount.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StockCount.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A6A616723144C92004DA408 /* SecKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SecKeys.plist; sourceTree = "<group>"; };
 		6AB766BF21CD735400FAD43B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/KeyboardToolBar.strings; sourceTree = "<group>"; };
 		6AB766C021CD735A00FAD43B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/KeyboardToolBar.xib; sourceTree = "<group>"; };
 		6AB766C121CD750D00FAD43B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/KeyboardToolBar.strings"; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 		89520F551FEEF19B00B7E351 /* StockCount */ = {
 			isa = PBXGroup;
 			children = (
+				6A6A616723144C92004DA408 /* SecKeys.plist */,
 				89AE9496200C2DE300C3C901 /* Controllers */,
 				89C035B21FF572F9003F9BEC /* Extension */,
 				89C035AC1FF57043003F9BEC /* Resource */,
@@ -511,6 +514,7 @@
 				89C0CA882010051800D5F108 /* btn_option.png in Resources */,
 				89C0CA8B2010076000D5F108 /* icon_info.png in Resources */,
 				D31504BB21CAC82200D963B3 /* Instruction.storyboard in Resources */,
+				6A6A616823144C92004DA408 /* SecKeys.plist in Resources */,
 				8916F9AB200F1502006827DD /* ScanDlg.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

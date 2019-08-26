@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         Fabric.with([Crashlytics.self])
         
+        retrieveSecKeyValues()
+        
         // Initialize CaptureHelper
         let AppInfo = SKTAppInfo()
     AppInfo.appKey="MCwCFDqSvrhLenQ9qu49ADSL3K+9mWV8AhQIamqcj1fjbGZVcJ3r+t5ijm+/ow=="
