@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  StockCount
+*/
+"txt_preview" = "So wird das Resultat aussehen:\n";
+"mobile_sdk" = "Diese Demo-Anwendung verwendet die Socket Mobile Capture SDK. Im Rahmen der Socket Mobile Geschäftsbedingungen steht der Quellcode als Teil der SDK für die Adaption an Ihre Geschäftsanforderungen zur Verfügung. \n\n";
+"capture_sdk" = "Mehr über die Capture SDK";
+
+"txt_instruction_1" = "Verbinden Sie Ihren Scanner im Anwendungsmodus (mit der Socket Mobile Companion App)";
+"txt_instruction_2" = "Scannen Sie die Artikel-Barcodes in Ihre Textdatei ein. Die Anzahl (default ist 1) wird automatisch bei jedem Scan hinzugefügt";
+"txt_instruction_3" = "Ändern Sie die Scan-Einstellungen, um Sie Ihren Anforderungen anzupassen";

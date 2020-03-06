@@ -8,6 +8,7 @@
 "cancel" = "Cancel";
 
 "alert" = "Alert";
+"JSON Parse Error" = "JSON Parse Error";
 
 "version" = "Stock Count by Socket Mobile\nVersion ";
 
@@ -23,3 +24,5 @@
 
 "mobile_sdk" = "This demo app uses Socket Mobile's Capture SDK. As part of the SDK, the source code is available for adaptation per your business under the Socket Mobile terms and agreements.\n\n";
 "capture_sdk" = "Learn more about the Capture SDK";
+
+"Error on create share file." = "Error on create share file.";

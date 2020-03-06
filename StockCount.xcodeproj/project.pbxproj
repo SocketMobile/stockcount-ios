@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A6A616823144C92004DA408 /* SecKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A6A616723144C92004DA408 /* SecKeys.plist */; };
 		6AB766BB21CD733F00FAD43B /* KeyboardToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB766BD21CD733F00FAD43B /* KeyboardToolBar.xib */; };
+		6ADCF8CC22650EEF00F10082 /* RefersionKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADCF8CB22650EEF00F10082 /* RefersionKeys.swift */; };
 		8904B00620326F5600BE2B05 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8904B00520326F5600BE2B05 /* NibView.swift */; };
 		8904B0082032701100BE2B05 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8904B0072032701100BE2B05 /* UIView.swift */; };
 		8904B00D2032768400BE2B05 /* KeyboardToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8904B00C2032768400BE2B05 /* KeyboardToolBar.swift */; };
@@ -44,7 +46,7 @@
 		89CBCF852035DD0700CFA85F /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CBCF842035DD0700CFA85F /* InstructionViewController.swift */; };
 		89DAF7801FEF0D6000510F1D /* RMFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DAF77F1FEF0D6000510F1D /* RMFile.swift */; };
 		89E787802020D62E00DDA268 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 89E7877E2020D62E00DDA268 /* Localizable.strings */; };
-		9C24F9ADEF01D3702DE666D1 /* Pods_StockCount.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F20284CCAEE92258B8A69F /* Pods_StockCount.framework */; };
+		C56DC89B51EA39F2973EEEB0 /* libPods-StockCount.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38234F06055C1E57D462A4D3 /* libPods-StockCount.a */; };
 		D31504BB21CAC82200D963B3 /* Instruction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D31504BD21CAC82200D963B3 /* Instruction.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -66,10 +68,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04F20284CCAEE92258B8A69F /* Pods_StockCount.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockCount.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38234F06055C1E57D462A4D3 /* libPods-StockCount.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StockCount.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A6A616723144C92004DA408 /* SecKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SecKeys.plist; sourceTree = "<group>"; };
 		6AB766BF21CD735400FAD43B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/KeyboardToolBar.strings; sourceTree = "<group>"; };
 		6AB766C021CD735A00FAD43B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/KeyboardToolBar.xib; sourceTree = "<group>"; };
 		6AB766C121CD750D00FAD43B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/KeyboardToolBar.strings"; sourceTree = "<group>"; };
+		6ADCF8CB22650EEF00F10082 /* RefersionKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefersionKeys.swift; sourceTree = "<group>"; };
+		6AE5CAED225FB97500A92959 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/KeyboardToolBar.strings; sourceTree = "<group>"; };
+		6AE5CAEE225FB97500A92959 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		6AE5CAEF225FB97500A92959 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Instruction.strings; sourceTree = "<group>"; };
+		6AE5CAF0225FB97500A92959 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		6AE5CAF1225FB97500A92959 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6AE5CAF2225FB97B00A92959 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/KeyboardToolBar.strings; sourceTree = "<group>"; };
+		6AE5CAF3225FB97B00A92959 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		6AE5CAF4225FB97B00A92959 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Instruction.strings; sourceTree = "<group>"; };
+		6AE5CAF5225FB97B00A92959 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		6AE5CAF6225FB97B00A92959 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8904B00520326F5600BE2B05 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
 		8904B0072032701100BE2B05 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		8904B00C2032768400BE2B05 /* KeyboardToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolBar.swift; sourceTree = "<group>"; };
@@ -134,7 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C24F9ADEF01D3702DE666D1 /* Pods_StockCount.framework in Frameworks */,
+				C56DC89B51EA39F2973EEEB0 /* libPods-StockCount.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,7 +181,7 @@
 		2CA288C83FAC2B3ACCF1B33F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				04F20284CCAEE92258B8A69F /* Pods_StockCount.framework */,
+				38234F06055C1E57D462A4D3 /* libPods-StockCount.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -265,6 +279,7 @@
 		89520F551FEEF19B00B7E351 /* StockCount */ = {
 			isa = PBXGroup;
 			children = (
+				6A6A616723144C92004DA408 /* SecKeys.plist */,
 				89AE9496200C2DE300C3C901 /* Controllers */,
 				89C035B21FF572F9003F9BEC /* Extension */,
 				89C035AC1FF57043003F9BEC /* Resource */,
@@ -305,6 +320,7 @@
 				89C035B51FF57667003F9BEC /* FileMgr */,
 				8909E2EE1FF055120026B356 /* SettingMgr */,
 				89DAF77E1FEF0D3E00510F1D /* DBMgr */,
+				6ADCF8CB22650EEF00F10082 /* RefersionKeys.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -381,7 +397,7 @@
 				89520F501FEEF19B00B7E351 /* Frameworks */,
 				89520F511FEEF19B00B7E351 /* Resources */,
 				89CAE6681FEF00E900547B54 /* Run Script */,
-				38C9BD25E441D1B6D38D1C9A /* [CP] Embed Pods Frameworks */,
+				C2E18DA23A8EBC19268FA835 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -463,6 +479,8 @@
 				Base,
 				"zh-Hans",
 				ja,
+				de,
+				fr,
 			);
 			mainGroup = 89520F4A1FEEF19B00B7E351;
 			productRefGroup = 89520F541FEEF19B00B7E351 /* Products */;
@@ -496,6 +514,7 @@
 				89C0CA882010051800D5F108 /* btn_option.png in Resources */,
 				89C0CA8B2010076000D5F108 /* icon_info.png in Resources */,
 				D31504BB21CAC82200D963B3 /* Instruction.storyboard in Resources */,
+				6A6A616823144C92004DA408 /* SecKeys.plist in Resources */,
 				8916F9AB200F1502006827DD /* ScanDlg.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,32 +536,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		38C9BD25E441D1B6D38D1C9A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-StockCount/Pods-StockCount-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SKTCapture/SKTCapture.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKTCapture.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StockCount/Pods-StockCount-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		89CAE6681FEF00E900547B54 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -556,6 +549,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [ -f buildscripts/env-vars.sh ]\nthen\nsource buildscripts/env-vars.sh\n    echo \"deploy the build to Crashlytics\"\n    \"${PODS_ROOT}/Fabric/run\" $CrashlyticsApiKey $CrashlyticsSecret\nfi\n\n";
+		};
+		C2E18DA23A8EBC19268FA835 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StockCount/Pods-StockCount-resources.sh",
+				"${PODS_ROOT}/SKTCapture/softScanBeep.wav",
+				"${PODS_ROOT}/SKTCapture/socketmobilepublickey.pem",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/softScanBeep.wav",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/socketmobilepublickey.pem",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StockCount/Pods-StockCount-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		E6E9C7B2077D9EE362690A75 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -602,6 +619,7 @@
 				8916F9AD200F1988006827DD /* ScanDlg.swift in Sources */,
 				8909E2ED1FF0427F0026B356 /* HomeViewController.swift in Sources */,
 				89520F571FEEF19B00B7E351 /* AppDelegate.swift in Sources */,
+				6ADCF8CC22650EEF00F10082 /* RefersionKeys.swift in Sources */,
 				8956133820112A740004E74C /* SettingViewController.swift in Sources */,
 				89C035BB1FF58D3F003F9BEC /* String.swift in Sources */,
 				89C035B41FF57333003F9BEC /* Date.swift in Sources */,
@@ -660,6 +678,8 @@
 				6AB766BF21CD735400FAD43B /* ja */,
 				6AB766C021CD735A00FAD43B /* Base */,
 				6AB766C121CD750D00FAD43B /* zh-Hans */,
+				6AE5CAED225FB97500A92959 /* de */,
+				6AE5CAF2225FB97B00A92959 /* fr */,
 			);
 			name = KeyboardToolBar.xib;
 			sourceTree = "<group>";
@@ -671,6 +691,8 @@
 				D31504B421CAC15A00D963B3 /* en */,
 				D31504B521CAC29100D963B3 /* zh-Hans */,
 				D31504B821CAC2A400D963B3 /* ja */,
+				6AE5CAEE225FB97500A92959 /* de */,
+				6AE5CAF3225FB97B00A92959 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -682,6 +704,8 @@
 				D31504B621CAC29100D963B3 /* zh-Hans */,
 				D31504B921CAC2A400D963B3 /* ja */,
 				D31504C521CAC83700D963B3 /* en */,
+				6AE5CAF0225FB97500A92959 /* de */,
+				6AE5CAF5225FB97B00A92959 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -693,6 +717,8 @@
 				89E787822020D6AF00DDA268 /* en */,
 				D31504B721CAC29100D963B3 /* zh-Hans */,
 				D31504BA21CAC2A400D963B3 /* ja */,
+				6AE5CAF1225FB97500A92959 /* de */,
+				6AE5CAF6225FB97B00A92959 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -704,6 +730,8 @@
 				D31504BF21CAC82700D963B3 /* en */,
 				D31504C121CAC82D00D963B3 /* zh-Hans */,
 				D31504C321CAC82F00D963B3 /* ja */,
+				6AE5CAEF225FB97500A92959 /* de */,
+				6AE5CAF4225FB97B00A92959 /* fr */,
 			);
 			name = Instruction.storyboard;
 			sourceTree = "<group>";
@@ -768,6 +796,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -820,6 +849,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -839,7 +869,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8cbd640b-14c6-47d0-96fd-728a81f48cd2";
 				PROVISIONING_PROFILE_SPECIFIER = BillWildDevProvision;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -859,7 +889,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7f708c3c-7b8b-4090-9c7b-fe08a209dab1";
 				PROVISIONING_PROFILE_SPECIFIER = "XC Ad Hoc: *";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

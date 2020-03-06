@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GHl-yp-HpZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GHl-yp-HpZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -129,7 +129,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVv-7u-pp3">
-                                        <rect key="frame" x="56" y="16" width="100.5" height="19.5"/>
+                                        <rect key="frame" x="56" y="15.5" width="100.5" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -185,7 +185,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Started" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pq6-Ca-b5l">
-                                        <rect key="frame" x="56" y="16" width="84.5" height="19.5"/>
+                                        <rect key="frame" x="56" y="15.5" width="84.5" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -225,13 +225,13 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_device.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ixt-4F-BsC">
-                                <rect key="frame" x="112.5" y="268" width="150" height="131"/>
+                                <rect key="frame" x="112.5" y="217.5" width="150" height="132"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ixt-4F-BsC" secondAttribute="height" multiplier="345:303" id="RdD-hf-Btj"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmc-xK-7pR">
-                                <rect key="frame" x="139" y="407" width="97.5" height="36"/>
+                                <rect key="frame" x="139" y="357.5" width="97.5" height="36"/>
                                 <string key="text">Socket Mobile
 Version 0.8</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -239,7 +239,7 @@ Version 0.8</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2AH-YX-18f">
-                                <rect key="frame" x="9.5" y="461" width="356" height="182"/>
+                                <rect key="frame" x="9.5" y="411.5" width="356" height="231.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -255,18 +255,47 @@ Learn more about the Capture SDK.</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frl-ii-3SM">
+                                <rect key="frame" x="94" y="615" width="187.5" height="40"/>
+                                <color key="backgroundColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="RWF-kp-vJo"/>
+                                </constraints>
+                                <state key="normal" title="Buy Scanner">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onBuyScannerClicked:" destination="vQ4-Cq-4Is" eventType="touchUpInside" id="LbJ-VF-fKi"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="iJd-Dj-Gp8">
+                                <rect key="frame" x="0.0" y="32" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.30128959760273971" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="2AH-YX-18f" firstAttribute="centerX" secondItem="010-su-NIN" secondAttribute="centerX" id="1RX-7e-5Jx"/>
-                            <constraint firstItem="Ixt-4F-BsC" firstAttribute="centerY" secondItem="010-su-NIN" secondAttribute="centerY" id="2xI-kg-JVE"/>
+                            <constraint firstItem="Ixt-4F-BsC" firstAttribute="centerY" secondItem="010-su-NIN" secondAttribute="centerY" constant="-50" id="2xI-kg-JVE"/>
                             <constraint firstItem="2AH-YX-18f" firstAttribute="top" secondItem="Cmc-xK-7pR" secondAttribute="bottom" constant="18" id="Ame-de-xb8"/>
                             <constraint firstItem="SD9-YG-zdc" firstAttribute="top" secondItem="BBN-hL-QdY" secondAttribute="bottom" id="CyF-1e-YTg"/>
+                            <constraint firstItem="iJd-Dj-Gp8" firstAttribute="width" secondItem="010-su-NIN" secondAttribute="width" id="Eot-6F-cuJ"/>
                             <constraint firstItem="Cmc-xK-7pR" firstAttribute="top" secondItem="Ixt-4F-BsC" secondAttribute="bottom" constant="8" id="FzO-bc-NSm"/>
+                            <constraint firstItem="iJd-Dj-Gp8" firstAttribute="centerX" secondItem="oAR-cP-n2J" secondAttribute="centerX" id="GQx-W4-vVa"/>
                             <constraint firstItem="2AH-YX-18f" firstAttribute="width" secondItem="010-su-NIN" secondAttribute="width" multiplier="0.95" id="HIl-C9-YnM"/>
                             <constraint firstItem="Ixt-4F-BsC" firstAttribute="centerX" secondItem="010-su-NIN" secondAttribute="centerX" id="JgO-Fs-bCQ"/>
                             <constraint firstItem="Cmc-xK-7pR" firstAttribute="centerX" secondItem="010-su-NIN" secondAttribute="centerX" id="LTS-yw-1IM"/>
+                            <constraint firstItem="oAR-cP-n2J" firstAttribute="bottom" secondItem="frl-ii-3SM" secondAttribute="bottom" constant="12" id="MUg-yH-ccT"/>
+                            <constraint firstItem="frl-ii-3SM" firstAttribute="centerX" secondItem="oAR-cP-n2J" secondAttribute="centerX" id="U5a-Vy-Gh6"/>
+                            <constraint firstItem="frl-ii-3SM" firstAttribute="width" secondItem="010-su-NIN" secondAttribute="width" multiplier="0.5" id="Z1o-Vy-Pge"/>
                             <constraint firstItem="BBN-hL-QdY" firstAttribute="leading" secondItem="oAR-cP-n2J" secondAttribute="leading" id="ZEO-MR-8A3"/>
+                            <constraint firstItem="iJd-Dj-Gp8" firstAttribute="centerY" secondItem="oAR-cP-n2J" secondAttribute="centerY" id="g5i-SW-jdC"/>
+                            <constraint firstItem="iJd-Dj-Gp8" firstAttribute="height" secondItem="010-su-NIN" secondAttribute="height" id="hDC-lp-tQg"/>
                             <constraint firstItem="SD9-YG-zdc" firstAttribute="trailing" secondItem="oAR-cP-n2J" secondAttribute="trailing" id="hsD-3E-Mcq"/>
                             <constraint firstItem="SD9-YG-zdc" firstAttribute="leading" secondItem="oAR-cP-n2J" secondAttribute="leading" id="iL4-3I-ZYg"/>
                             <constraint firstItem="oAR-cP-n2J" firstAttribute="bottom" secondItem="2AH-YX-18f" secondAttribute="bottom" constant="24" id="lFJ-Vo-I5a"/>
@@ -281,6 +310,7 @@ Learn more about the Capture SDK.</string>
                     </navigationItem>
                     <connections>
                         <outlet property="lblVersion" destination="Cmc-xK-7pR" id="0Yh-3H-mfL"/>
+                        <outlet property="loadingIndicator" destination="iJd-Dj-Gp8" id="siD-Ld-63V"/>
                         <outlet property="txtLink" destination="2AH-YX-18f" id="C0X-eF-527"/>
                     </connections>
                 </viewController>
@@ -300,13 +330,13 @@ Learn more about the Capture SDK.</string>
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6yO-b3-iGj">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="562"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="620"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3p-Kl-USO">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Automatically add quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARM-f8-e4D">
-                                                        <rect key="frame" x="18" y="16" width="193" height="19.5"/>
+                                                        <rect key="frame" x="18" y="15.5" width="193" height="19.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -439,7 +469,7 @@ Learn more about the Capture SDK.</string>
                                                         <rect key="frame" x="0.0" y="148" width="375" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="700" text="Set default quantity as" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="bhj-UB-cFw">
-                                                                <rect key="frame" x="18" y="16.5" width="154" height="18"/>
+                                                                <rect key="frame" x="18" y="16" width="154" height="18"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -455,7 +485,7 @@ Learn more about the Capture SDK.</string>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                                             </textField>
                                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="nle-GW-b3g">
-                                                                <rect key="frame" x="263" y="11" width="94" height="29"/>
+                                                                <rect key="frame" x="263" y="10.5" width="94" height="29"/>
                                                                 <color key="tintColor" red="0.1333333333" green="0.44705882349999998" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <connections>
                                                                     <action selector="didDefaultQuantityChanged:" destination="9an-oy-szK" eventType="valueChanged" id="qYh-ER-jmz"/>
@@ -604,7 +634,7 @@ Learn more about the Capture SDK.</string>
                                                 <rect key="frame" x="0.0" y="442" width="375" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vibrate when scans" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0P8-vc-Bpg">
-                                                        <rect key="frame" x="18" y="16" width="142" height="19.5"/>
+                                                        <rect key="frame" x="18" y="15.5" width="142" height="19.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -626,11 +656,11 @@ Learn more about the Capture SDK.</string>
                                                     <constraint firstItem="0P8-vc-Bpg" firstAttribute="centerY" secondItem="4Sc-xD-AgG" secondAttribute="centerY" id="oy1-FG-LUa"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0F-N7-uk3">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0F-N7-uk3" userLabel="Support D600">
                                                 <rect key="frame" x="0.0" y="500" width="375" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Support D600" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5w-ff-Umz">
-                                                        <rect key="frame" x="18" y="16" width="104" height="19.5"/>
+                                                        <rect key="frame" x="18" y="15.5" width="104" height="19.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -652,6 +682,33 @@ Learn more about the Capture SDK.</string>
                                                     <constraint firstAttribute="trailing" secondItem="fDR-W3-Ugg" secondAttribute="trailing" constant="18" id="wfC-Ct-mGE"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xZm-F0-9Oj">
+                                                <rect key="frame" x="0.0" y="558" width="375" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Consolidating counts before sharing the file" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GN3-Xd-f3o">
+                                                        <rect key="frame" x="18" y="6" width="277" height="38.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EVf-aW-jWn">
+                                                        <rect key="frame" x="308" y="9.5" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="didConsolidatingCountsChanged:" destination="9an-oy-szK" eventType="valueChanged" id="npS-xK-xud"/>
+                                                            <action selector="didSupportD600Changed:" destination="9an-oy-szK" eventType="valueChanged" id="LkU-K2-evj"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="EVf-aW-jWn" firstAttribute="centerY" secondItem="xZm-F0-9Oj" secondAttribute="centerY" id="OvW-uv-Tit"/>
+                                                    <constraint firstItem="GN3-Xd-f3o" firstAttribute="leading" secondItem="xZm-F0-9Oj" secondAttribute="leading" constant="18" id="RAK-qS-eNT"/>
+                                                    <constraint firstAttribute="height" constant="50" id="U39-D1-Wvg"/>
+                                                    <constraint firstAttribute="trailing" secondItem="GN3-Xd-f3o" secondAttribute="trailing" constant="80" id="WsG-Ly-7Lz"/>
+                                                    <constraint firstItem="GN3-Xd-f3o" firstAttribute="centerY" secondItem="xZm-F0-9Oj" secondAttribute="centerY" id="q48-vG-vbP"/>
+                                                    <constraint firstAttribute="trailing" secondItem="EVf-aW-jWn" secondAttribute="trailing" constant="18" id="qbF-Xg-D1j"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -659,13 +716,16 @@ Learn more about the Capture SDK.</string>
                                             <constraint firstItem="x0F-N7-uk3" firstAttribute="leading" secondItem="6yO-b3-iGj" secondAttribute="leading" id="3pD-hs-4vW"/>
                                             <constraint firstItem="4Sc-xD-AgG" firstAttribute="top" secondItem="LxG-aO-QRQ" secondAttribute="bottom" constant="8" id="Avs-r5-v20"/>
                                             <constraint firstItem="x0F-N7-uk3" firstAttribute="top" secondItem="4Sc-xD-AgG" secondAttribute="bottom" constant="8" id="CTj-4Z-b7V"/>
+                                            <constraint firstAttribute="bottom" secondItem="xZm-F0-9Oj" secondAttribute="bottom" constant="12" id="CTw-db-HeB"/>
                                             <constraint firstAttribute="trailing" secondItem="4Sc-xD-AgG" secondAttribute="trailing" id="Gib-iP-L3v"/>
                                             <constraint firstItem="LxG-aO-QRQ" firstAttribute="leading" secondItem="6yO-b3-iGj" secondAttribute="leading" id="Gy1-zP-h06"/>
                                             <constraint firstItem="LxG-aO-QRQ" firstAttribute="top" secondItem="d3p-Kl-USO" secondAttribute="bottom" id="NWO-ke-l7z"/>
                                             <constraint firstItem="4Sc-xD-AgG" firstAttribute="leading" secondItem="6yO-b3-iGj" secondAttribute="leading" id="RqU-Ms-HfJ"/>
                                             <constraint firstAttribute="trailing" secondItem="d3p-Kl-USO" secondAttribute="trailing" id="SPe-16-lyq"/>
-                                            <constraint firstAttribute="bottom" secondItem="x0F-N7-uk3" secondAttribute="bottom" constant="12" id="cZk-sg-Kus"/>
+                                            <constraint firstItem="xZm-F0-9Oj" firstAttribute="leading" secondItem="6yO-b3-iGj" secondAttribute="leading" id="bua-xX-C15"/>
                                             <constraint firstAttribute="trailing" secondItem="x0F-N7-uk3" secondAttribute="trailing" id="jLu-k1-AZe"/>
+                                            <constraint firstItem="xZm-F0-9Oj" firstAttribute="top" secondItem="x0F-N7-uk3" secondAttribute="bottom" constant="8" id="r2W-Cy-Ikh"/>
+                                            <constraint firstAttribute="trailing" secondItem="xZm-F0-9Oj" secondAttribute="trailing" id="vWJ-VB-TRU"/>
                                             <constraint firstItem="d3p-Kl-USO" firstAttribute="leading" secondItem="6yO-b3-iGj" secondAttribute="leading" id="wPI-4q-1KO"/>
                                             <constraint firstAttribute="trailing" secondItem="LxG-aO-QRQ" secondAttribute="trailing" id="yBG-Fn-unB"/>
                                         </constraints>
@@ -701,6 +761,7 @@ Learn more about the Capture SDK.</string>
                         <outlet property="imgCheckQuantityNoComma" destination="DLM-mF-ajW" id="7oV-aH-Jcl"/>
                         <outlet property="stepperQuantity" destination="nle-GW-b3g" id="71I-i8-ydD"/>
                         <outlet property="switchAutoQuantity" destination="FS7-CQ-mOh" id="m4T-nq-0Cg"/>
+                        <outlet property="switchConsolidatingCounts" destination="EVf-aW-jWn" id="H4R-hp-x5v"/>
                         <outlet property="switchSupportD600" destination="fDR-W3-Ugg" id="zFH-WD-ha6"/>
                         <outlet property="switchVibrate" destination="8ZH-hi-LkA" id="UHi-2U-A9t"/>
                         <outlet property="txtPreview" destination="ky6-C9-E5Y" id="KwO-V6-4nZ"/>

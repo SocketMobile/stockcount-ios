@@ -27,7 +27,7 @@ class FileMgr  {
         
         
         let fileTitle = "Inventory Scan - " + Date().toStringWithFormat("MM/dd/yyyy") + "-\(scanCount)\n"
-        let fileName = "InventoryScan_" + Date().toStringWithFormat("yyMMddHHmmss") + ".txt"
+        let fileName = "InventoryScan_" + Date().toStringWithFormat("yyMMddHHmmss")
         
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             let fileURL = dir.appendingPathComponent(fileName)
@@ -58,6 +58,56 @@ class FileMgr  {
                 }
             }
         }
+        return nil
+    }
+    
+    class func saveShareFile(fileName: String) -> URL? {
+        let content = readFile(fileName: fileName) ?? ""
+        return saveShareFile(fileName: fileName, content: content)
+    }
+    
+    class func saveShareFile(fileName: String, content: String) -> URL? {
+        let fileMgr = FileManager.default
+        var ext = "txt"
+        var shareContent = content
+        let shareFileName = fileName.hasSuffix(".txt") ? String(fileName.prefix(fileName.count - 4)) : fileName
+        if SettingMgr.consolidatingCounts {
+            ext = "csv"
+            
+            var lines = content.split(separator: "\n")
+            if !lines.isEmpty {
+                let firstLine = String(lines.removeFirst())
+                var barcodeCountMap = [String: Int]()
+                lines.joined(separator: ";").split(separator: ";", omittingEmptySubsequences: true).forEach { (line) in
+                    let components = line.contains(",") ? line.split(separator: ",", omittingEmptySubsequences: true) : line.split(separator: " ", omittingEmptySubsequences: true)
+                    if !components.isEmpty {
+                        let barcode = String(components[0])
+                        let count = components.count > 1 ? Int(String(components[1]).trimmingCharacters(in: CharacterSet.whitespaces)) ?? 1 : 1
+                        
+                        if !barcode.isEmpty {
+                            barcodeCountMap[barcode] = (barcodeCountMap[barcode] ?? 0) + count
+                        }
+                    }
+                }
+                
+                shareContent = "\(firstLine)\n"
+                barcodeCountMap.forEach { (keyValue) in
+                    let (barcode, count) = keyValue
+                    shareContent += "\(barcode), \(count)\n"
+                }
+            }
+        }
+        
+        if let dir = fileMgr.urls(for: .documentDirectory, in: .userDomainMask).first {
+            let fileURL = dir.appendingPathComponent("\(shareFileName).\(ext)")
+            do {
+                try shareContent.write(to: fileURL, atomically: false, encoding: .utf8)
+                return fileURL
+            } catch {
+                NSLog("error on create file for share. \(fileName)")
+            }
+        }
+        
         return nil
     }
     

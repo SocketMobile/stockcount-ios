@@ -9,12 +9,15 @@
 import Foundation
 import UIKit
 import SKTCapture
+import Alamofire
+import SwiftyJSON
 
 class OptionViewController : UIViewController {
     
     
     @IBOutlet weak var lblVersion: UILabel!
     @IBOutlet weak var txtLink: UITextView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +33,7 @@ class OptionViewController : UIViewController {
             self.updateVersion(appVer, captureVersion)
         }
         let sdkString = "mobile_sdk".localized + "capture_sdk".localized
-        let myAttribute = [ NSAttributedStringKey.font: UIFont(name: "System Font Regular", size: 15.0)! ]
+        let myAttribute = [ NSAttributedString.Key.font: UIFont(name: "System Font Regular", size: 15.0)! ]
         
         let attributedString = NSMutableAttributedString(string: sdkString, attributes: myAttribute)
 
@@ -42,6 +45,8 @@ class OptionViewController : UIViewController {
         txtLink.attributedText = attributedString
         txtLink.textAlignment = NSTextAlignment.center
         txtLink.delegate = self
+        
+        loadingIndicator.isHidden = true
     }
     
     @IBAction func onBtnGetStarted(_ sender: Any) {
@@ -54,6 +59,51 @@ class OptionViewController : UIViewController {
     
     func updateVersion(_ appVer: String, _ captureVer: String) {
         lblVersion.text = "\("version".localized)\(appVer)\n\("Capture".localized) \(captureVer)"
+    }
+    
+    @IBAction func onBuyScannerClicked(_ sender: Any) {
+        let regionCode = Locale.current.regionCode
+        
+        //for the CN link, we don't have Socket Store suitable for China. We are using the Amazon link.
+        if regionCode == "CN" {
+            UIApplication.shared.open(URL(string: ChinaLink)!, options: [:], completionHandler: nil)
+            return
+        }
+        
+        let refersionKey = getRefersionKeys(regionCode!)
+        let parameters: Parameters = [
+            "refersion_public_key": refersionKey.pub_key,
+            "refersion_secret_key": refersionKey.sec_key,
+            "affiliate_code": refersionKey.aff_code
+        ]
+        let url = "https://www.refersion.com/api/get_affiliate"
+        loadingIndicator.isHidden = false
+        loadingIndicator.startAnimating()
+        
+        request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { (resp) in
+            self.loadingIndicator.isHidden = true
+            self.loadingIndicator.stopAnimating()
+            if let _ = resp.error {
+                let alertController = UIAlertController(title: "error".localized, message: resp.error?.localizedDescription ?? "", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "ok".localized, style: .default, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
+                return
+            }
+            
+            if let json = resp.data {
+                do {
+                    let data = try JSON(data: json)
+                    if let link = data["link"].string {
+                        UIApplication.shared.open(URL(string: link)!, options: [:], completionHandler: nil)
+                    }
+                } catch {
+                    let alertController = UIAlertController(title: "error".localized, message: "JSON Parse Error".localized, preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: "ok".localized, style: .default, handler: nil))
+                    self.present(alertController, animated: true, completion: nil)
+                    return
+                }
+            }
+        }
     }
 }
 

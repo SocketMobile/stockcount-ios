@@ -9,6 +9,13 @@
 import Foundation
 import UIKit
 import AudioToolbox
+import AVFoundation
+import MediaPlayer
+
+let MAX_VOLUME : Float? = 1
+let MIN_VOLUME : Float? = 0
+let LOW_INIT_VOL : Float = 0.1
+let HIGH_INIT_VOL : Float = 0.9
 
 class EditViewController: CustomNavBarViewController, UITextViewDelegate
 {
@@ -24,26 +31,77 @@ class EditViewController: CustomNavBarViewController, UITextViewDelegate
     var keyboardToolBar : KeyboardToolBar?
     private let appleKeyboardIdentifier = ["en_US@hw=Automatic;sw=QWERTY", "en_US@sw=QWERTY;hw=Automatic"]
     
+    let volumeControl = MPVolumeView(frame: CGRect(x: 0, y: 0, width: 120, height: 120))
+    var isForceVolumeChange = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         updateTopButtons(isDoneVisible: false)
         
         //Keyboard Notification
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         
         keyboardToolBar = KeyboardToolBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50))
         keyboardToolBar?.delegate = self
         txtView.inputAccessoryView = keyboardToolBar
         
         editController.readFile(fileName)
+        
+        view.addSubview(volumeControl)
+    }
+    override func viewDidLayoutSubviews() {
+        volumeControl.frame = CGRect(x: -120, y: -120, width: 100, height: 100)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         txtView.becomeFirstResponder()
-    }
         
+        AVAudioSession.sharedInstance().addObserver(self, forKeyPath: "outputVolume", options: .new, context: nil)
+        
+        let vol = AVAudioSession.sharedInstance().outputVolume
+        initVolume(vol)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        AVAudioSession.sharedInstance().removeObserver(self, forKeyPath: "outputVolume")
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        switch keyPath {
+        case "outputVolume":
+            if !isForceVolumeChange {
+                didTriggerScan()
+            } else {
+                isForceVolumeChange = false
+            }
+            if change != nil {
+                let volume = change![NSKeyValueChangeKey.newKey] as? Float
+                initVolume(volume)
+            }
+        default:
+            break
+        }
+    }
+    
+    func initVolume(_ volume: Float?) {
+        if volume == MAX_VOLUME {
+            setVolume(HIGH_INIT_VOL)
+        } else if volume == MIN_VOLUME {
+            setVolume(LOW_INIT_VOL)
+        }
+    }
+    func setVolume(_ volume: Float) {
+        isForceVolumeChange = true
+        let slider = volumeControl.subviews.filter{NSStringFromClass($0.classForCoder) == "MPVolumeSlider"}.first as? UISlider
+        slider?.value = volume
+    }
     deinit {
         NotificationCenter.default.removeObserver(self)
         
@@ -62,11 +120,11 @@ class EditViewController: CustomNavBarViewController, UITextViewDelegate
     
     @objc func keyboardNotification(notification: NSNotification) {
         if let userInfo = notification.userInfo {
-            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
-            let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
-            let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
-            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
-            let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
+            let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+            let duration:TimeInterval = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+            let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
+            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
+            let animationCurve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
             if (endFrame?.origin.y)! >= UIScreen.main.bounds.size.height {
                 self.keyboardHeightLayoutConstraint?.constant = 0
             } else {
@@ -114,11 +172,13 @@ class EditViewController: CustomNavBarViewController, UITextViewDelegate
     }
     @objc func onBtnShare() {
         editController.saveFile(fileName, strContent: txtView.text)
-        if let fileURL = FileMgr.getURL(fileName: fileName) {
+        if let fileURL = FileMgr.saveShareFile(fileName: fileName) {
             let activityViewController = UIActivityViewController(activityItems: [fileURL], applicationActivities: nil)
             activityViewController.popoverPresentationController?.sourceView = self.view
             
             self.present(activityViewController, animated: true, completion: nil)
+        } else {
+            showAlert("Error on create share file.".localized)
         }
     }
     @objc func onBtnDone() {

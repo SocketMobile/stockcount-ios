@@ -31,6 +31,7 @@ class SettingViewController : CustomNavBarViewController {
     
     @IBOutlet weak var switchSupportD600: UISwitch!
     
+    @IBOutlet weak var switchConsolidatingCounts: UISwitch!
     private func updateBtnCtrlState() {
         btnContainer.isUserInteractionEnabled = SettingMgr.autoAddQuantity
         btnContainer.alpha = SettingMgr.autoAddQuantity ? 1.0 : 0.3
@@ -42,6 +43,7 @@ class SettingViewController : CustomNavBarViewController {
         switchAutoQuantity.isOn = SettingMgr.autoAddQuantity
         switchSupportD600.isOn = SettingMgr.supportD600
         switchVibrate.isOn = SettingMgr.vibrationOnScan
+        switchConsolidatingCounts.isOn = SettingMgr.consolidatingCounts
         showQuantityFormat(SettingMgr.delineatorComma)
         showNewLineFormat(SettingMgr.newLineForNewScan)
 
@@ -142,4 +144,8 @@ class SettingViewController : CustomNavBarViewController {
         }
     }
     
+    
+    @IBAction func didConsolidatingCountsChanged(_ sender: Any) {
+        SettingMgr.consolidatingCounts = switchConsolidatingCounts.isOn
+    }
 }
