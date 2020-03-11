@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 import RealmSwift
+import AppCenter
+import AppCenterCrashes
+
 
 class HomeViewCell : UITableViewCell {
     @IBOutlet weak var lblFileTitle: UILabel!
@@ -31,6 +34,9 @@ class HomeViewController: CustomNavBarViewController, UITableViewDataSource, UIT
         
         let realm = try! Realm()
         realmResult = realm.objects(RMFile.self).sorted(byKeyPath: "updatedTime", ascending: false)
+    MSAppCenter.start("3f7aba1a-0d62-4281-908c-68590b513971", withServices:[
+          MSCrashes.self
+        ])
     }
     
     override func viewWillAppear(_ animated: Bool) {
