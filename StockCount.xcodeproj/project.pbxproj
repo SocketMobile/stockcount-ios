@@ -861,6 +861,7 @@
 				DEVELOPMENT_TEAM = GCJ274LWEE;
 				INFOPLIST_FILE = "$(SRCROOT)/StockCount/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.socketmobile.stockCount;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8cbd640b-14c6-47d0-96fd-728a81f48cd2";
@@ -881,6 +882,7 @@
 				DEVELOPMENT_TEAM = GCJ274LWEE;
 				INFOPLIST_FILE = "$(SRCROOT)/StockCount/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.socketmobile.stockCount;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7f708c3c-7b8b-4090-9c7b-fe08a209dab1";
