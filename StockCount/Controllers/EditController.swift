@@ -107,8 +107,7 @@ CaptureHelperDevicePresenceDelegate {
     
     //MARK: - CaptureHelperDevicePresenceDelegate
     func didNotifyArrivalForDevice(_ device: CaptureHelperDevice, withResult result: SKTResult) {
-        let name = device.deviceInfo.name
-        if name?.caseInsensitiveCompare("SoftScanner") == ComparisonResult.orderedSame {
+        if device.deviceInfo.deviceType == SKTCaptureDeviceType.socketCamC820 {
             if let viewContext = self.viewer?.getOverlayContextForSoftScan() {
                 let context : [String:Any] = [SKTCaptureSocketCamContext : viewContext]
                 device.setSocketCamOverlayViewParameter(context, withCompletionHandler: { (result) in
@@ -128,8 +127,7 @@ CaptureHelperDevicePresenceDelegate {
     }
     
     func didNotifyRemovalForDevice(_ device: CaptureHelperDevice, withResult result: SKTResult) {
-        let name = device.deviceInfo.name
-        if name?.caseInsensitiveCompare("SoftScanner") != ComparisonResult.orderedSame {
+      if device.deviceInfo.deviceType != SKTCaptureDeviceType.socketCamC820 {
             connectedScannerCount -= 1
             if connectedScannerCount < 0 {
                 connectedScannerCount = 0
