@@ -460,7 +460,7 @@
 					};
 					89520F661FEEF19B00B7E351 = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						TestTargetID = 89520F521FEEF19B00B7E351;
 					};
 					89520F711FEEF19B00B7E351 = {
@@ -555,16 +555,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-StockCount/Pods-StockCount-resources.sh",
 				"${PODS_ROOT}/SKTCapture/softScanBeep.wav",
 				"${PODS_ROOT}/SKTCapture/socketmobilepublickey.pem",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/softScanBeep.wav",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/socketmobilepublickey.pem",
@@ -607,7 +603,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Assumes that you tag versions with the version number (e.g., \"1.1\") and then the build number is\n# that plus the number of commits since the tag (e.g., \"1.1.17\")\n# using the annotated tag with git: git tag -a 1.1 -m \"new version whatever\"\n\necho \"Updating version/build number from git...\"\nplist=${INFOPLIST_FILE}\n\n# increment the build number (ie 115 to 116)\nversionnum=`git describe | awk '{split($0,a,\"-\"); print a[1]}'`\nbuildnum=`git describe --long | awk '{split($0,a,\"-\"); print a[1] \".\" a[2]}'`\n\nif [[ \"${versionnum}\" == \"\" ]]; then\necho \"No version number from git!!!!!\"\nexit 2\nfi\n\nif [[ \"${buildnum}\" == \"\" ]]; then\necho \"No build number from git!!!!!\"\nexit 2\nfi\n\n/usr/libexec/Plistbuddy -c \"Set CFBundleShortVersionString $versionnum\" \"${plist}\"\necho \"Updated version number to $versionnum\"\n\n/usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\necho \"Updated build number to $buildnum\"\n\nif [ -f buildscripts/env-vars.sh ]\nthen\n    source buildscripts/env-vars.sh\necho \"add $Crashlytics in APIKey of $plist\"\n/usr/libexec/Plistbuddy -c \"Set Fabric:APIKey $CrashlyticsApiKey\" \"${plist}\"\nfi\n";
+			shellScript = "# Assumes that you tag versions with the version number (e.g., \"1.1\") and then the build number is\n# that plus the number of commits since the tag (e.g., \"1.1.17\")\n# using the annotated tag with git: git tag -a 1.1 -m \"new version whatever\"\n\necho \"Updating version/build number from git...\"\nplist=${INFOPLIST_FILE}\n\n# increment the build number (ie 115 to 116)\nversionnum=`git describe | awk '{split($0,a,\"-\"); print a[1] \".\" a[2]}'`\nbuildnum=`git describe --long | awk '{split($0,a,\"-\"); print a[1] \".\" a[2]}'`\n\nif [[ \"${versionnum}\" == \"\" ]]; then\necho \"No version number from git!!!!!\"\nexit 2\nfi\n\nif [[ \"${buildnum}\" == \"\" ]]; then\necho \"No build number from git!!!!!\"\nexit 2\nfi\n\n/usr/libexec/Plistbuddy -c \"Set CFBundleShortVersionString $versionnum\" \"${plist}\"\necho \"Updated version number to $versionnum\"\n\n/usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\necho \"Updated build number to $buildnum\"\n\nif [ -f buildscripts/env-vars.sh ]\nthen\n    source buildscripts/env-vars.sh\necho \"add $Crashlytics in APIKey of $plist\"\n/usr/libexec/Plistbuddy -c \"Set Fabric:APIKey $CrashlyticsApiKey\" \"${plist}\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -862,13 +858,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = Q9U5XG63LF;
+				DEVELOPMENT_TEAM = GCJ274LWEE;
 				INFOPLIST_FILE = "$(SRCROOT)/StockCount/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.socketmobile.stockCount;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8cbd640b-14c6-47d0-96fd-728a81f48cd2";
-				PROVISIONING_PROFILE_SPECIFIER = BillWildDevProvision;
+				PROVISIONING_PROFILE_SPECIFIER = "development test com.socketmobile.*";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -882,13 +879,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = Q9U5XG63LF;
+				DEVELOPMENT_TEAM = GCJ274LWEE;
 				INFOPLIST_FILE = "$(SRCROOT)/StockCount/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.socketmobile.stockCount;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7f708c3c-7b8b-4090-9c7b-fe08a209dab1";
-				PROVISIONING_PROFILE_SPECIFIER = "XC Ad Hoc: *";
+				PROVISIONING_PROFILE_SPECIFIER = "crashlytics distribution";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -899,11 +897,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = GCJ274LWEE;
 				INFOPLIST_FILE = StockCountTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.socketmobile.stockCountTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StockCount.app/StockCount";
@@ -915,11 +916,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = StockCountTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.socketmobile.stockCountTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StockCount.app/StockCount";

@@ -9,6 +9,10 @@
 import UIKit
 import Fabric
 import Crashlytics
+import AppCenter
+import AppCenterAnalytics
+import AppCenterCrashes
+
 
 import SKTCapture
 import AVFoundation
@@ -22,6 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         Fabric.with([Crashlytics.self])
+        
+    MSAppCenter.start("3f7aba1a-0d62-4281-908c-68590b513971", withServices:[
+          MSAnalytics.self,
+          MSCrashes.self
+        ])
         
         retrieveSecKeyValues()
         

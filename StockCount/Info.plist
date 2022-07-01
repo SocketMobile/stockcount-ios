@@ -17,9 +17,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1</string>
+	<string>1.2.10</string>
 	<key>CFBundleVersion</key>
-	<string>1.1.1</string>
+	<string>1.2.10</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -63,5 +63,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>This app uses Bluetooth to connect to your Socket Mobile scanner</string>
 </dict>
 </plist>
