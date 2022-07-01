@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import SKTCapture
+import CaptureSDK
 import Alamofire
 import SwiftyJSON
 

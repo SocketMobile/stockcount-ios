@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import SKTCapture
+import CaptureSDK
 
 protocol KeyboardToolBarDelegate : class {
     func didTriggerScan()

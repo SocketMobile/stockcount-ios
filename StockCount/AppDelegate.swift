@@ -14,7 +14,7 @@ import AppCenterAnalytics
 import AppCenterCrashes
 
 
-import SKTCapture
+import CaptureSDK
 import AVFoundation
 
 @UIApplicationMain

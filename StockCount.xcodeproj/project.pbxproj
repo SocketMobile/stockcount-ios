@@ -397,7 +397,7 @@
 				89520F501FEEF19B00B7E351 /* Frameworks */,
 				89520F511FEEF19B00B7E351 /* Resources */,
 				89CAE6681FEF00E900547B54 /* Run Script */,
-				C2E18DA23A8EBC19268FA835 /* [CP] Copy Pods Resources */,
+				C95B51BD7769F036052202F2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -550,24 +550,22 @@
 			shellPath = /bin/sh;
 			shellScript = "if [ -f buildscripts/env-vars.sh ]\nthen\nsource buildscripts/env-vars.sh\n    echo \"deploy the build to Crashlytics\"\n    \"${PODS_ROOT}/Fabric/run\" $CrashlyticsApiKey $CrashlyticsSecret\nfi\n\n";
 		};
-		C2E18DA23A8EBC19268FA835 /* [CP] Copy Pods Resources */ = {
+		C95B51BD7769F036052202F2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-StockCount/Pods-StockCount-resources.sh",
-				"${PODS_ROOT}/SKTCapture/softScanBeep.wav",
-				"${PODS_ROOT}/SKTCapture/socketmobilepublickey.pem",
+				"${PODS_ROOT}/Target Support Files/Pods-StockCount/Pods-StockCount-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/CaptureSDK/CaptureSDK.framework/CaptureSDK",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/softScanBeep.wav",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/socketmobilepublickey.pem",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CaptureSDK.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StockCount/Pods-StockCount-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StockCount/Pods-StockCount-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E6E9C7B2077D9EE362690A75 /* [CP] Check Pods Manifest.lock */ = {
@@ -858,6 +856,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GCJ274LWEE;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/StockCount/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.socketmobile.stockCount;
@@ -878,6 +877,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = GCJ274LWEE;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/StockCount/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.socketmobile.stockCount;

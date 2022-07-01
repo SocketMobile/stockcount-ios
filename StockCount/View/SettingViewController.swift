@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import SKTCapture
+import CaptureSDK
 
 class SettingViewController : CustomNavBarViewController {
     

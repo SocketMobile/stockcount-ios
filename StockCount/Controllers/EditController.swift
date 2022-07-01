@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SKTCapture
+import CaptureSDK
 
 protocol EditControllerProtocol {
     func readFile(_ fileName : String)
@@ -29,7 +29,7 @@ CaptureHelperDevicePresenceDelegate {
     
     var isSoftScan : Bool = false {
         didSet {
-            captureHelper.setSoftScanStatus(isSoftScan ? .enable : .disable) { (result) in
+            captureHelper.setSocketCamStatus(isSoftScan ? .enable : .disable) { (result) in
                 print("Setting softscan to supported returned \(result.rawValue)")
             }
         }
@@ -40,7 +40,7 @@ CaptureHelperDevicePresenceDelegate {
         
         captureHelper.pushDelegate(self)
         
-        captureHelper.setSoftScanStatus(.disable, withCompletionHandler: { (result) in
+        captureHelper.setSocketCamStatus(.disable, withCompletionHandler: { (result) in
             print("Soft Scan Disabled \(result.rawValue)")
         })
     }
@@ -110,8 +110,8 @@ CaptureHelperDevicePresenceDelegate {
         let name = device.deviceInfo.name
         if name?.caseInsensitiveCompare("SoftScanner") == ComparisonResult.orderedSame {
             if let viewContext = self.viewer?.getOverlayContextForSoftScan() {
-                let context : [String:Any] = [SKTCaptureSoftScanContext : viewContext]
-                device.setSoftScanOverlayViewParameter(context, withCompletionHandler: { (result) in
+                let context : [String:Any] = [SKTCaptureSocketCamContext : viewContext]
+                device.setSocketCamOverlayViewParameter(context, withCompletionHandler: { (result) in
                     print("Set soft scan overlay result : \(result.rawValue)")
                     device.setTrigger(.start, withCompletionHandler: { (result) in
                         print("Starting soft scan result : \(result.rawValue)")
