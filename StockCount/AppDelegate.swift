@@ -27,9 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         Fabric.with([Crashlytics.self])
         
-    MSAppCenter.start("3f7aba1a-0d62-4281-908c-68590b513971", withServices:[
-          MSAnalytics.self,
-          MSCrashes.self
+      AppCenter.start(withAppSecret: "3f7aba1a-0d62-4281-908c-68590b513971", services:[
+          Analytics.self,
+          Crashes.self
         ])
         
         retrieveSecKeyValues()

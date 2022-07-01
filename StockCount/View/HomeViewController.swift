@@ -34,8 +34,8 @@ class HomeViewController: CustomNavBarViewController, UITableViewDataSource, UIT
         
         let realm = try! Realm()
         realmResult = realm.objects(RMFile.self).sorted(byKeyPath: "updatedTime", ascending: false)
-    MSAppCenter.start("3f7aba1a-0d62-4281-908c-68590b513971", withServices:[
-          MSCrashes.self
+      AppCenter.start(withAppSecret: "3f7aba1a-0d62-4281-908c-68590b513971", services:[
+          Crashes.self
         ])
     }
     
