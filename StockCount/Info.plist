@@ -17,9 +17,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2.12</string>
+	<string>1.2.18</string>
 	<key>CFBundleVersion</key>
-	<string>1.2.12</string>
+	<string>1.2.18</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -34,8 +34,12 @@
 			</dict>
 		</array>
 	</dict>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>This app uses Bluetooth to connect to your Socket Mobile scanner</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>This application uses Bluetooth to communicate with barcode scanner.</string>
 	<key>NSCameraUsageDescription</key>
@@ -63,7 +67,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>This app uses Bluetooth to connect to your Socket Mobile scanner</string>
 </dict>
 </plist>
