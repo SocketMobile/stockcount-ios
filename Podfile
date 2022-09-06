@@ -3,8 +3,6 @@ platform :ios, '11.0'
 
 target 'StockCount' do
   pod 'CaptureSDK', '~>1.4'
-  pod 'Fabric', '~>1.9'
-  pod 'Crashlytics', '~>3.12'
   pod 'AppCenter'
   pod 'Realm', '~>3.13', :modular_headers => true
   pod 'RealmSwift', '~>3.13'

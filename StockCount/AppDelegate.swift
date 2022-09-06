@@ -11,8 +11,6 @@ import AppCenter
 import AppCenterAnalytics
 import AppCenterCrashes
 import CaptureSDK
-import Crashlytics
-import Fabric
 import UIKit
 
 @UIApplicationMain
@@ -24,9 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
-    // Override point for customization after application launch.
-    Fabric.with([Crashlytics.self])
-
     AppCenter.start(
       withAppSecret: "3f7aba1a-0d62-4281-908c-68590b513971",
       services: [
