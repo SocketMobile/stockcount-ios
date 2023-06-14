@@ -2,7 +2,7 @@ platform :ios, '11.0'
 #use_frameworks!
 
 target 'StockCount' do
-  pod 'CaptureSDK', '~>1.4'
+  pod 'CaptureSDK', '~>1.6'
   pod 'AppCenter'
   pod 'Realm', '~>3.13', :modular_headers => true
   pod 'RealmSwift', '~>3.13'
