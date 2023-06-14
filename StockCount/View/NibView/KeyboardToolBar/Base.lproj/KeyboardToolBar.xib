@@ -1,123 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_0" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KeyboardToolBar" customModule="InventoryUtility" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KeyboardToolBar" customModule="StockCount" customModuleProvider="target">
             <connections>
                 <outlet property="btnConnection" destination="HJk-jb-9ix" id="yJv-sR-9LR"/>
                 <outlet property="btnKeytype" destination="IkH-eC-ZSe" id="dUZ-bX-6N2"/>
             </connections>
         </placeholder>
+        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="cui-Tb-68R">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+            <items>
+                <barButtonItem style="plain" systemItem="flexibleSpace" id="aEy-Ep-Dvx"/>
+                <barButtonItem style="plain" id="PIG-89-GOt">
+                    <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="O58-70-kmS">
+                        <rect key="frame" x="21" y="5" width="80" height="34.5"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="SCAN"/>
+                        <buttonConfiguration key="configuration" style="filled" title="Scan"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="18"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="onBtnScan:" destination="-1" eventType="touchUpInside" id="Vdp-tP-k78"/>
+                        </connections>
+                    </button>
+                </barButtonItem>
+                <barButtonItem style="plain" systemItem="flexibleSpace" id="HXs-vc-xLw"/>
+                <barButtonItem style="plain" id="eBR-2M-9yw">
+                    <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="IkH-eC-ZSe">
+                        <rect key="frame" x="122" y="5" width="78.5" height="34.5"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <buttonConfiguration key="configuration" style="gray" title="abc"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="18"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" systemColor="linkColor"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="onBtnSwitchKeyboard:" destination="-1" eventType="touchUpInside" id="mwl-7c-Bp9"/>
+                        </connections>
+                    </button>
+                </barButtonItem>
+                <barButtonItem style="plain" systemItem="flexibleSpace" id="iPq-B1-P40"/>
+                <barButtonItem style="plain" id="q6o-Uv-sk1">
+                    <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HJk-jb-9ix">
+                        <rect key="frame" x="221" y="6" width="32" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" backgroundImage="scanner_disconnected"/>
+                    </button>
+                </barButtonItem>
+                <barButtonItem style="plain" systemItem="flexibleSpace" id="WCl-EB-OQA"/>
+                <barButtonItem style="plain" id="xbm-R1-aMd">
+                    <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="XVP-Vk-L6M">
+                        <rect key="frame" x="274" y="4" width="80" height="36"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="SCAN"/>
+                        <buttonConfiguration key="configuration" style="filled" title="Scan"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="18"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="onBtnScan:" destination="-1" eventType="touchUpInside" id="Bhv-9n-aCO"/>
+                        </connections>
+                    </button>
+                </barButtonItem>
+                <barButtonItem style="plain" systemItem="flexibleSpace" id="VJe-hh-DNl"/>
+            </items>
+            <point key="canvasLocation" x="-233" y="-137"/>
+        </toolbar>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="nYN-QB-NqN">
-                    <rect key="frame" x="16" y="0.0" width="343" height="50"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O58-70-kmS">
-                            <rect key="frame" x="0.0" y="7" width="80" height="36"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="80" id="Pde-qI-Hmx"/>
-                                <constraint firstAttribute="height" constant="36" id="VvO-j3-DXS"/>
-                            </constraints>
-                            <state key="normal" title="SCAN"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                    <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                    <real key="value" value="1"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="18"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="onBtnScan:" destination="-1" eventType="touchUpInside" id="Vdp-tP-k78"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkH-eC-ZSe">
-                            <rect key="frame" x="110.5" y="7" width="60" height="36"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="36" id="Gg1-ph-788"/>
-                                <constraint firstAttribute="width" constant="60" id="USo-kZ-tTH"/>
-                            </constraints>
-                            <state key="normal" title="abc">
-                                <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                    <real key="value" value="1"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="18"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="onBtnSwitchKeyboard:" destination="-1" eventType="touchUpInside" id="mwl-7c-Bp9"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJk-jb-9ix">
-                            <rect key="frame" x="200.5" y="9" width="32" height="32"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="HJk-jb-9ix" secondAttribute="height" multiplier="1:1" id="TTp-Pp-dlb"/>
-                                <constraint firstAttribute="height" constant="32" id="cF5-0J-bhV"/>
-                            </constraints>
-                            <state key="normal" backgroundImage="scanner_disconnected"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVP-Vk-L6M">
-                            <rect key="frame" x="263" y="7" width="80" height="36"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="36" id="496-7D-qoy"/>
-                                <constraint firstAttribute="width" constant="80" id="Fzw-6u-LHK"/>
-                            </constraints>
-                            <state key="normal" title="SCAN"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                    <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                    <real key="value" value="1"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="18"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="onBtnScan:" destination="-1" eventType="touchUpInside" id="Bhv-9n-aCO"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                </stackView>
-            </subviews>
-            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstItem="nYN-QB-NqN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="ETf-9B-9k1"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="nYN-QB-NqN" secondAttribute="bottom" id="O0V-3I-6VX"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nYN-QB-NqN" secondAttribute="trailing" constant="16" id="vpy-5y-rep"/>
-                <constraint firstItem="nYN-QB-NqN" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="zn2-zP-7QB"/>
-            </constraints>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-        </view>
     </objects>
     <resources>
         <image name="scanner_disconnected" width="28" height="28"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

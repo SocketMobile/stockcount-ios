@@ -32,19 +32,17 @@ class OptionViewController : UIViewController {
             }
             self.updateVersion(appVer, captureVersion)
         }
-        let sdkString = "mobile_sdk".localized + "capture_sdk".localized
-        let myAttribute = [ NSAttributedString.Key.font: UIFont(name: "System Font Regular", size: 15.0)! ]
-        
-        let attributedString = NSMutableAttributedString(string: sdkString, attributes: myAttribute)
+        if let attributedText = txtLink.attributedText {
+          let attributedString = attributedText.string as NSString
+          let mutableAttributedString = NSMutableAttributedString(attributedString: attributedText)
 
-        let linkStrLength = "capture_sdk".localized.count
-        
-        let range = NSMakeRange(attributedString.length - linkStrLength, linkStrLength)
-        attributedString.addAttributes([.link : URL(string: "https://github.com/SocketMobile")!], range: range)
-        
-        txtLink.attributedText = attributedString
-        txtLink.textAlignment = NSTextAlignment.center
-        txtLink.delegate = self
+          let range = attributedString.range(of: "capture_sdk".localized)
+          mutableAttributedString.addAttributes([.link : URL(string: "https://github.com/SocketMobile")!], range: range)
+
+          txtLink.attributedText = mutableAttributedString
+          txtLink.textAlignment = NSTextAlignment.center
+          txtLink.delegate = self
+        }
         
         loadingIndicator.isHidden = true
     }

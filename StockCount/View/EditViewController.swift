@@ -41,10 +41,13 @@ class EditViewController: CustomNavBarViewController, UITextViewDelegate
         
         //Keyboard Notification
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        
-        keyboardToolBar = KeyboardToolBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50))
-        keyboardToolBar?.delegate = self
-        txtView.inputAccessoryView = keyboardToolBar
+
+        let toolbar = KeyboardToolBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50))
+        toolbar.delegate = self
+        keyboardToolBar = toolbar
+        let uiInputView = UIInputView(frame: toolbar.frame, inputViewStyle: .keyboard)
+        uiInputView.addSubview(toolbar)
+        txtView.inputAccessoryView = uiInputView
         
         editController.readFile(fileName)
         

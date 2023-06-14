@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GHl-yp-HpZ">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GHl-yp-HpZ">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,60 +17,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gdL-i4-nJJ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gdL-i4-nJJ">
                                 <rect key="frame" x="0.0" y="72" width="375" height="595"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" systemColor="systemGroupedBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="CELL_ITEM" id="RPq-qK-5r4" customClass="HomeViewCell" customModule="StockCount" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="75"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CELL_ITEM" id="RPq-qK-5r4" customClass="HomeViewCell" customModule="StockCount" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RPq-qK-5r4" id="PLc-er-l4f">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RPq-qK-5r4" translatesAutoresizingMaskIntoConstraints="NO" id="PLc-er-l4f">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
-                                            <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEo-rf-LwR">
-                                                    <rect key="frame" x="8" y="0.0" width="359" height="67"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="shelf 1-8 2017-10-02" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgF-0V-cJV">
-                                                            <rect key="frame" x="12" y="12" width="162" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234560D, 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sy-Hg-6FH">
-                                                            <rect key="frame" x="12" y="37" width="87" height="18"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                                    <constraints>
-                                                        <constraint firstItem="2sy-Hg-6FH" firstAttribute="leading" secondItem="EgF-0V-cJV" secondAttribute="leading" id="1hb-DT-tlZ"/>
-                                                        <constraint firstItem="EgF-0V-cJV" firstAttribute="leading" secondItem="wEo-rf-LwR" secondAttribute="leading" constant="12" id="9Kw-6u-FLy"/>
-                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EgF-0V-cJV" secondAttribute="trailing" id="EMD-aJ-Yvb"/>
-                                                        <constraint firstItem="2sy-Hg-6FH" firstAttribute="top" secondItem="EgF-0V-cJV" secondAttribute="bottom" constant="4" id="XHb-sa-IvN"/>
-                                                        <constraint firstItem="EgF-0V-cJV" firstAttribute="top" secondItem="wEo-rf-LwR" secondAttribute="top" constant="12" id="bhb-B9-7Pt"/>
-                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2sy-Hg-6FH" secondAttribute="trailing" id="n9B-tt-DS4"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
-                                                            <size key="value" width="1" height="1"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
-                                                            <real key="value" value="0.5"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="shelf 1-8 2017-10-02" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgF-0V-cJV">
+                                                    <rect key="frame" x="16" y="12" width="161" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234560D, 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sy-Hg-6FH">
+                                                    <rect key="frame" x="16" y="41" width="87" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="wEo-rf-LwR" secondAttribute="bottom" constant="8" id="4KT-ui-g1O"/>
-                                                <constraint firstItem="wEo-rf-LwR" firstAttribute="leading" secondItem="PLc-er-l4f" secondAttribute="leading" constant="8" id="V7z-tH-KXo"/>
-                                                <constraint firstItem="wEo-rf-LwR" firstAttribute="top" secondItem="PLc-er-l4f" secondAttribute="top" id="Wy0-Oj-TzF"/>
-                                                <constraint firstAttribute="trailing" secondItem="wEo-rf-LwR" secondAttribute="trailing" constant="8" id="i66-rg-StF"/>
+                                                <constraint firstItem="EgF-0V-cJV" firstAttribute="leading" secondItem="PLc-er-l4f" secondAttribute="leading" constant="16" id="J5U-AE-Gl7"/>
+                                                <constraint firstItem="2sy-Hg-6FH" firstAttribute="leading" secondItem="PLc-er-l4f" secondAttribute="leading" constant="16" id="ddo-qy-OmG"/>
+                                                <constraint firstItem="EgF-0V-cJV" firstAttribute="top" secondItem="PLc-er-l4f" secondAttribute="top" constant="12" id="faZ-GF-zvr"/>
+                                                <constraint firstItem="2sy-Hg-6FH" firstAttribute="top" secondItem="EgF-0V-cJV" secondAttribute="bottom" constant="8" symbolic="YES" id="uoR-xX-AZz"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                         <connections>
                                             <outlet property="lblFileTitle" destination="EgF-0V-cJV" id="OWf-bO-5dR"/>
                                             <outlet property="lblFirstScan" destination="2sy-Hg-6FH" id="wGx-RS-lCd"/>
@@ -84,14 +61,14 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="gdL-i4-nJJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="3bO-xe-5JP"/>
                             <constraint firstItem="gdL-i4-nJJ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4wH-tQ-JzU"/>
                             <constraint firstItem="gdL-i4-nJJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="okc-ha-fEF"/>
                             <constraint firstItem="gdL-i4-nJJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xnm-Tl-6Pj"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="All Files" id="CEW-ZG-CHd"/>
                     <connections>
@@ -102,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="455.625" y="116.19718309859155"/>
+            <point key="canvasLocation" x="455.19999999999999" y="115.59220389805098"/>
         </scene>
         <!--Option View Controller-->
         <scene sceneID="ZhU-j3-XAQ">
@@ -115,7 +92,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BBN-hL-QdY">
                                 <rect key="frame" x="0.0" y="64" width="375" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpj-Jg-5ZS">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpj-Jg-5ZS">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                         <connections>
                                             <segue destination="9an-oy-szK" kind="show" id="b3C-fG-2He"/>
@@ -143,13 +120,12 @@
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXk-J2-XOk" userLabel="divider">
                                         <rect key="frame" x="0.0" y="49" width="375" height="1"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="jRh-ts-WEY"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Wjh-9q-yqi" firstAttribute="centerY" secondItem="BBN-hL-QdY" secondAttribute="centerY" id="AfW-V3-RWe"/>
                                     <constraint firstItem="HVv-7u-pp3" firstAttribute="leading" secondItem="5aY-7l-asw" secondAttribute="trailing" constant="16" id="HM5-OR-Ohh"/>
@@ -171,7 +147,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SD9-YG-zdc">
                                 <rect key="frame" x="0.0" y="114" width="375" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVa-ui-4hD">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVa-ui-4hD">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                         <connections>
                                             <action selector="onBtnGetStarted:" destination="vQ4-Cq-4Is" eventType="touchUpInside" id="fBt-9n-HYq"/>
@@ -185,7 +161,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Started" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pq6-Ca-b5l">
-                                        <rect key="frame" x="56" y="15.5" width="84.5" height="19.5"/>
+                                        <rect key="frame" x="56" y="15.5" width="84" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -199,13 +175,12 @@
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kx0-e8-gLH" userLabel="divider">
                                         <rect key="frame" x="0.0" y="49" width="375" height="1"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="gNu-M2-kTY"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="vVa-ui-4hD" secondAttribute="bottom" id="10c-8a-Vo3"/>
                                     <constraint firstItem="OHK-F0-9Td" firstAttribute="leading" secondItem="SD9-YG-zdc" secondAttribute="leading" constant="16" id="1IZ-nw-Vcu"/>
@@ -235,27 +210,27 @@
                                 <string key="text">Socket Mobile
 Version 0.8</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2AH-YX-18f">
                                 <rect key="frame" x="9.5" y="411.5" width="356" height="231.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">This demo app uses Socket Mobile's Capture SDK. As part of the SDK, the source code is available for adaptation per your business under the Socket Mobile terms and agreements.
 
 Learn more about the Capture SDK.</string>
                                         <attributes>
-                                            <font key="NSFont" size="15" name=".AppleSystemUIFont"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="1" tighteningFactorForTruncation="0.0"/>
+                                            <color key="NSColor" systemColor="labelColor"/>
+                                            <font key="NSFont" metaFont="system" size="15"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frl-ii-3SM">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frl-ii-3SM">
                                 <rect key="frame" x="94" y="615" width="187.5" height="40"/>
                                 <color key="backgroundColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
                                 <constraints>
@@ -278,7 +253,8 @@ Learn more about the Capture SDK.</string>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.30128959760273971" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="oAR-cP-n2J"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="2AH-YX-18f" firstAttribute="centerX" secondItem="010-su-NIN" secondAttribute="centerX" id="1RX-7e-5Jx"/>
                             <constraint firstItem="Ixt-4F-BsC" firstAttribute="centerY" secondItem="010-su-NIN" secondAttribute="centerY" constant="-50" id="2xI-kg-JVE"/>
@@ -303,7 +279,6 @@ Learn more about the Capture SDK.</string>
                             <constraint firstItem="BBN-hL-QdY" firstAttribute="trailing" secondItem="oAR-cP-n2J" secondAttribute="trailing" id="qia-4u-JJT"/>
                             <constraint firstItem="Ixt-4F-BsC" firstAttribute="width" secondItem="010-su-NIN" secondAttribute="width" multiplier="2:5" id="run-Mc-j3Z"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="oAR-cP-n2J"/>
                     </view>
                     <navigationItem key="navigationItem" id="I7D-55-XNc">
                         <barButtonItem key="backBarButtonItem" title=" " id="CNX-Hw-bwv"/>
@@ -348,7 +323,6 @@ Learn more about the Capture SDK.</string>
                                                         </connections>
                                                     </switch>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="FS7-CQ-mOh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ARM-f8-e4D" secondAttribute="trailing" constant="4" id="0uH-fx-eQE"/>
                                                     <constraint firstAttribute="trailing" secondItem="FS7-CQ-mOh" secondAttribute="trailing" constant="18" id="KTJ-ir-aO0"/>
@@ -367,11 +341,10 @@ Learn more about the Capture SDK.</string>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity format options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSc-U8-QIE">
                                                                 <rect key="frame" x="18" y="14" width="172" height="20"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="textColor" systemColor="secondaryLabelColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstItem="FSc-U8-QIE" firstAttribute="leading" secondItem="ooE-Wt-6nr" secondAttribute="leading" constant="18" id="H4C-RH-CTN"/>
                                                             <constraint firstAttribute="height" constant="40" id="Lo9-yj-XSU"/>
@@ -382,9 +355,8 @@ Learn more about the Capture SDK.</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2be-Tw-o34">
                                                         <rect key="frame" x="0.0" y="40" width="375" height="50"/>
                                                         <subviews>
-                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Yz-Cw-Ddw">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Yz-Cw-Ddw">
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <connections>
                                                                     <action selector="didQuantityFormatChanged:" destination="9an-oy-szK" eventType="touchUpInside" id="gRN-0U-9YL"/>
                                                                 </connections>
@@ -404,13 +376,13 @@ Learn more about the Capture SDK.</string>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8mK-pC-I0g">
                                                                 <rect key="frame" x="18" y="49" width="357" height="1"/>
-                                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="Pf6-HT-huu"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstItem="2Pn-fZ-VTh" firstAttribute="leading" secondItem="0YU-1Y-5Lo" secondAttribute="trailing" constant="16" id="Bex-6X-siF"/>
                                                             <constraint firstItem="9Yz-Cw-Ddw" firstAttribute="top" secondItem="2be-Tw-o34" secondAttribute="top" id="Et9-mV-FQH"/>
@@ -430,9 +402,8 @@ Learn more about the Capture SDK.</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xmI-A6-Rvr">
                                                         <rect key="frame" x="0.0" y="90" width="375" height="50"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMu-al-Mig">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMu-al-Mig">
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <connections>
                                                                     <action selector="didQuantityFormatChanged:" destination="9an-oy-szK" eventType="touchUpInside" id="hx7-Sh-cEa"/>
                                                                 </connections>
@@ -451,7 +422,7 @@ Learn more about the Capture SDK.</string>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstItem="fNs-rW-v5t" firstAttribute="leading" secondItem="DLM-mF-ajW" secondAttribute="trailing" constant="16" id="7Tg-wd-WFv"/>
                                                             <constraint firstItem="DLM-mF-ajW" firstAttribute="centerY" secondItem="xmI-A6-Rvr" secondAttribute="centerY" id="CwQ-c0-zFP"/>
@@ -480,19 +451,18 @@ Learn more about the Capture SDK.</string>
                                                                     <constraint firstAttribute="width" constant="36" id="3aw-u7-JXp"/>
                                                                     <constraint firstAttribute="height" constant="36" id="zHH-Zz-lWi"/>
                                                                 </constraints>
-                                                                <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                                             </textField>
                                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="nle-GW-b3g">
-                                                                <rect key="frame" x="263" y="10.5" width="94" height="29"/>
+                                                                <rect key="frame" x="263" y="9" width="94" height="32"/>
                                                                 <color key="tintColor" red="0.1333333333" green="0.44705882349999998" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <connections>
                                                                     <action selector="didDefaultQuantityChanged:" destination="9an-oy-szK" eventType="valueChanged" id="qYh-ER-jmz"/>
                                                                 </connections>
                                                             </stepper>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstItem="nle-GW-b3g" firstAttribute="leading" secondItem="EZg-6t-r95" secondAttribute="trailing" constant="8" id="0Cf-JX-MNj"/>
                                                             <constraint firstAttribute="height" constant="50" id="0xo-F4-tYR"/>
@@ -507,9 +477,8 @@ Learn more about the Capture SDK.</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0AG-DX-gIy">
                                                         <rect key="frame" x="0.0" y="206" width="375" height="50"/>
                                                         <subviews>
-                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fP4-fd-xMt">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fP4-fd-xMt">
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <connections>
                                                                     <action selector="didNewLineSetChanged:" destination="9an-oy-szK" eventType="touchUpInside" id="QC8-Qm-miC"/>
                                                                 </connections>
@@ -535,7 +504,7 @@ Learn more about the Capture SDK.</string>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7sb-Ke-Dii" secondAttribute="trailing" constant="16" id="1S7-i5-yEq"/>
                                                             <constraint firstItem="fP4-fd-xMt" firstAttribute="top" secondItem="0AG-DX-gIy" secondAttribute="top" id="2aX-zT-V45"/>
@@ -555,9 +524,8 @@ Learn more about the Capture SDK.</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NJD-w6-JZD">
                                                         <rect key="frame" x="0.0" y="256" width="375" height="50"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0g-YQ-C1c">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0g-YQ-C1c">
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <connections>
                                                                     <action selector="didNewLineSetChanged:" destination="9an-oy-szK" eventType="touchUpInside" id="SK9-3N-nRZ"/>
                                                                 </connections>
@@ -570,13 +538,13 @@ Learn more about the Capture SDK.</string>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start new scan after semicolon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cB1-oJ-z4u">
-                                                                <rect key="frame" x="54" y="16" width="212.5" height="18"/>
+                                                                <rect key="frame" x="54" y="16" width="212" height="18"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstItem="TLy-Xj-pEj" firstAttribute="leading" secondItem="NJD-w6-JZD" secondAttribute="leading" constant="18" id="5GJ-mq-Zkz"/>
                                                             <constraint firstAttribute="bottom" secondItem="n0g-YQ-C1c" secondAttribute="bottom" id="74G-eJ-RLR"/>
@@ -592,7 +560,7 @@ Learn more about the Capture SDK.</string>
                                                     </view>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ky6-C9-E5Y">
                                                         <rect key="frame" x="0.0" y="314" width="375" height="70"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                                                         <accessibility key="accessibilityConfiguration">
                                                             <accessibilityTraits key="traits" notEnabled="YES"/>
                                                         </accessibility>
@@ -603,7 +571,6 @@ Learn more about the Capture SDK.</string>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                 </subviews>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="ooE-Wt-6nr" firstAttribute="top" secondItem="LxG-aO-QRQ" secondAttribute="top" id="0ux-bf-kvI"/>
                                                     <constraint firstItem="ooE-Wt-6nr" firstAttribute="leading" secondItem="LxG-aO-QRQ" secondAttribute="leading" id="370-yh-81D"/>
@@ -646,7 +613,7 @@ Learn more about the Capture SDK.</string>
                                                         </connections>
                                                     </switch>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="8ZH-hi-LkA" firstAttribute="centerY" secondItem="4Sc-xD-AgG" secondAttribute="centerY" id="0k7-IR-LUj"/>
                                                     <constraint firstItem="0P8-vc-Bpg" firstAttribute="leading" secondItem="4Sc-xD-AgG" secondAttribute="leading" constant="18" id="6oi-Zz-KJQ"/>
@@ -659,8 +626,8 @@ Learn more about the Capture SDK.</string>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0F-N7-uk3" userLabel="Support D600">
                                                 <rect key="frame" x="0.0" y="500" width="375" height="50"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Support D600" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5w-ff-Umz">
-                                                        <rect key="frame" x="18" y="15.5" width="104" height="19.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use contactless readers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5w-ff-Umz">
+                                                        <rect key="frame" x="18" y="15.5" width="175.5" height="19.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -672,7 +639,7 @@ Learn more about the Capture SDK.</string>
                                                         </connections>
                                                     </switch>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="fDR-W3-Ugg" firstAttribute="centerY" secondItem="x0F-N7-uk3" secondAttribute="centerY" id="5wr-XT-CQJ"/>
                                                     <constraint firstAttribute="height" constant="50" id="dDU-GC-ROD"/>
@@ -699,7 +666,7 @@ Learn more about the Capture SDK.</string>
                                                         </connections>
                                                     </switch>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="EVf-aW-jWn" firstAttribute="centerY" secondItem="xZm-F0-9Oj" secondAttribute="centerY" id="OvW-uv-Tit"/>
                                                     <constraint firstItem="GN3-Xd-f3o" firstAttribute="leading" secondItem="xZm-F0-9Oj" secondAttribute="leading" constant="18" id="RAK-qS-eNT"/>
@@ -710,7 +677,6 @@ Learn more about the Capture SDK.</string>
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="d3p-Kl-USO" firstAttribute="top" secondItem="6yO-b3-iGj" secondAttribute="top" id="0FZ-cQ-mYA"/>
                                             <constraint firstItem="x0F-N7-uk3" firstAttribute="leading" secondItem="6yO-b3-iGj" secondAttribute="leading" id="3pD-hs-4vW"/>
@@ -731,7 +697,7 @@ Learn more about the Capture SDK.</string>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="6yO-b3-iGj" secondAttribute="bottom" id="G90-ZR-cgn"/>
@@ -741,7 +707,8 @@ Learn more about the Capture SDK.</string>
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Tos-yH-GEN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="m7C-qG-5pt" firstAttribute="leading" secondItem="Tos-yH-GEN" secondAttribute="leading" id="98o-YL-uYk"/>
                             <constraint firstItem="m7C-qG-5pt" firstAttribute="top" secondItem="Tos-yH-GEN" secondAttribute="top" id="AXe-SK-1i0"/>
@@ -750,7 +717,6 @@ Learn more about the Capture SDK.</string>
                             <constraint firstItem="6yO-b3-iGj" firstAttribute="width" secondItem="rAH-4M-BKG" secondAttribute="width" id="oxt-RF-tBi"/>
                             <constraint firstItem="m7C-qG-5pt" firstAttribute="bottom" secondItem="Tos-yH-GEN" secondAttribute="bottom" id="vhg-2D-ViH"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Tos-yH-GEN"/>
                     </view>
                     <navigationItem key="navigationItem" title="Scan Settings" id="VPZ-Z0-c3i"/>
                     <connections>
@@ -782,9 +748,9 @@ Learn more about the Capture SDK.</string>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uKA-vK-aOb">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Text Title
 ABC, 1</string>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
@@ -792,14 +758,14 @@ ABC, 1</string>
                                 </connections>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="yeh-eH-6w5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="uKA-vK-aOb" firstAttribute="trailing" secondItem="yeh-eH-6w5" secondAttribute="trailing" id="D85-4u-rs1"/>
                             <constraint firstItem="uKA-vK-aOb" firstAttribute="top" secondItem="yeh-eH-6w5" secondAttribute="top" id="E4m-Kr-hwJ"/>
                             <constraint firstItem="uKA-vK-aOb" firstAttribute="leading" secondItem="yeh-eH-6w5" secondAttribute="leading" id="bf0-Xh-zWI"/>
                             <constraint firstItem="yeh-eH-6w5" firstAttribute="bottom" secondItem="uKA-vK-aOb" secondAttribute="bottom" id="qIe-cv-Eqk"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="yeh-eH-6w5"/>
                     </view>
                     <navigationItem key="navigationItem" id="mc4-gA-VHa"/>
                     <connections>
@@ -836,5 +802,23 @@ ABC, 1</string>
         <image name="icon_info.png" width="200" height="200"/>
         <image name="icon_setting.png" width="200" height="200"/>
         <image name="img_device.png" width="345" height="303"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
