@@ -8,7 +8,7 @@ PODS:
   - AppCenter/Core (4.4.2)
   - AppCenter/Crashes (4.4.2):
     - AppCenter/Core
-  - CaptureSDK (1.6.34)
+  - CaptureSDK (1.6.39)
   - Realm (3.21.0):
     - Realm/Headers (= 3.21.0)
   - Realm/Headers (3.21.0)
@@ -36,7 +36,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AppCenter: b0eca112a27b71e97488ffa1949ee38c7abd4b79
-  CaptureSDK: 061935c45a4e9e25aab54b67f38071b4914b21c6
+  CaptureSDK: 34f244e4a3bae307a192be836b842f9226f6ed95
   Realm: 38e9dcb19104b58407167d99f70d4995f7c16023
   RealmSwift: 3183cc1ad48378fbcd634311b22c0e6c44021152
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
